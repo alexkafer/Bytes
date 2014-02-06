@@ -15,13 +15,19 @@
 		FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EFFB18A32D8600E2D79F /* AppDelegate.m */; };
 		FAF6EFFF18A32D8600E2D79F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF6EFFD18A32D8600E2D79F /* Main_iPhone.storyboard */; };
 		FAF6F00218A32D8600E2D79F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F00018A32D8600E2D79F /* Main_iPad.storyboard */; };
-		FAF6F00518A32D8600E2D79F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F00418A32D8600E2D79F /* ViewController.m */; };
 		FAF6F00718A32D8700E2D79F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F00618A32D8700E2D79F /* Images.xcassets */; };
 		FAF6F00E18A32D8700E2D79F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F00D18A32D8700E2D79F /* XCTest.framework */; };
 		FAF6F00F18A32D8700E2D79F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEB18A32D8600E2D79F /* Foundation.framework */; };
 		FAF6F01018A32D8700E2D79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEF18A32D8600E2D79F /* UIKit.framework */; };
 		FAF6F01818A32D8700E2D79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F01618A32D8700E2D79F /* InfoPlist.strings */; };
 		FAF6F01A18A32D8700E2D79F /* BytesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F01918A32D8700E2D79F /* BytesTests.m */; };
+		FAF6F02818A32DE000E2D79F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02718A32DE000E2D79F /* MainViewController.m */; };
+		FAF6F02B18A32E0E00E2D79F /* GameSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02A18A32E0E00E2D79F /* GameSetupViewController.m */; };
+		FAF6F02E18A32E4C00E2D79F /* TeamSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02D18A32E4C00E2D79F /* TeamSelectionViewController.m */; };
+		FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03318A32FD400E2D79F /* ByteCounter.m */; };
+		FAF6F03718A335EB00E2D79F /* MediaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03618A335EB00E2D79F /* MediaCell.m */; };
+		FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F03818A3385700E2D79F /* QuartzCore.framework */; };
+		FAF6F03C18A33A5600E2D79F /* GameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +53,25 @@
 		FAF6EFFB18A32D8600E2D79F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FAF6EFFE18A32D8600E2D79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FAF6F00118A32D8600E2D79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		FAF6F00318A32D8600E2D79F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FAF6F00418A32D8600E2D79F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAF6F00618A32D8700E2D79F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAF6F00C18A32D8700E2D79F /* BytesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BytesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6F00D18A32D8700E2D79F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FAF6F01518A32D8700E2D79F /* BytesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BytesTests-Info.plist"; sourceTree = "<group>"; };
 		FAF6F01718A32D8700E2D79F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAF6F01918A32D8700E2D79F /* BytesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BytesTests.m; sourceTree = "<group>"; };
+		FAF6F02618A32DE000E2D79F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FAF6F02718A32DE000E2D79F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FAF6F02918A32E0E00E2D79F /* GameSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSetupViewController.h; sourceTree = "<group>"; };
+		FAF6F02A18A32E0E00E2D79F /* GameSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSetupViewController.m; sourceTree = "<group>"; };
+		FAF6F02C18A32E4C00E2D79F /* TeamSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamSelectionViewController.h; sourceTree = "<group>"; };
+		FAF6F02D18A32E4C00E2D79F /* TeamSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamSelectionViewController.m; sourceTree = "<group>"; };
+		FAF6F03218A32FD400E2D79F /* ByteCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteCounter.h; sourceTree = "<group>"; };
+		FAF6F03318A32FD400E2D79F /* ByteCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteCounter.m; sourceTree = "<group>"; };
+		FAF6F03518A335EB00E2D79F /* MediaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaCell.h; sourceTree = "<group>"; };
+		FAF6F03618A335EB00E2D79F /* MediaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaCell.m; sourceTree = "<group>"; };
+		FAF6F03818A3385700E2D79F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FAF6F03A18A33A5600E2D79F /* GameplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayViewController.h; sourceTree = "<group>"; };
+		FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */,
 				FAF6EFEE18A32D8600E2D79F /* CoreGraphics.framework in Frameworks */,
 				FAF6EFF018A32D8600E2D79F /* UIKit.framework in Frameworks */,
 				FAF6EFEC18A32D8600E2D79F /* Foundation.framework in Frameworks */,
@@ -103,6 +121,7 @@
 		FAF6EFEA18A32D8600E2D79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF6F03818A3385700E2D79F /* QuartzCore.framework */,
 				FAF6EFEB18A32D8600E2D79F /* Foundation.framework */,
 				FAF6EFED18A32D8600E2D79F /* CoreGraphics.framework */,
 				FAF6EFEF18A32D8600E2D79F /* UIKit.framework */,
@@ -118,9 +137,19 @@
 				FAF6EFFB18A32D8600E2D79F /* AppDelegate.m */,
 				FAF6EFFD18A32D8600E2D79F /* Main_iPhone.storyboard */,
 				FAF6F00018A32D8600E2D79F /* Main_iPad.storyboard */,
-				FAF6F00318A32D8600E2D79F /* ViewController.h */,
-				FAF6F00418A32D8600E2D79F /* ViewController.m */,
+				FAF6F02C18A32E4C00E2D79F /* TeamSelectionViewController.h */,
+				FAF6F02D18A32E4C00E2D79F /* TeamSelectionViewController.m */,
+				FAF6F02918A32E0E00E2D79F /* GameSetupViewController.h */,
+				FAF6F02A18A32E0E00E2D79F /* GameSetupViewController.m */,
+				FAF6F02618A32DE000E2D79F /* MainViewController.h */,
+				FAF6F02718A32DE000E2D79F /* MainViewController.m */,
+				FAF6F03A18A33A5600E2D79F /* GameplayViewController.h */,
+				FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */,
+				FAF6F03518A335EB00E2D79F /* MediaCell.h */,
+				FAF6F03618A335EB00E2D79F /* MediaCell.m */,
 				FAF6F00618A32D8700E2D79F /* Images.xcassets */,
+				FAF6F03218A32FD400E2D79F /* ByteCounter.h */,
+				FAF6F03318A32FD400E2D79F /* ByteCounter.m */,
 				FAF6EFF218A32D8600E2D79F /* Supporting Files */,
 			);
 			path = Bytes;
@@ -202,6 +231,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Kintas;
 				TargetAttributes = {
+					FAF6EFE718A32D8600E2D79F = {
+						DevelopmentTeam = 286L685SLK;
+					};
 					FAF6F00B18A32D8700E2D79F = {
 						TestTargetID = FAF6EFE718A32D8600E2D79F;
 					};
@@ -253,9 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF6F00518A32D8600E2D79F /* ViewController.m in Sources */,
+				FAF6F02E18A32E4C00E2D79F /* TeamSelectionViewController.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
+				FAF6F03C18A33A5600E2D79F /* GameplayViewController.m in Sources */,
+				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
+				FAF6F02B18A32E0E00E2D79F /* GameSetupViewController.m in Sources */,
 				FAF6EFF818A32D8600E2D79F /* main.m in Sources */,
+				FAF6F03718A335EB00E2D79F /* MediaCell.m in Sources */,
+				FAF6F02818A32DE000E2D79F /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bytes/Bytes-Prefix.pch";
 				INFOPLIST_FILE = "Bytes/Bytes-Info.plist";
@@ -405,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bytes/Bytes-Prefix.pch";
 				INFOPLIST_FILE = "Bytes/Bytes-Info.plist";

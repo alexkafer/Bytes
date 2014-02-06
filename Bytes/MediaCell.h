@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MediaCell.h
 //  Bytes
 //
 //  Created by Alex Kafer on 2/5/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MediaCell : UICollectionViewCell
+
+@property (retain, nonatomic) UILabel* label;
 
 @end
