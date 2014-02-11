@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameplayViewController : UICollectionViewController
+@interface GameplayViewController : UIViewController
 
 @end

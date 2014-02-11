@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface MainViewController : UIViewController {
+@interface MainViewController : UIViewController <UIAlertViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate> {
     UILabel *scrollingText;
+    UIBarButtonItem *profile;
 }
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *profile;
+
+- (IBAction)updateProfile:(id)sender;
 
 @end
