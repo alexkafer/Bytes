@@ -58,6 +58,18 @@
     CGFloat width = currentScrollView.frame.size.width;
     NSInteger page = (currentScrollView.contentOffset.x + (0.5f * width)) / width;
     [segControl setSelectedSegmentIndex:page];
+    if (page == 4) {
+        [UIView animateWithDuration:0.5 animations:^{
+            [whatAreBytesBtn setAlpha:0];
+        } completion:^(BOOL finished) {
+            [whatAreBytesBtn setHidden:YES];
+        }];
+    } else {
+        [whatAreBytesBtn setHidden:NO];
+        [UIView animateWithDuration:0.5 animations:^{
+            [whatAreBytesBtn setAlpha:1];
+        }];
+    }
     //pageControl.currentPage = page;
 }
 
@@ -103,10 +115,11 @@
 }
 
 - (void)handleSingleTap:(UIGestureRecognizer *)gestureRecognizer {
-    // single tap handling
-    CGRect destRect = CGRectMake(whatAreBytesBtn.frame.origin.x+5, whatAreBytesBtn.frame.origin.y, whatAreBytesBtn.frame.size.width-10, whatAreBytesBtn.frame.size.height);
-    [gestureRecognizer.view setCenter:CGPointMake(scrollView.center.x, scrollView.center.y/1.5+20)];
-    [gestureRecognizer.view genieInTransitionWithDuration:1
+    
+    if (gestureRecognizer.view.tag > 0) {
+        CGRect destRect = CGRectMake(whatAreBytesBtn.frame.origin.x+5, whatAreBytesBtn.frame.origin.y, whatAreBytesBtn.frame.size.width-10, whatAreBytesBtn.frame.size.height);
+        [gestureRecognizer.view setCenter:CGPointMake(scrollView.center.x, scrollView.center.y/1.5+20)];
+        [gestureRecognizer.view genieInTransitionWithDuration:1
                                           destinationRect:destRect
                                           destinationEdge:BCRectEdgeTop completion:^{
                                               NSLog(@"Done!");
@@ -117,6 +130,7 @@
                                                   NSLog(@"Switch new gameset");
                                               }];
                                           }];
+    }
 }
 
 @end
