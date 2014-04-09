@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MediaCollectionViewController : UICollectionViewController
+@interface MediaCollectionViewController : UICollectionViewController {
+    NSMutableArray *mediaCells;
+}
 
 @property (nonatomic, retain) NSMutableArray *mediaCells;
 

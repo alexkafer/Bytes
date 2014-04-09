@@ -7,36 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6BAE2918E84B7C00A0F4E6 /* AKPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */; };
+		2AE576A218E8A48E0007E623 /* AKAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE576A118E8A48E0007E623 /* AKAuthHelper.m */; };
+		FA23573318A9C37100D6829B /* MediaSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23573218A9C37100D6829B /* MediaSelectViewController.m */; };
+		FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA8D18F39B700090DB76 /* AKStyler.m */; };
+		FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */; };
+		FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */; };
+		FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9818F499320090DB76 /* AKGameOptions.m */; };
+		FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9C18F499FB0090DB76 /* AKGame.m */; };
+		FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */; };
+		FA5EBAA318F49F610090DB76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA218F49F610090DB76 /* Parse.framework */; };
+		FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA418F49F850090DB76 /* CFNetwork.framework */; };
+		FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */; };
+		FA5EBAA918F49F960090DB76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA818F49F960090DB76 /* CoreLocation.framework */; };
+		FA5EBAAB18F49FA10090DB76 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAA18F49FA10090DB76 /* libz.dylib */; };
+		FA5EBAAD18F49FAA0090DB76 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */; };
+		FA5EBAAF18F49FB60090DB76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAE18F49FB60090DB76 /* Security.framework */; };
+		FA5EBAB118F49FBE0090DB76 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */; };
+		FA5EBAB318F49FC60090DB76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */; };
+		FA5EBAB718F4A18A0090DB76 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */; };
+		FA5EBAB818F4A18A0090DB76 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */; };
+		FA5EBABB18F4BE5D0090DB76 /* UIView+draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */; };
+		FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */; };
+		FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAC318F4F1360090DB76 /* UIView+Genie.m */; };
+		FA7095B218E5120900C1B282 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7095B118E5120900C1B282 /* Images.xcassets */; };
+		FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7095B418E5125900C1B282 /* LoadingViewController.m */; };
+		FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A4FF18E7719E0093C13E /* GameKit.framework */; };
+		FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50218E772810093C13E /* GCGameHelper.m */; };
+		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
+		FAF0A50818E79E780093C13E /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50718E79E780093C13E /* CardViewController.m */; };
+		FAF0A50A18E7B4960093C13E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF0A50918E7B4960093C13E /* CardView.xib */; };
 		FAF6EFEC18A32D8600E2D79F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEB18A32D8600E2D79F /* Foundation.framework */; };
-		FAF6EFEE18A32D8600E2D79F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFED18A32D8600E2D79F /* CoreGraphics.framework */; };
 		FAF6EFF018A32D8600E2D79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEF18A32D8600E2D79F /* UIKit.framework */; };
 		FAF6EFF618A32D8600E2D79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */; };
 		FAF6EFF818A32D8600E2D79F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EFF718A32D8600E2D79F /* main.m */; };
 		FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EFFB18A32D8600E2D79F /* AppDelegate.m */; };
-		FAF6EFFF18A32D8600E2D79F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF6EFFD18A32D8600E2D79F /* Main_iPhone.storyboard */; };
-		FAF6F00218A32D8600E2D79F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F00018A32D8600E2D79F /* Main_iPad.storyboard */; };
-		FAF6F00718A32D8700E2D79F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F00618A32D8700E2D79F /* Images.xcassets */; };
-		FAF6F00E18A32D8700E2D79F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F00D18A32D8700E2D79F /* XCTest.framework */; };
+		FAF6EFFF18A32D8600E2D79F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF6EFFD18A32D8600E2D79F /* MainStoryboard.storyboard */; };
 		FAF6F00F18A32D8700E2D79F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEB18A32D8600E2D79F /* Foundation.framework */; };
 		FAF6F01018A32D8700E2D79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEF18A32D8600E2D79F /* UIKit.framework */; };
 		FAF6F01818A32D8700E2D79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F01618A32D8700E2D79F /* InfoPlist.strings */; };
 		FAF6F01A18A32D8700E2D79F /* BytesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F01918A32D8700E2D79F /* BytesTests.m */; };
-		FAF6F02818A32DE000E2D79F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02718A32DE000E2D79F /* MainViewController.m */; };
-		FAF6F02B18A32E0E00E2D79F /* GameSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02A18A32E0E00E2D79F /* GameSetupViewController.m */; };
-		FAF6F02E18A32E4C00E2D79F /* TeamSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02D18A32E4C00E2D79F /* TeamSelectionViewController.m */; };
+		FAF6F02818A32DE000E2D79F /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */; };
 		FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03318A32FD400E2D79F /* ByteCounter.m */; };
 		FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F03818A3385700E2D79F /* QuartzCore.framework */; };
 		FAF6F03C18A33A5600E2D79F /* GameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */; };
 		FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */; };
-		FAF6F04118A4414800E2D79F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04018A4414800E2D79F /* Parse.framework */; };
-		FAF6F04318A4416400E2D79F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04218A4416400E2D79F /* AudioToolbox.framework */; };
-		FAF6F04518A4416A00E2D79F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04418A4416A00E2D79F /* CFNetwork.framework */; };
-		FAF6F04718A4417500E2D79F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04618A4417500E2D79F /* CoreLocation.framework */; };
-		FAF6F04918A4417E00E2D79F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04818A4417E00E2D79F /* libz.dylib */; };
-		FAF6F04B18A4418600E2D79F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04A18A4418600E2D79F /* MobileCoreServices.framework */; };
-		FAF6F04D18A4419000E2D79F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04C18A4419000E2D79F /* Security.framework */; };
-		FAF6F04F18A4419700E2D79F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F04E18A4419700E2D79F /* StoreKit.framework */; };
-		FAF6F05118A4419E00E2D79F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F05018A4419E00E2D79F /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +65,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A6BAE2718E84B7C00A0F4E6 /* AKPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPlayer.h; sourceTree = "<group>"; };
+		2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPlayer.m; sourceTree = "<group>"; };
+		2AE576A018E8A48E0007E623 /* AKAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAuthHelper.h; sourceTree = "<group>"; };
+		2AE576A118E8A48E0007E623 /* AKAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAuthHelper.m; sourceTree = "<group>"; };
+		FA23573118A9C37100D6829B /* MediaSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaSelectViewController.h; sourceTree = "<group>"; };
+		FA23573218A9C37100D6829B /* MediaSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaSelectViewController.m; sourceTree = "<group>"; };
+		FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKStyler.h; sourceTree = "<group>"; };
+		FA5EBA8D18F39B700090DB76 /* AKStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKStyler.m; sourceTree = "<group>"; };
+		FA5EBA9218F497EC0090DB76 /* GameOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOptionsViewController.h; sourceTree = "<group>"; };
+		FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOptionsViewController.m; sourceTree = "<group>"; };
+		FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOptionsView.xib; sourceTree = "<group>"; };
+		FA5EBA9718F499320090DB76 /* AKGameOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGameOptions.h; sourceTree = "<group>"; };
+		FA5EBA9818F499320090DB76 /* AKGameOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGameOptions.m; sourceTree = "<group>"; };
+		FA5EBA9B18F499FB0090DB76 /* AKGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGame.h; sourceTree = "<group>"; };
+		FA5EBA9C18F499FB0090DB76 /* AKGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGame.m; sourceTree = "<group>"; };
+		FA5EBA9F18F49DAA0090DB76 /* AKGamemode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGamemode.h; sourceTree = "<group>"; };
+		FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGamemode.m; sourceTree = "<group>"; };
+		FA5EBAA218F49F610090DB76 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		FA5EBAA418F49F850090DB76 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FA5EBAA818F49F960090DB76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FA5EBAAA18F49FA10090DB76 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FA5EBAAE18F49FB60090DB76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA5EBAB418F4A18A0090DB76 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		FA5EBAB918F4BE5D0090DB76 /* UIView+draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+draggable.h"; sourceTree = "<group>"; };
+		FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+draggable.m"; sourceTree = "<group>"; };
+		FA5EBABC18F4D9F90090DB76 /* GameSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSetupViewController.h; sourceTree = "<group>"; };
+		FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSetupViewController.m; sourceTree = "<group>"; };
+		FA5EBAC218F4F1360090DB76 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
+		FA5EBAC318F4F1360090DB76 /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
+		FA7095B118E5120900C1B282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA7095B318E5125900C1B282 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
+		FA7095B418E5125900C1B282 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
+		FAF0A4FF18E7719E0093C13E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		FAF0A50118E772810093C13E /* GCGameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCGameHelper.h; sourceTree = "<group>"; };
+		FAF0A50218E772810093C13E /* GCGameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCGameHelper.m; sourceTree = "<group>"; };
+		FAF0A50418E780A20093C13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAF0A50618E79E780093C13E /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		FAF0A50718E79E780093C13E /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		FAF0A50918E7B4960093C13E /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		FAF6EFE818A32D8600E2D79F /* Bytes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bytes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6EFEB18A32D8600E2D79F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FAF6EFED18A32D8600E2D79F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAF6EFEF18A32D8600E2D79F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF6EFF318A32D8600E2D79F /* Bytes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bytes-Info.plist"; sourceTree = "<group>"; };
 		FAF6EFF518A32D8600E2D79F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -60,20 +119,13 @@
 		FAF6EFF918A32D8600E2D79F /* Bytes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bytes-Prefix.pch"; sourceTree = "<group>"; };
 		FAF6EFFA18A32D8600E2D79F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FAF6EFFB18A32D8600E2D79F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FAF6EFFE18A32D8600E2D79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		FAF6F00118A32D8600E2D79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		FAF6F00618A32D8700E2D79F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FAF6EFFE18A32D8600E2D79F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FAF6F00C18A32D8700E2D79F /* BytesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BytesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAF6F00D18A32D8700E2D79F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FAF6F01518A32D8700E2D79F /* BytesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BytesTests-Info.plist"; sourceTree = "<group>"; };
 		FAF6F01718A32D8700E2D79F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAF6F01918A32D8700E2D79F /* BytesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BytesTests.m; sourceTree = "<group>"; };
-		FAF6F02618A32DE000E2D79F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		FAF6F02718A32DE000E2D79F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		FAF6F02918A32E0E00E2D79F /* GameSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSetupViewController.h; sourceTree = "<group>"; };
-		FAF6F02A18A32E0E00E2D79F /* GameSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSetupViewController.m; sourceTree = "<group>"; };
-		FAF6F02C18A32E4C00E2D79F /* TeamSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamSelectionViewController.h; sourceTree = "<group>"; };
-		FAF6F02D18A32E4C00E2D79F /* TeamSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamSelectionViewController.m; sourceTree = "<group>"; };
+		FAF6F02618A32DE000E2D79F /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
+		FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
 		FAF6F03218A32FD400E2D79F /* ByteCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteCounter.h; sourceTree = "<group>"; };
 		FAF6F03318A32FD400E2D79F /* ByteCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteCounter.m; sourceTree = "<group>"; };
 		FAF6F03818A3385700E2D79F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -81,15 +133,6 @@
 		FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayViewController.m; sourceTree = "<group>"; };
 		FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaCollectionViewController.h; sourceTree = "<group>"; };
 		FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaCollectionViewController.m; sourceTree = "<group>"; };
-		FAF6F04018A4414800E2D79F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		FAF6F04218A4416400E2D79F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FAF6F04418A4416A00E2D79F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		FAF6F04618A4417500E2D79F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FAF6F04818A4417E00E2D79F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		FAF6F04A18A4418600E2D79F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		FAF6F04C18A4419000E2D79F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		FAF6F04E18A4419700E2D79F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		FAF6F05018A4419E00E2D79F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,19 +140,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF6F05118A4419E00E2D79F /* SystemConfiguration.framework in Frameworks */,
-				FAF6F04F18A4419700E2D79F /* StoreKit.framework in Frameworks */,
-				FAF6F04D18A4419000E2D79F /* Security.framework in Frameworks */,
-				FAF6F04B18A4418600E2D79F /* MobileCoreServices.framework in Frameworks */,
-				FAF6F04918A4417E00E2D79F /* libz.dylib in Frameworks */,
-				FAF6F04718A4417500E2D79F /* CoreLocation.framework in Frameworks */,
-				FAF6F04518A4416A00E2D79F /* CFNetwork.framework in Frameworks */,
-				FAF6F04318A4416400E2D79F /* AudioToolbox.framework in Frameworks */,
+				FA5EBAB318F49FC60090DB76 /* SystemConfiguration.framework in Frameworks */,
+				FA5EBAB118F49FBE0090DB76 /* StoreKit.framework in Frameworks */,
+				FA5EBAAF18F49FB60090DB76 /* Security.framework in Frameworks */,
+				FA5EBAAD18F49FAA0090DB76 /* MobileCoreServices.framework in Frameworks */,
+				FA5EBAAB18F49FA10090DB76 /* libz.dylib in Frameworks */,
+				FA5EBAA918F49F960090DB76 /* CoreLocation.framework in Frameworks */,
+				FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */,
+				FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */,
+				FA5EBAA318F49F610090DB76 /* Parse.framework in Frameworks */,
+				FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */,
+				FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */,
 				FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */,
-				FAF6EFEE18A32D8600E2D79F /* CoreGraphics.framework in Frameworks */,
 				FAF6EFF018A32D8600E2D79F /* UIKit.framework in Frameworks */,
 				FAF6EFEC18A32D8600E2D79F /* Foundation.framework in Frameworks */,
-				FAF6F04118A4414800E2D79F /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +161,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF6F00E18A32D8700E2D79F /* XCTest.framework in Frameworks */,
 				FAF6F01018A32D8700E2D79F /* UIKit.framework in Frameworks */,
 				FAF6F00F18A32D8700E2D79F /* Foundation.framework in Frameworks */,
 			);
@@ -126,6 +169,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA5EBA9A18F499D90090DB76 /* AK-API */ = {
+			isa = PBXGroup;
+			children = (
+				2AE576A018E8A48E0007E623 /* AKAuthHelper.h */,
+				2AE576A118E8A48E0007E623 /* AKAuthHelper.m */,
+				2A6BAE2718E84B7C00A0F4E6 /* AKPlayer.h */,
+				2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */,
+				FA5EBA9B18F499FB0090DB76 /* AKGame.h */,
+				FA5EBA9C18F499FB0090DB76 /* AKGame.m */,
+				FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */,
+				FA5EBA8D18F39B700090DB76 /* AKStyler.m */,
+				FA5EBA9718F499320090DB76 /* AKGameOptions.h */,
+				FA5EBA9818F499320090DB76 /* AKGameOptions.m */,
+				FA5EBA9E18F49D710090DB76 /* AK Gamemodes */,
+			);
+			name = "AK-API";
+			sourceTree = "<group>";
+		};
+		FA5EBA9E18F49D710090DB76 /* AK Gamemodes */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EBA9F18F49DAA0090DB76 /* AKGamemode.h */,
+				FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */,
+			);
+			name = "AK Gamemodes";
+			sourceTree = "<group>";
+		};
 		FAF6EFDF18A32D8600E2D79F = {
 			isa = PBXGroup;
 			children = (
@@ -148,20 +218,20 @@
 		FAF6EFEA18A32D8600E2D79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FAF6F05018A4419E00E2D79F /* SystemConfiguration.framework */,
-				FAF6F04E18A4419700E2D79F /* StoreKit.framework */,
-				FAF6F04C18A4419000E2D79F /* Security.framework */,
-				FAF6F04A18A4418600E2D79F /* MobileCoreServices.framework */,
-				FAF6F04818A4417E00E2D79F /* libz.dylib */,
-				FAF6F04618A4417500E2D79F /* CoreLocation.framework */,
-				FAF6F04418A4416A00E2D79F /* CFNetwork.framework */,
-				FAF6F04218A4416400E2D79F /* AudioToolbox.framework */,
-				FAF6F04018A4414800E2D79F /* Parse.framework */,
+				FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */,
+				FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */,
+				FA5EBAAE18F49FB60090DB76 /* Security.framework */,
+				FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */,
+				FA5EBAAA18F49FA10090DB76 /* libz.dylib */,
+				FA5EBAA818F49F960090DB76 /* CoreLocation.framework */,
+				FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */,
+				FA5EBAA418F49F850090DB76 /* CFNetwork.framework */,
+				FA5EBAA218F49F610090DB76 /* Parse.framework */,
+				FAF0A50418E780A20093C13E /* CoreGraphics.framework */,
+				FAF0A4FF18E7719E0093C13E /* GameKit.framework */,
 				FAF6F03818A3385700E2D79F /* QuartzCore.framework */,
 				FAF6EFEB18A32D8600E2D79F /* Foundation.framework */,
-				FAF6EFED18A32D8600E2D79F /* CoreGraphics.framework */,
 				FAF6EFEF18A32D8600E2D79F /* UIKit.framework */,
-				FAF6F00D18A32D8700E2D79F /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,21 +241,23 @@
 			children = (
 				FAF6EFFA18A32D8600E2D79F /* AppDelegate.h */,
 				FAF6EFFB18A32D8600E2D79F /* AppDelegate.m */,
-				FAF6EFFD18A32D8600E2D79F /* Main_iPhone.storyboard */,
-				FAF6F00018A32D8600E2D79F /* Main_iPad.storyboard */,
-				FAF6F02C18A32E4C00E2D79F /* TeamSelectionViewController.h */,
-				FAF6F02D18A32E4C00E2D79F /* TeamSelectionViewController.m */,
-				FAF6F02918A32E0E00E2D79F /* GameSetupViewController.h */,
-				FAF6F02A18A32E0E00E2D79F /* GameSetupViewController.m */,
-				FAF6F02618A32DE000E2D79F /* MainViewController.h */,
-				FAF6F02718A32DE000E2D79F /* MainViewController.m */,
+				FAF6EFFD18A32D8600E2D79F /* MainStoryboard.storyboard */,
+				FA7095B318E5125900C1B282 /* LoadingViewController.h */,
+				FA7095B418E5125900C1B282 /* LoadingViewController.m */,
+				FA5EBABC18F4D9F90090DB76 /* GameSetupViewController.h */,
+				FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */,
+				FAF6F02618A32DE000E2D79F /* MultiplayerViewController.h */,
+				FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */,
 				FAF6F03A18A33A5600E2D79F /* GameplayViewController.h */,
 				FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */,
 				FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */,
 				FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */,
-				FAF6F00618A32D8700E2D79F /* Images.xcassets */,
+				FA23573118A9C37100D6829B /* MediaSelectViewController.h */,
+				FA23573218A9C37100D6829B /* MediaSelectViewController.m */,
 				FAF6F03218A32FD400E2D79F /* ByteCounter.h */,
 				FAF6F03318A32FD400E2D79F /* ByteCounter.m */,
+				FA7095B118E5120900C1B282 /* Images.xcassets */,
+				FA5EBA9A18F499D90090DB76 /* AK-API */,
 				FAF6EFF218A32D8600E2D79F /* Supporting Files */,
 			);
 			path = Bytes;
@@ -194,6 +266,21 @@
 		FAF6EFF218A32D8600E2D79F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA5EBAB918F4BE5D0090DB76 /* UIView+draggable.h */,
+				FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */,
+				FA5EBAC218F4F1360090DB76 /* UIView+Genie.h */,
+				FA5EBAC318F4F1360090DB76 /* UIView+Genie.m */,
+				FAF0A50618E79E780093C13E /* CardViewController.h */,
+				FAF0A50718E79E780093C13E /* CardViewController.m */,
+				FAF0A50918E7B4960093C13E /* CardView.xib */,
+				FA5EBA9218F497EC0090DB76 /* GameOptionsViewController.h */,
+				FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */,
+				FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */,
+				FA5EBAB418F4A18A0090DB76 /* AuthViewController.h */,
+				FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */,
+				FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */,
+				FAF0A50118E772810093C13E /* GCGameHelper.h */,
+				FAF0A50218E772810093C13E /* GCGameHelper.m */,
 				FAF6EFF318A32D8600E2D79F /* Bytes-Info.plist */,
 				FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */,
 				FAF6EFF718A32D8600E2D79F /* main.m */,
@@ -264,7 +351,7 @@
 		FAF6EFE018A32D8600E2D79F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Kintas;
 				TargetAttributes = {
 					FAF6EFE718A32D8600E2D79F = {
@@ -299,9 +386,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF6F00218A32D8600E2D79F /* Main_iPad.storyboard in Resources */,
-				FAF6F00718A32D8700E2D79F /* Images.xcassets in Resources */,
-				FAF6EFFF18A32D8600E2D79F /* Main_iPhone.storyboard in Resources */,
+				FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */,
+				FAF6EFFF18A32D8600E2D79F /* MainStoryboard.storyboard in Resources */,
+				FA7095B218E5120900C1B282 /* Images.xcassets in Resources */,
+				FAF0A50A18E7B4960093C13E /* CardView.xib in Resources */,
+				FA5EBAB818F4A18A0090DB76 /* AuthViewController.xib in Resources */,
 				FAF6EFF618A32D8600E2D79F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,13 +411,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */,
-				FAF6F02E18A32E4C00E2D79F /* TeamSelectionViewController.m in Sources */,
+				FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */,
+				FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
+				FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */,
+				FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */,
+				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
 				FAF6F03C18A33A5600E2D79F /* GameplayViewController.m in Sources */,
+				FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */,
 				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
-				FAF6F02B18A32E0E00E2D79F /* GameSetupViewController.m in Sources */,
+				FA23573318A9C37100D6829B /* MediaSelectViewController.m in Sources */,
+				FA5EBABB18F4BE5D0090DB76 /* UIView+draggable.m in Sources */,
+				2AE576A218E8A48E0007E623 /* AKAuthHelper.m in Sources */,
+				2A6BAE2918E84B7C00A0F4E6 /* AKPlayer.m in Sources */,
+				FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */,
+				FAF0A50818E79E780093C13E /* CardViewController.m in Sources */,
+				FA5EBAB718F4A18A0090DB76 /* AuthViewController.m in Sources */,
+				FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */,
+				FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */,
 				FAF6EFF818A32D8600E2D79F /* main.m in Sources */,
-				FAF6F02818A32DE000E2D79F /* MainViewController.m in Sources */,
+				FAF6F02818A32DE000E2D79F /* MultiplayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,20 +461,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FAF6EFFD18A32D8600E2D79F /* Main_iPhone.storyboard */ = {
+		FAF6EFFD18A32D8600E2D79F /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FAF6EFFE18A32D8600E2D79F /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		FAF6F00018A32D8600E2D79F /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAF6F00118A32D8600E2D79F /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		FAF6F01618A32D8700E2D79F /* InfoPlist.strings */ = {
@@ -390,7 +484,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -430,7 +523,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -468,12 +560,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Alex/Dropbox/iOS\\ Development/Byte/Bytes",
+					/Users/Alex/Dropbox/iOS,
+					Development/Byte/Bytes,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bytes/Bytes-Prefix.pch";
 				INFOPLIST_FILE = "Bytes/Bytes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -486,12 +581,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Alex/Dropbox/iOS\\ Development/Byte/Bytes",
+					/Users/Alex/Dropbox/iOS,
+					Development/Byte/Bytes,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bytes/Bytes-Prefix.pch";
 				INFOPLIST_FILE = "Bytes/Bytes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -499,7 +597,6 @@
 		FAF6F02118A32D8700E2D79F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bytes.app/Bytes";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -522,7 +619,6 @@
 		FAF6F02218A32D8700E2D79F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bytes.app/Bytes";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -557,6 +653,7 @@
 				FAF6F01F18A32D8700E2D79F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAF6F02018A32D8700E2D79F /* Build configuration list for PBXNativeTarget "BytesTests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +662,7 @@
 				FAF6F02218A32D8700E2D79F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

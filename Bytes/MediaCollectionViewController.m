@@ -12,7 +12,7 @@
 @synthesize mediaCells;
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return mediaCells.count; //TODO Change this number with how many cells are in the array
+    return mediaCells.count;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -20,23 +20,36 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddCell" forIndexPath:indexPath];
-    
-    return cell;
+    return [collectionView dequeueReusableCellWithReuseIdentifier:@"NormalCell" forIndexPath:indexPath];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath == 0) {
-        [mediaCells addObject:@"Data"];
-        return false;
-    }
+    NSLog(@"Index: %li", (long)indexPath.item);
     
     return true;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [mediaCells removeAllObjects];
-    [mediaCells addObject:@"Add"];
+-(void)saveNewMedia {
+    NSArray *newData = [[NSArray alloc] initWithObjects:@"otherData", nil];
+    
+    [self.collectionView performBatchUpdates:^{
+        int resultsSize = [self.mediaCells count]; //data is the previous array of data
+        [self.mediaCells addObjectsFromArray:newData];
+        NSMutableArray *arrayWithIndexPaths = [NSMutableArray array];
+        for (int i = resultsSize; i < resultsSize + newData.count; i++)
+        {
+            [arrayWithIndexPaths addObject:[NSIndexPath indexPathForRow:i-1 inSection:0]];
+        }
+        
+        [self.collectionView insertItemsAtIndexPaths:arrayWithIndexPaths];
+    } completion:nil];
+    
+}
+
+- (void)viewDidLoad {
+    self.mediaCells = [[NSMutableArray alloc] init];
+    [mediaCells addObject:@"AddCell"];
+    
     NSLog(@"Added");
 }
 
