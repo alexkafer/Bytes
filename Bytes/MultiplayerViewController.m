@@ -104,38 +104,6 @@
 
 - (void)handleSingleTap:(UIGestureRecognizer *)gestureRecognizer {
     // single tap handling
-    //NSLog(@"All the single taps");
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-   // CardViewController *selectedCard = [cardViewControllers objectAtIndex:gestureRecognizer.view.tag];
-//
-//    GameSetupViewController *setup = (GameSetupViewController *)[storyboard instantiateViewControllerWithIdentifier:@"setupGame"];
-//    [setup.navigationController setTitle:[selectedCard.titleLabel text]];
-//    [setup setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-//    
-//    UIView *emptyView = [[UIView alloc] initWithFrame:self.view.frame];
-//    [emptyView setBackgroundColor:[UIColor whiteColor]];
-//    
-//    [UIView animateWithDuration:0.5
-//                     animations:^{
-//                         [scrollView setBackgroundColor:[UIColor whiteColor]];
-//                         [segControl setAlpha:0];
-//                         [whatAreBytesBtn setAlpha:0];
-//                         //[self.view setBackgroundColor:[UIColor whiteColor]];
-//                         [scrollView setBounds:CGRectMake(scrollView.bounds.origin.x, scrollView.bounds.origin.y, scrollView.bounds.size.width, scrollView.bounds.size.height + 150)];
-//                         [scrollView setCenter:CGPointMake(scrollView.center.x, scrollView.center.y+70)];
-//                     } completion:^(BOOL finished) {
-//                         [segControl setHidden:YES];
-//                         [whatAreBytesBtn setHidden:YES];
-//                     }];
-//    
-//    [UIView transitionFromView:gestureRecognizer.view toView:nil
-//                      duration:.5
-//                       options:UIViewAnimationOptionTransitionFlipFromLeft
-//                    completion:^(BOOL finished) {
-//                        [UIView animateWithDuration:4 animations:nil completion:^(BOOL finished) {
-//                            [self presentViewController:setup animated:NO completion:nil];
-//                        }];
-//                    }];
     CGRect destRect = CGRectMake(whatAreBytesBtn.frame.origin.x+5, whatAreBytesBtn.frame.origin.y, whatAreBytesBtn.frame.size.width-10, whatAreBytesBtn.frame.size.height);
     [gestureRecognizer.view setCenter:CGPointMake(scrollView.center.x, scrollView.center.y/1.5+20)];
     [gestureRecognizer.view genieInTransitionWithDuration:1
@@ -149,13 +117,6 @@
                                                   NSLog(@"Switch new gameset");
                                               }];
                                           }];
-    
-//    [setup transitionFromViewController:self toViewController:setup duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight
-//                            animations:^(void) {
-//                                [selectedCard.view setBackgroundColor:[UIColor redColor]];
-//    }completion:^(BOOL finished) {
-//        NSLog(@"Finished");
-//    }];
 }
 
 @end
