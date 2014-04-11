@@ -29,8 +29,13 @@
     
     [authView enableDragging];
     [authView setDraggable:YES];
-    [AKStyler styleLayer:authView.layer opacity:0.5 fancy:YES];
+    [AKStyler styleLayer:authView.layer opacity:0.1 fancy:NO];
     [AKStyler styleLayer:loginButton.layer opacity:0.1 fancy:NO];
+    
+    [registerView enableDragging];
+    [registerView setDraggable:YES];
+    [AKStyler styleLayer:registerView.layer opacity:0.1 fancy:NO];
+    [AKStyler styleLayer:registerButton.layer opacity:0.1 fancy:NO];
     
     [username addTarget:self
                        action:@selector(focusPassword)
@@ -196,7 +201,7 @@
     [self fadeOutLabel:StartingAppLabel];
     NSLog(@"Completed!");
     [UIView animateWithDuration:0.5 animations:^{
-        loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+80);
+        loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+120);
         [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-120)];
     } completion:^(BOOL finished) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
@@ -293,8 +298,45 @@
 }
 
 #pragma mark - IBActions
+-(IBAction)submitRegistration:(id)sender {
+    PFUser *user = [PFUser user];
+    [user setUsername:regUsername.text];
+    [user setEmail:regEmail.text];
+    NSString *pass = regPassword.text;
+    if (![pass isEqual:regPasswordRepeat.text]) {
+        [[[UIAlertView alloc] initWithTitle:@"Passwords don't match" message:@"Please make sure both fields are the same" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        
+        [regPassword.layer setShadowColor:[UIColor redColor].CGColor];
+        [regPasswordRepeat.layer setShadowColor:[UIColor redColor].CGColor];
+        [UIView animateWithDuration:1 animations:^{
+            [regPassword.layer setShadowColor:[UIColor whiteColor].CGColor];
+            [regPasswordRepeat.layer setShadowColor:[UIColor whiteColor].CGColor];
+        }];
+        
+        
+        return;
+    }
+    
+    [user setPassword:regUsername.text];
+    [[PFUser user] signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Signed Up?");
+    }];
+
+}
+-(IBAction)emailInfo:(id)sender {
+    [[[UIAlertView alloc] initWithTitle:@"Why do you need my e-mail?" message:@"Emails are used for one thing only, Gravatar. If you have a gravatar profile picture set it will display as your profile picture." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+}
+
 - (IBAction) registerAccount:(id)sender {
-    NSLog(@"Register");
+    [registerView setHidden:NO];
+    
+    [registerView setCenter:CGPointMake(registerView.center.x+320, authView.center.y)];
+    [UIView animateWithDuration:0.5f animations:^{
+        [authView setAlpha:0];
+        [registerView setCenter:CGPointMake(registerView.center.x-320, registerView.center.y)];
+    }];
+    
+    [authView setHidden:YES];
 }
 
 - (IBAction)login:(id)sender {

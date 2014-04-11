@@ -20,7 +20,6 @@
 		FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA418F49F850090DB76 /* CFNetwork.framework */; };
 		FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */; };
 		FA5EBAA918F49F960090DB76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA818F49F960090DB76 /* CoreLocation.framework */; };
-		FA5EBAAB18F49FA10090DB76 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAA18F49FA10090DB76 /* libz.dylib */; };
 		FA5EBAAD18F49FAA0090DB76 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */; };
 		FA5EBAAF18F49FB60090DB76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAE18F49FB60090DB76 /* Security.framework */; };
 		FA5EBAB118F49FBE0090DB76 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */; };
@@ -37,6 +36,9 @@
 		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
 		FAF0A50818E79E780093C13E /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50718E79E780093C13E /* CardViewController.m */; };
 		FAF0A50A18E7B4960093C13E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF0A50918E7B4960093C13E /* CardView.xib */; };
+		FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF1186918F5F78200C75B89 /* AKGravatar.m */; };
+		FAF1186E18F5FCBC00C75B89 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */; };
+		FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF1187018F609B300C75B89 /* UIImageView+movable.m */; };
 		FAF6EFEC18A32D8600E2D79F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEB18A32D8600E2D79F /* Foundation.framework */; };
 		FAF6EFF018A32D8600E2D79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEF18A32D8600E2D79F /* UIKit.framework */; };
 		FAF6EFF618A32D8600E2D79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */; };
@@ -50,7 +52,6 @@
 		FAF6F02818A32DE000E2D79F /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */; };
 		FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03318A32FD400E2D79F /* ByteCounter.m */; };
 		FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F03818A3385700E2D79F /* QuartzCore.framework */; };
-		FAF6F03C18A33A5600E2D79F /* GameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */; };
 		FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,12 @@
 		FAF0A50618E79E780093C13E /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
 		FAF0A50718E79E780093C13E /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		FAF0A50918E7B4960093C13E /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		FAF1186818F5F78200C75B89 /* AKGravatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGravatar.h; sourceTree = "<group>"; };
+		FAF1186918F5F78200C75B89 /* AKGravatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGravatar.m; sourceTree = "<group>"; };
+		FAF1186B18F5F82300C75B89 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FAF1186F18F609B300C75B89 /* UIImageView+movable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+movable.h"; sourceTree = "<group>"; };
+		FAF1187018F609B300C75B89 /* UIImageView+movable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+movable.m"; sourceTree = "<group>"; };
 		FAF6EFE818A32D8600E2D79F /* Bytes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bytes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6EFEB18A32D8600E2D79F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAF6EFEF18A32D8600E2D79F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,8 +136,6 @@
 		FAF6F03218A32FD400E2D79F /* ByteCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteCounter.h; sourceTree = "<group>"; };
 		FAF6F03318A32FD400E2D79F /* ByteCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteCounter.m; sourceTree = "<group>"; };
 		FAF6F03818A3385700E2D79F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FAF6F03A18A33A5600E2D79F /* GameplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayViewController.h; sourceTree = "<group>"; };
-		FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayViewController.m; sourceTree = "<group>"; };
 		FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaCollectionViewController.h; sourceTree = "<group>"; };
 		FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,11 +145,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF1186E18F5FCBC00C75B89 /* JavaScriptCore.framework in Frameworks */,
 				FA5EBAB318F49FC60090DB76 /* SystemConfiguration.framework in Frameworks */,
 				FA5EBAB118F49FBE0090DB76 /* StoreKit.framework in Frameworks */,
 				FA5EBAAF18F49FB60090DB76 /* Security.framework in Frameworks */,
 				FA5EBAAD18F49FAA0090DB76 /* MobileCoreServices.framework in Frameworks */,
-				FA5EBAAB18F49FA10090DB76 /* libz.dylib in Frameworks */,
 				FA5EBAA918F49F960090DB76 /* CoreLocation.framework in Frameworks */,
 				FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */,
 				FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */,
@@ -180,6 +185,8 @@
 				FA5EBA9C18F499FB0090DB76 /* AKGame.m */,
 				FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */,
 				FA5EBA8D18F39B700090DB76 /* AKStyler.m */,
+				FAF1186818F5F78200C75B89 /* AKGravatar.h */,
+				FAF1186918F5F78200C75B89 /* AKGravatar.m */,
 				FA5EBA9718F499320090DB76 /* AKGameOptions.h */,
 				FA5EBA9818F499320090DB76 /* AKGameOptions.m */,
 				FA5EBA9E18F49D710090DB76 /* AK Gamemodes */,
@@ -218,6 +225,8 @@
 		FAF6EFEA18A32D8600E2D79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */,
+				FAF1186B18F5F82300C75B89 /* libcommonCrypto.dylib */,
 				FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */,
 				FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */,
 				FA5EBAAE18F49FB60090DB76 /* Security.framework */,
@@ -248,8 +257,6 @@
 				FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */,
 				FAF6F02618A32DE000E2D79F /* MultiplayerViewController.h */,
 				FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */,
-				FAF6F03A18A33A5600E2D79F /* GameplayViewController.h */,
-				FAF6F03B18A33A5600E2D79F /* GameplayViewController.m */,
 				FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */,
 				FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */,
 				FA23573118A9C37100D6829B /* MediaSelectViewController.h */,
@@ -266,6 +273,8 @@
 		FAF6EFF218A32D8600E2D79F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAF1186F18F609B300C75B89 /* UIImageView+movable.h */,
+				FAF1187018F609B300C75B89 /* UIImageView+movable.m */,
 				FA5EBAB918F4BE5D0090DB76 /* UIView+draggable.h */,
 				FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */,
 				FA5EBAC218F4F1360090DB76 /* UIView+Genie.h */,
@@ -411,13 +420,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */,
+				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
 				FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */,
 				FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */,
+				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
 				FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */,
 				FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */,
 				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
-				FAF6F03C18A33A5600E2D79F /* GameplayViewController.m in Sources */,
 				FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */,
 				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
 				FA23573318A9C37100D6829B /* MediaSelectViewController.m in Sources */,
@@ -567,6 +577,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bytes/Bytes-Prefix.pch";
 				INFOPLIST_FILE = "Bytes/Bytes-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -588,6 +602,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bytes/Bytes-Prefix.pch";
 				INFOPLIST_FILE = "Bytes/Bytes-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

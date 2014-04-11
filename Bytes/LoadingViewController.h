@@ -32,10 +32,19 @@ typedef enum {
     IBOutlet UITextField *username;
     IBOutlet UITextField *password;
     IBOutlet UIButton *loginButton;
+    
+    IBOutlet UIView *registerView;
+    IBOutlet UITextField *regUsername;
+    IBOutlet UITextField *regEmail;
+    IBOutlet UITextField *regPassword;
+    IBOutlet UITextField *regPasswordRepeat;
+    IBOutlet UIButton *registerButton;
 }
 
 -(IBAction)registerAccount:(id)sender;
 -(IBAction)login:(id)sender;
+-(IBAction)submitRegistration:(id)sender;
+-(IBAction)emailInfo:(id)sender;
 
 -(void)userAuthenticated;
 

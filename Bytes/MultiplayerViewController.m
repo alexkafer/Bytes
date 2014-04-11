@@ -12,8 +12,6 @@
 #import "UIView+Genie.h"
 #import "AKStyler.h"
 
-//#import "UIView+swipeVertical.h"
-
 @interface MultiplayerViewController ()
 
 @end
@@ -43,7 +41,7 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
         [tap setNumberOfTapsRequired:1];
         [obj.view addGestureRecognizer:tap];
-        [obj.view setTag:idx];
+        [obj.view setTag:idx+1];
         //[obj.view enableDragging];
         //[obj.view setScrollViewPriority:scrollView];
         [scrollView addSubview:obj.view];
@@ -63,6 +61,7 @@
             [whatAreBytesBtn setAlpha:0];
         } completion:^(BOOL finished) {
             [whatAreBytesBtn setHidden:YES];
+            NSLog(@"Hiding");
         }];
     } else {
         [whatAreBytesBtn setHidden:NO];
@@ -115,7 +114,7 @@
 }
 
 - (void)handleSingleTap:(UIGestureRecognizer *)gestureRecognizer {
-    
+    NSLog(@"Singled you out, %d", gestureRecognizer.view.tag);
     if (gestureRecognizer.view.tag > 0) {
         CGRect destRect = CGRectMake(whatAreBytesBtn.frame.origin.x+5, whatAreBytesBtn.frame.origin.y, whatAreBytesBtn.frame.size.width-10, whatAreBytesBtn.frame.size.height);
         [gestureRecognizer.view setCenter:CGPointMake(scrollView.center.x, scrollView.center.y/1.5+20)];
@@ -127,7 +126,9 @@
                                               [UIView animateWithDuration:0.2 animations:^{
                                                   [segControl setAlpha:0];
                                               } completion:^(BOOL finished) {
-                                                  NSLog(@"Switch new gameset");
+                                                  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                                                  GameSetupViewController *setup = (GameSetupViewController *)[storyboard instantiateViewControllerWithIdentifier:@"gameSetup"];
+                                                  [self presentViewController:setup animated:NO completion:nil];
                                               }];
                                           }];
     }

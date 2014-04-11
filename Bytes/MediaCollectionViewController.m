@@ -33,7 +33,7 @@
     NSArray *newData = [[NSArray alloc] initWithObjects:@"otherData", nil];
     
     [self.collectionView performBatchUpdates:^{
-        int resultsSize = [self.mediaCells count]; //data is the previous array of data
+        int resultsSize = (int)[self.mediaCells count]; //data is the previous array of data
         [self.mediaCells addObjectsFromArray:newData];
         NSMutableArray *arrayWithIndexPaths = [NSMutableArray array];
         for (int i = resultsSize; i < resultsSize + newData.count; i++)

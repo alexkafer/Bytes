@@ -16,7 +16,5 @@
     NSMutableArray *cardViewControllers;
 }
 
-
-
 -(IBAction)scrollWith:(id)sender;
 @end

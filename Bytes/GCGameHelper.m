@@ -81,7 +81,6 @@ static GCGameHelper *sharedHelper = nil;
             
             //present the login form
         } else {
-            NSLog(@"Failed Auth - %hhd", [GKLocalPlayer localPlayer].isAuthenticated);
             [parentViewCont userAuthenticated];
             //problem with authentication,probably bc the user doesn't use Game Center
         }

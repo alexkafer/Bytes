@@ -1,15 +1,15 @@
 //
-//  UIView+draggable.m
-//  UIView+draggable
+//  UIImageView+movable.m
+//  Bytes
 //
-//  Created by Andrea on 13/03/14.
-//  Copyright (c) 2014 Fancy Pixel. All rights reserved.
+//  Created by Alex Kafer on 4/9/14.
+//  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "UIView+draggable.h"
+#import "UIImageView+movable.h"
 #import <objc/runtime.h>
 
-@implementation UIView (draggable)
+@implementation UIImageView (movable)
 
 - (void)setPanGesture:(UIPanGestureRecognizer*)panGesture
 {
@@ -27,14 +27,13 @@
 	
 	CGPoint translation = [sender translationInView:[self superview]];
 	[self setCenter:CGPointMake([self center].x + translation.x, [self center].y + translation.y)];
-	
-	[sender setTranslation:(CGPoint){0, 0} inView:[self superview]];
     
-    if (sender.state == UIGestureRecognizerStateBegan && self.layer.shadowRadius > 0) {
+	[sender setTranslation:(CGPoint){0, 0} inView:[self superview]];
+    if (sender.state == UIGestureRecognizerStateBegan) {
         self.layer.shadowOpacity = 0.5f;
         NSLog(@"Test");
-    } else if (sender.state == UIGestureRecognizerStateEnded && self.layer.shadowRadius > 0) {
-        self.layer.shadowOpacity = 0.1f;
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        self.layer.shadowOpacity = 0.0f;
         NSLog(@"End Test");
     }
 }
@@ -42,7 +41,7 @@
 - (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        UIView *piece = self;
+        UIImageView *piece = self;
         CGPoint locationInView = [gestureRecognizer locationInView:piece];
         CGPoint locationInSuperview = [gestureRecognizer locationInView:piece.superview];
         
@@ -58,6 +57,7 @@
 
 - (void)enableDragging
 {
+    [self setUserInteractionEnabled:YES];
 	self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
 	[self.panGesture setMaximumNumberOfTouches:1];
 	[self.panGesture setMinimumNumberOfTouches:1];

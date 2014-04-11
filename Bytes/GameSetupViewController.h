@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameSetupViewController : UIViewController
-
+@interface GameSetupViewController : UIViewController {
+    IBOutlet UIImageView *profileView;
+    IBOutlet UIImageView *addPlayer;
+    
+    IBOutlet UIView *inviteView;
+    IBOutlet UITextField *inviteSearch;
+    
+    IBOutlet UIView *managerView;
+    IBOutlet UIButton *managerButton;
+    
+    NSMutableArray *players;
+}
 @end

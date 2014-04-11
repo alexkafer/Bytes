@@ -12,6 +12,7 @@
 
 @property (nonatomic, retain) NSString *accountName;
 @property (nonatomic) BOOL *isOffline;
+@property (nonatomic) BOOL *isCurrent;
 
 
 @end
