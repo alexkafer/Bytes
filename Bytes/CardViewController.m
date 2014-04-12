@@ -45,18 +45,7 @@
     layer.shadowRadius = 4.0f;
     layer.shadowOpacity = 0.30f;
     //layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
-    layer.shadowPath = [AKStyler fancyShadowForRect:layer.bounds distance:15.0f];
-    // Do any additional setup after loading the view from its nib.
-    
-    CALayer *buttonLayer = button.layer;
-    
-    buttonLayer.cornerRadius = 4.0f;
-    buttonLayer.shadowOffset =  CGSizeMake(1, 1);
-    buttonLayer.shadowColor = [[UIColor blackColor] CGColor];
-    buttonLayer.shadowRadius = 4.0f;
-    buttonLayer.shadowOpacity = 0.50f;
-    //buttonLayer.shadowPath = [[UIBezierPath bezierPathWithRect:buttonLayer.bounds] CGPath];
-    buttonLayer.shadowPath = [AKStyler fancyShadowForRect:buttonLayer.bounds distance:5.0f];
+    layer.shadowPath = [AKStyler cardShadowForRect:layer.bounds distance:15.0f];
     // Do any additional setup after loading the view from its nib.
 }
 

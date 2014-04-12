@@ -19,5 +19,6 @@
     IBOutlet UIButton *managerButton;
     
     NSMutableArray *players;
+    BOOL isAdding;
 }
 @end

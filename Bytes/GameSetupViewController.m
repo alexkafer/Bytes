@@ -79,6 +79,19 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if (isAdding) {
+        UIView *touchedView = [touch view];
+        if ([touchedView isEqual:self.view]) {
+            [self.view.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
+                [obj endEditing:YES];
+            }];
+        }
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     // register for keyboard notifications
@@ -134,10 +147,12 @@
 
 -(void)keyboardWillShow {
     [self moveAuthWithKeyboard];
+    isAdding = YES;
 }
 
 -(void)hideKeyboard {
     [inviteView endEditing:YES];
+    isAdding = NO;
 }
 
 //method to move the auth up whenever the keyboard would get in the way

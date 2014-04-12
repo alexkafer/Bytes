@@ -31,6 +31,10 @@
 		FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAC318F4F1360090DB76 /* UIView+Genie.m */; };
 		FA7095B218E5120900C1B282 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7095B118E5120900C1B282 /* Images.xcassets */; };
 		FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7095B418E5125900C1B282 /* LoadingViewController.m */; };
+		FA846FF718F9921200F70327 /* AAAGamificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF018F9921200F70327 /* AAAGamificationManager.m */; };
+		FA846FF818F9921200F70327 /* AAAMainPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF218F9921200F70327 /* AAAMainPlayer.m */; };
+		FA846FF918F9921200F70327 /* AAAScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF418F9921200F70327 /* AAAScoreView.m */; };
+		FA846FFA18F9921200F70327 /* AAAScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF618F9921200F70327 /* AAAScoreViewController.m */; };
 		FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A4FF18E7719E0093C13E /* GameKit.framework */; };
 		FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50218E772810093C13E /* GCGameHelper.m */; };
 		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
@@ -104,6 +108,14 @@
 		FA7095B118E5120900C1B282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA7095B318E5125900C1B282 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		FA7095B418E5125900C1B282 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
+		FA846FEF18F9921200F70327 /* AAAGamificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAGamificationManager.h; sourceTree = "<group>"; };
+		FA846FF018F9921200F70327 /* AAAGamificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAGamificationManager.m; sourceTree = "<group>"; };
+		FA846FF118F9921200F70327 /* AAAMainPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAMainPlayer.h; sourceTree = "<group>"; };
+		FA846FF218F9921200F70327 /* AAAMainPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAMainPlayer.m; sourceTree = "<group>"; };
+		FA846FF318F9921200F70327 /* AAAScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAScoreView.h; sourceTree = "<group>"; };
+		FA846FF418F9921200F70327 /* AAAScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAScoreView.m; sourceTree = "<group>"; };
+		FA846FF518F9921200F70327 /* AAAScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAScoreViewController.h; sourceTree = "<group>"; };
+		FA846FF618F9921200F70327 /* AAAScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAScoreViewController.m; sourceTree = "<group>"; };
 		FAF0A4FF18E7719E0093C13E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FAF0A50118E772810093C13E /* GCGameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCGameHelper.h; sourceTree = "<group>"; };
 		FAF0A50218E772810093C13E /* GCGameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCGameHelper.m; sourceTree = "<group>"; };
@@ -203,6 +215,21 @@
 			name = "AK Gamemodes";
 			sourceTree = "<group>";
 		};
+		FA846FEE18F991F400F70327 /* Gamify */ = {
+			isa = PBXGroup;
+			children = (
+				FA846FEF18F9921200F70327 /* AAAGamificationManager.h */,
+				FA846FF018F9921200F70327 /* AAAGamificationManager.m */,
+				FA846FF118F9921200F70327 /* AAAMainPlayer.h */,
+				FA846FF218F9921200F70327 /* AAAMainPlayer.m */,
+				FA846FF318F9921200F70327 /* AAAScoreView.h */,
+				FA846FF418F9921200F70327 /* AAAScoreView.m */,
+				FA846FF518F9921200F70327 /* AAAScoreViewController.h */,
+				FA846FF618F9921200F70327 /* AAAScoreViewController.m */,
+			);
+			name = Gamify;
+			sourceTree = "<group>";
+		};
 		FAF6EFDF18A32D8600E2D79F = {
 			isa = PBXGroup;
 			children = (
@@ -253,10 +280,10 @@
 				FAF6EFFD18A32D8600E2D79F /* MainStoryboard.storyboard */,
 				FA7095B318E5125900C1B282 /* LoadingViewController.h */,
 				FA7095B418E5125900C1B282 /* LoadingViewController.m */,
-				FA5EBABC18F4D9F90090DB76 /* GameSetupViewController.h */,
-				FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */,
 				FAF6F02618A32DE000E2D79F /* MultiplayerViewController.h */,
 				FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */,
+				FA5EBABC18F4D9F90090DB76 /* GameSetupViewController.h */,
+				FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */,
 				FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */,
 				FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */,
 				FA23573118A9C37100D6829B /* MediaSelectViewController.h */,
@@ -264,6 +291,7 @@
 				FAF6F03218A32FD400E2D79F /* ByteCounter.h */,
 				FAF6F03318A32FD400E2D79F /* ByteCounter.m */,
 				FA7095B118E5120900C1B282 /* Images.xcassets */,
+				FA846FEE18F991F400F70327 /* Gamify */,
 				FA5EBA9A18F499D90090DB76 /* AK-API */,
 				FAF6EFF218A32D8600E2D79F /* Supporting Files */,
 			);
@@ -420,11 +448,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */,
+				FA846FF918F9921200F70327 /* AAAScoreView.m in Sources */,
 				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
 				FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */,
+				FA846FF718F9921200F70327 /* AAAGamificationManager.m in Sources */,
 				FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
+				FA846FF818F9921200F70327 /* AAAMainPlayer.m in Sources */,
+				FA846FFA18F9921200F70327 /* AAAScoreViewController.m in Sources */,
 				FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */,
 				FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */,
 				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
