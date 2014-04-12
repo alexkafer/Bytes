@@ -7,7 +7,7 @@
 //
 
 #import "LoadingViewController.h"
-#import "MultiplayerViewController.h"
+#import "MainViewController.h"
 #import "AKStyler.h"
 #import "UIView+draggable.h"
 #import <Parse/Parse.h>
@@ -205,7 +205,7 @@
         [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-120)];
     } completion:^(BOOL finished) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        MultiplayerViewController *main = (MultiplayerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+        MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
         [self presentViewController:main animated:NO completion:nil];
     }];
     

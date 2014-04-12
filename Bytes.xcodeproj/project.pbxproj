@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A6BAE2918E84B7C00A0F4E6 /* AKPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */; };
-		2AE576A218E8A48E0007E623 /* AKAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE576A118E8A48E0007E623 /* AKAuthHelper.m */; };
-		FA23573318A9C37100D6829B /* MediaSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23573218A9C37100D6829B /* MediaSelectViewController.m */; };
 		FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA8D18F39B700090DB76 /* AKStyler.m */; };
 		FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */; };
 		FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */; };
@@ -31,12 +29,16 @@
 		FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAC318F4F1360090DB76 /* UIView+Genie.m */; };
 		FA7095B218E5120900C1B282 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7095B118E5120900C1B282 /* Images.xcassets */; };
 		FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7095B418E5125900C1B282 /* LoadingViewController.m */; };
-		FA846FF718F9921200F70327 /* AAAGamificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF018F9921200F70327 /* AAAGamificationManager.m */; };
-		FA846FF818F9921200F70327 /* AAAMainPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF218F9921200F70327 /* AAAMainPlayer.m */; };
-		FA846FF918F9921200F70327 /* AAAScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF418F9921200F70327 /* AAAScoreView.m */; };
-		FA846FFA18F9921200F70327 /* AAAScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FF618F9921200F70327 /* AAAScoreViewController.m */; };
+		FA846FFD18F992D400F70327 /* GamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FFC18F992D400F70327 /* GamePlayViewController.m */; };
+		FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FFF18F99FF100F70327 /* UIView+Slidable.m */; };
+		FA84700518F9B1BE00F70327 /* ALRadialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700218F9B1BE00F70327 /* ALRadialButton.m */; };
+		FA84700618F9B1BE00F70327 /* ALRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700418F9B1BE00F70327 /* ALRadialMenu.m */; };
+		FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */; };
+		FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84700B18F9C6C100F70327 /* PlayerView.xib */; };
+		FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700E18F9C7F100F70327 /* UIView+InitNib.m */; };
+		FA84701218F9D12C00F70327 /* AKTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701118F9D12C00F70327 /* AKTeam.m */; };
+		FA84701518F9DBE400F70327 /* AKGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701418F9DBE400F70327 /* AKGameManager.m */; };
 		FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A4FF18E7719E0093C13E /* GameKit.framework */; };
-		FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50218E772810093C13E /* GCGameHelper.m */; };
 		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
 		FAF0A50818E79E780093C13E /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50718E79E780093C13E /* CardViewController.m */; };
 		FAF0A50A18E7B4960093C13E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF0A50918E7B4960093C13E /* CardView.xib */; };
@@ -53,10 +55,9 @@
 		FAF6F01018A32D8700E2D79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEF18A32D8600E2D79F /* UIKit.framework */; };
 		FAF6F01818A32D8700E2D79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF6F01618A32D8700E2D79F /* InfoPlist.strings */; };
 		FAF6F01A18A32D8700E2D79F /* BytesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F01918A32D8700E2D79F /* BytesTests.m */; };
-		FAF6F02818A32DE000E2D79F /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */; };
+		FAF6F02818A32DE000E2D79F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F02718A32DE000E2D79F /* MainViewController.m */; };
 		FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03318A32FD400E2D79F /* ByteCounter.m */; };
 		FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F03818A3385700E2D79F /* QuartzCore.framework */; };
-		FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,10 +73,6 @@
 /* Begin PBXFileReference section */
 		2A6BAE2718E84B7C00A0F4E6 /* AKPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPlayer.h; sourceTree = "<group>"; };
 		2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPlayer.m; sourceTree = "<group>"; };
-		2AE576A018E8A48E0007E623 /* AKAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAuthHelper.h; sourceTree = "<group>"; };
-		2AE576A118E8A48E0007E623 /* AKAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAuthHelper.m; sourceTree = "<group>"; };
-		FA23573118A9C37100D6829B /* MediaSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaSelectViewController.h; sourceTree = "<group>"; };
-		FA23573218A9C37100D6829B /* MediaSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaSelectViewController.m; sourceTree = "<group>"; };
 		FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKStyler.h; sourceTree = "<group>"; };
 		FA5EBA8D18F39B700090DB76 /* AKStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKStyler.m; sourceTree = "<group>"; };
 		FA5EBA9218F497EC0090DB76 /* GameOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOptionsViewController.h; sourceTree = "<group>"; };
@@ -108,17 +105,24 @@
 		FA7095B118E5120900C1B282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA7095B318E5125900C1B282 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		FA7095B418E5125900C1B282 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
-		FA846FEF18F9921200F70327 /* AAAGamificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAGamificationManager.h; sourceTree = "<group>"; };
-		FA846FF018F9921200F70327 /* AAAGamificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAGamificationManager.m; sourceTree = "<group>"; };
-		FA846FF118F9921200F70327 /* AAAMainPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAMainPlayer.h; sourceTree = "<group>"; };
-		FA846FF218F9921200F70327 /* AAAMainPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAMainPlayer.m; sourceTree = "<group>"; };
-		FA846FF318F9921200F70327 /* AAAScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAScoreView.h; sourceTree = "<group>"; };
-		FA846FF418F9921200F70327 /* AAAScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAScoreView.m; sourceTree = "<group>"; };
-		FA846FF518F9921200F70327 /* AAAScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAScoreViewController.h; sourceTree = "<group>"; };
-		FA846FF618F9921200F70327 /* AAAScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAScoreViewController.m; sourceTree = "<group>"; };
+		FA846FFB18F992D400F70327 /* GamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayViewController.h; sourceTree = "<group>"; };
+		FA846FFC18F992D400F70327 /* GamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayViewController.m; sourceTree = "<group>"; };
+		FA846FFE18F99FF100F70327 /* UIView+Slidable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Slidable.h"; sourceTree = "<group>"; };
+		FA846FFF18F99FF100F70327 /* UIView+Slidable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Slidable.m"; sourceTree = "<group>"; };
+		FA84700118F9B1BE00F70327 /* ALRadialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialButton.h; sourceTree = "<group>"; };
+		FA84700218F9B1BE00F70327 /* ALRadialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialButton.m; sourceTree = "<group>"; };
+		FA84700318F9B1BE00F70327 /* ALRadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialMenu.h; sourceTree = "<group>"; };
+		FA84700418F9B1BE00F70327 /* ALRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialMenu.m; sourceTree = "<group>"; };
+		FA84700818F9C3A300F70327 /* GameSetupPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSetupPlayerView.h; sourceTree = "<group>"; };
+		FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSetupPlayerView.m; sourceTree = "<group>"; };
+		FA84700B18F9C6C100F70327 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		FA84700D18F9C7F100F70327 /* UIView+InitNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InitNib.h"; sourceTree = "<group>"; };
+		FA84700E18F9C7F100F70327 /* UIView+InitNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InitNib.m"; sourceTree = "<group>"; };
+		FA84701018F9D12C00F70327 /* AKTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTeam.h; sourceTree = "<group>"; };
+		FA84701118F9D12C00F70327 /* AKTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTeam.m; sourceTree = "<group>"; };
+		FA84701318F9DBE400F70327 /* AKGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGameManager.h; sourceTree = "<group>"; };
+		FA84701418F9DBE400F70327 /* AKGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGameManager.m; sourceTree = "<group>"; };
 		FAF0A4FF18E7719E0093C13E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		FAF0A50118E772810093C13E /* GCGameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCGameHelper.h; sourceTree = "<group>"; };
-		FAF0A50218E772810093C13E /* GCGameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCGameHelper.m; sourceTree = "<group>"; };
 		FAF0A50418E780A20093C13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAF0A50618E79E780093C13E /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
 		FAF0A50718E79E780093C13E /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
@@ -143,13 +147,11 @@
 		FAF6F01518A32D8700E2D79F /* BytesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BytesTests-Info.plist"; sourceTree = "<group>"; };
 		FAF6F01718A32D8700E2D79F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAF6F01918A32D8700E2D79F /* BytesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BytesTests.m; sourceTree = "<group>"; };
-		FAF6F02618A32DE000E2D79F /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
-		FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
+		FAF6F02618A32DE000E2D79F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FAF6F02718A32DE000E2D79F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FAF6F03218A32FD400E2D79F /* ByteCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteCounter.h; sourceTree = "<group>"; };
 		FAF6F03318A32FD400E2D79F /* ByteCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteCounter.m; sourceTree = "<group>"; };
 		FAF6F03818A3385700E2D79F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaCollectionViewController.h; sourceTree = "<group>"; };
-		FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,10 +191,10 @@
 		FA5EBA9A18F499D90090DB76 /* AK-API */ = {
 			isa = PBXGroup;
 			children = (
-				2AE576A018E8A48E0007E623 /* AKAuthHelper.h */,
-				2AE576A118E8A48E0007E623 /* AKAuthHelper.m */,
 				2A6BAE2718E84B7C00A0F4E6 /* AKPlayer.h */,
 				2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */,
+				FA84701018F9D12C00F70327 /* AKTeam.h */,
+				FA84701118F9D12C00F70327 /* AKTeam.m */,
 				FA5EBA9B18F499FB0090DB76 /* AKGame.h */,
 				FA5EBA9C18F499FB0090DB76 /* AKGame.m */,
 				FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */,
@@ -202,6 +204,8 @@
 				FA5EBA9718F499320090DB76 /* AKGameOptions.h */,
 				FA5EBA9818F499320090DB76 /* AKGameOptions.m */,
 				FA5EBA9E18F49D710090DB76 /* AK Gamemodes */,
+				FA84701318F9DBE400F70327 /* AKGameManager.h */,
+				FA84701418F9DBE400F70327 /* AKGameManager.m */,
 			);
 			name = "AK-API";
 			sourceTree = "<group>";
@@ -215,19 +219,15 @@
 			name = "AK Gamemodes";
 			sourceTree = "<group>";
 		};
-		FA846FEE18F991F400F70327 /* Gamify */ = {
+		FA84700718F9C1ED00F70327 /* ALRadial */ = {
 			isa = PBXGroup;
 			children = (
-				FA846FEF18F9921200F70327 /* AAAGamificationManager.h */,
-				FA846FF018F9921200F70327 /* AAAGamificationManager.m */,
-				FA846FF118F9921200F70327 /* AAAMainPlayer.h */,
-				FA846FF218F9921200F70327 /* AAAMainPlayer.m */,
-				FA846FF318F9921200F70327 /* AAAScoreView.h */,
-				FA846FF418F9921200F70327 /* AAAScoreView.m */,
-				FA846FF518F9921200F70327 /* AAAScoreViewController.h */,
-				FA846FF618F9921200F70327 /* AAAScoreViewController.m */,
+				FA84700118F9B1BE00F70327 /* ALRadialButton.h */,
+				FA84700218F9B1BE00F70327 /* ALRadialButton.m */,
+				FA84700318F9B1BE00F70327 /* ALRadialMenu.h */,
+				FA84700418F9B1BE00F70327 /* ALRadialMenu.m */,
 			);
-			name = Gamify;
+			name = ALRadial;
 			sourceTree = "<group>";
 		};
 		FAF6EFDF18A32D8600E2D79F = {
@@ -280,18 +280,16 @@
 				FAF6EFFD18A32D8600E2D79F /* MainStoryboard.storyboard */,
 				FA7095B318E5125900C1B282 /* LoadingViewController.h */,
 				FA7095B418E5125900C1B282 /* LoadingViewController.m */,
-				FAF6F02618A32DE000E2D79F /* MultiplayerViewController.h */,
-				FAF6F02718A32DE000E2D79F /* MultiplayerViewController.m */,
+				FAF6F02618A32DE000E2D79F /* MainViewController.h */,
+				FAF6F02718A32DE000E2D79F /* MainViewController.m */,
 				FA5EBABC18F4D9F90090DB76 /* GameSetupViewController.h */,
 				FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */,
-				FAF6F03D18A33EDB00E2D79F /* MediaCollectionViewController.h */,
-				FAF6F03E18A33EDB00E2D79F /* MediaCollectionViewController.m */,
-				FA23573118A9C37100D6829B /* MediaSelectViewController.h */,
-				FA23573218A9C37100D6829B /* MediaSelectViewController.m */,
+				FA846FFB18F992D400F70327 /* GamePlayViewController.h */,
+				FA846FFC18F992D400F70327 /* GamePlayViewController.m */,
 				FAF6F03218A32FD400E2D79F /* ByteCounter.h */,
 				FAF6F03318A32FD400E2D79F /* ByteCounter.m */,
 				FA7095B118E5120900C1B282 /* Images.xcassets */,
-				FA846FEE18F991F400F70327 /* Gamify */,
+				FA84700718F9C1ED00F70327 /* ALRadial */,
 				FA5EBA9A18F499D90090DB76 /* AK-API */,
 				FAF6EFF218A32D8600E2D79F /* Supporting Files */,
 			);
@@ -305,6 +303,8 @@
 				FAF1187018F609B300C75B89 /* UIImageView+movable.m */,
 				FA5EBAB918F4BE5D0090DB76 /* UIView+draggable.h */,
 				FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */,
+				FA846FFE18F99FF100F70327 /* UIView+Slidable.h */,
+				FA846FFF18F99FF100F70327 /* UIView+Slidable.m */,
 				FA5EBAC218F4F1360090DB76 /* UIView+Genie.h */,
 				FA5EBAC318F4F1360090DB76 /* UIView+Genie.m */,
 				FAF0A50618E79E780093C13E /* CardViewController.h */,
@@ -316,12 +316,15 @@
 				FA5EBAB418F4A18A0090DB76 /* AuthViewController.h */,
 				FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */,
 				FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */,
-				FAF0A50118E772810093C13E /* GCGameHelper.h */,
-				FAF0A50218E772810093C13E /* GCGameHelper.m */,
 				FAF6EFF318A32D8600E2D79F /* Bytes-Info.plist */,
 				FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */,
 				FAF6EFF718A32D8600E2D79F /* main.m */,
 				FAF6EFF918A32D8600E2D79F /* Bytes-Prefix.pch */,
+				FA84700D18F9C7F100F70327 /* UIView+InitNib.h */,
+				FA84700E18F9C7F100F70327 /* UIView+InitNib.m */,
+				FA84700818F9C3A300F70327 /* GameSetupPlayerView.h */,
+				FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */,
+				FA84700B18F9C6C100F70327 /* PlayerView.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */,
 				FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */,
 				FAF6EFFF18A32D8600E2D79F /* MainStoryboard.storyboard in Resources */,
 				FA7095B218E5120900C1B282 /* Images.xcassets in Resources */,
@@ -447,32 +451,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF6F03F18A33EDB00E2D79F /* MediaCollectionViewController.m in Sources */,
-				FA846FF918F9921200F70327 /* AAAScoreView.m in Sources */,
 				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
-				FAF0A50318E772810093C13E /* GCGameHelper.m in Sources */,
-				FA846FF718F9921200F70327 /* AAAGamificationManager.m in Sources */,
+				FA84701518F9DBE400F70327 /* AKGameManager.m in Sources */,
 				FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
+				FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
-				FA846FF818F9921200F70327 /* AAAMainPlayer.m in Sources */,
-				FA846FFA18F9921200F70327 /* AAAScoreViewController.m in Sources */,
 				FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */,
 				FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */,
+				FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */,
 				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
 				FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */,
 				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
-				FA23573318A9C37100D6829B /* MediaSelectViewController.m in Sources */,
 				FA5EBABB18F4BE5D0090DB76 /* UIView+draggable.m in Sources */,
-				2AE576A218E8A48E0007E623 /* AKAuthHelper.m in Sources */,
+				FA846FFD18F992D400F70327 /* GamePlayViewController.m in Sources */,
 				2A6BAE2918E84B7C00A0F4E6 /* AKPlayer.m in Sources */,
+				FA84701218F9D12C00F70327 /* AKTeam.m in Sources */,
+				FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */,
 				FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */,
+				FA84700618F9B1BE00F70327 /* ALRadialMenu.m in Sources */,
 				FAF0A50818E79E780093C13E /* CardViewController.m in Sources */,
 				FA5EBAB718F4A18A0090DB76 /* AuthViewController.m in Sources */,
+				FA84700518F9B1BE00F70327 /* ALRadialButton.m in Sources */,
 				FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */,
 				FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */,
 				FAF6EFF818A32D8600E2D79F /* main.m in Sources */,
-				FAF6F02818A32DE000E2D79F /* MultiplayerViewController.m in Sources */,
+				FAF6F02818A32DE000E2D79F /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

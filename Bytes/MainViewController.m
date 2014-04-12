@@ -6,17 +6,13 @@
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "MultiplayerViewController.h"
+#import "MainViewController.h"
 #import "CardViewController.h"
 #import "GameSetupViewController.h"
 #import "UIView+Genie.h"
 #import "AKStyler.h"
 
-@interface MultiplayerViewController ()
-
-@end
-
-@implementation MultiplayerViewController
+@implementation MainViewController
 
 - (void)viewDidLoad
 {

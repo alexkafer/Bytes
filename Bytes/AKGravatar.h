@@ -11,5 +11,5 @@
 @interface AKGravatar : NSObject
 
 +(NSURL *)getGravatarURL:(NSString *)emailAddress withSize: (int)pixelSize;
-+ (UIImage*)circularScaleAndCropImage:(UIImage*)image frame:(CGRect)frame;
+
 @end

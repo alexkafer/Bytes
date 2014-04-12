@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MultiplayerViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
+@interface MainViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
     IBOutlet UIScrollView *scrollView;
     IBOutlet UISegmentedControl *segControl;
     IBOutlet UIButton *whatAreBytesBtn;

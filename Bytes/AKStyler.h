@@ -13,5 +13,6 @@
 + (CGPathRef)fancyShadowForRect:(CGRect)rect distance:(float)distance;
 + (void)styleLayer:(CALayer *)layer opacity:(float)opacity fancy: (BOOL)fancy;
 + (CGPathRef)cardShadowForRect:(CGRect)rect distance:(float)distance;
++ (UIImage*)circularScaleAndCropImage:(UIImage*)image frame:(CGRect)frame;
 
 @end

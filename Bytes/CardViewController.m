@@ -45,7 +45,7 @@
     layer.shadowRadius = 4.0f;
     layer.shadowOpacity = 0.30f;
     //layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
-    layer.shadowPath = [AKStyler cardShadowForRect:layer.bounds distance:15.0f];
+    layer.shadowPath = [AKStyler fancyShadowForRect:layer.bounds distance:15.0f];
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -7,7 +7,40 @@
 //
 
 #import "AKPlayer.h"
+#import "AKGravatar.h"
 
 @implementation AKPlayer
+@synthesize accountName, profileImage;
+
+-(id)initWithUsername:(NSString *)user andProfilePicture:(UIImage *)profile {
+    self = [super init];
+    if (self) {
+        accountName = user;
+        profileImage = profile;
+    }
+    return self;
+}
+
+-(id)initWithUsername:(NSString *)user andGravatarEmail:(NSString *)gravMail {
+    self = [super init];
+    if (self) {
+        accountName = user;
+        profileImage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[AKGravatar getGravatarURL:gravMail withSize:200]]];
+    }
+    return self;
+}
+
+-(GameSetupPlayerView *)getPlayerProfileView {
+    UIImage *profilePic = profileImage;
+    
+    if (profilePic == nil) {
+        profilePic = [UIImage imageNamed:@"userAccount"];
+    }
+    
+    GameSetupPlayerView *playerProfile = [[GameSetupPlayerView alloc] initWithPlayerDetail:@"You (Host)" withUncroppedProfilePicture:profilePic];
+    [playerProfile loadView];
+    
+    return playerProfile;
+}
 
 @end

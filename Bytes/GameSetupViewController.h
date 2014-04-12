@@ -7,18 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameSetupPlayerView.h"
+#import "AKGame.h"
 
 @interface GameSetupViewController : UIViewController {
-    IBOutlet UIImageView *profileView;
-    IBOutlet UIImageView *addPlayer;
-    
-    IBOutlet UIView *inviteView;
-    IBOutlet UITextField *inviteSearch;
-    
-    IBOutlet UIView *managerView;
-    IBOutlet UIButton *managerButton;
+    AKGame *currentGame;
     
     NSMutableArray *players;
     BOOL isAdding;
 }
+
+
 @end
