@@ -11,7 +11,7 @@
 @implementation AKGame
 @synthesize hostPlayer, players;
 
--(id)initWithOptions: (AKGameOptions *)options hostedBy: (AKPlayer *)host withPlayers: (NSMutableArray *)otherPlayers {
+-(id)initWithPreGameOptions: (AKPreGame *)options {
     if (self = [super init])
     {
         hostPlayer = host;

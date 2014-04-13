@@ -8,19 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "AKGame.h"
-
-typedef enum {
-    PoolPlay,
-    Competitive,
-    Defensive
-} AKGameType;
+#import "AKGamemode.h"
 
 @interface AKPreGame : NSObject
 
-@property (nonatomic) AKGameType *gameType;
+@property (nonatomic) AKGamemode *gameType;
+
+@property (nonatomic) NSMutableArray *teams;
+
 @property (nonatomic) BOOL *isMultiplayer;
 @property (nonatomic) NSNumber *maxPlayers;
 
-
+-(id)initWithGamemode: (AKGamemode *)gamemode;
 
 @end

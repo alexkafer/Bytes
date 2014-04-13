@@ -13,7 +13,6 @@
 		FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */; };
 		FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9818F499320090DB76 /* AKPreGame.m */; };
 		FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9C18F499FB0090DB76 /* AKGame.m */; };
-		FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */; };
 		FA5EBAA318F49F610090DB76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA218F49F610090DB76 /* Parse.framework */; };
 		FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA418F49F850090DB76 /* CFNetwork.framework */; };
 		FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */; };
@@ -81,8 +80,6 @@
 		FA5EBA9818F499320090DB76 /* AKPreGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPreGame.m; sourceTree = "<group>"; };
 		FA5EBA9B18F499FB0090DB76 /* AKGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGame.h; sourceTree = "<group>"; };
 		FA5EBA9C18F499FB0090DB76 /* AKGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGame.m; sourceTree = "<group>"; };
-		FA5EBA9F18F49DAA0090DB76 /* AKGamemode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGamemode.h; sourceTree = "<group>"; };
-		FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGamemode.m; sourceTree = "<group>"; };
 		FA5EBAA218F49F610090DB76 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		FA5EBAA418F49F850090DB76 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -196,22 +193,12 @@
 				FA5EBA9818F499320090DB76 /* AKPreGame.m */,
 				FA5EBA9B18F499FB0090DB76 /* AKGame.h */,
 				FA5EBA9C18F499FB0090DB76 /* AKGame.m */,
-				FA5EBA9E18F49D710090DB76 /* AK Gamemodes */,
 				FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */,
 				FA5EBA8D18F39B700090DB76 /* AKStyler.m */,
 				FAF1186818F5F78200C75B89 /* AKGravatar.h */,
 				FAF1186918F5F78200C75B89 /* AKGravatar.m */,
 			);
 			name = "AK-API";
-			sourceTree = "<group>";
-		};
-		FA5EBA9E18F49D710090DB76 /* AK Gamemodes */ = {
-			isa = PBXGroup;
-			children = (
-				FA5EBA9F18F49DAA0090DB76 /* AKGamemode.h */,
-				FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */,
-			);
-			name = "AK Gamemodes";
 			sourceTree = "<group>";
 		};
 		FA84700718F9C1ED00F70327 /* ALRadial */ = {
@@ -446,21 +433,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
 				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
-				FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */,
+				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
+				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
 				FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */,
-				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
-				FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */,
 				FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */,
 				FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */,
-				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
-				FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */,
-				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
 				FA5EBABB18F4BE5D0090DB76 /* UIView+draggable.m in Sources */,
 				FA846FFD18F992D400F70327 /* GamePlayViewController.m in Sources */,
 				2A6BAE2918E84B7C00A0F4E6 /* AKPlayer.m in Sources */,
 				FA84701218F9D12C00F70327 /* AKTeam.m in Sources */,
+				FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */,
+				FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */,
 				FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */,
 				FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */,
 				FA84700618F9B1BE00F70327 /* ALRadialMenu.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AKGameOptions.h"
+#import "AKPreGame.h"
 #import "AKPlayer.h"
 
 @interface AKGame : NSObject
@@ -17,7 +17,7 @@
 @property (nonatomic) AKPlayer *hostPlayer;
 @property (nonatomic) NSMutableArray *players;
 
-//-(id)initWithOptions: (AKGameOptions *)options hostedBy: (AKPlayer *)host withPlayers: (NSMutableArray *)otherPlayers;
+-(id)initWithPreGameOptions: (AKPreGame *)options;
 
 -(NSString *)validateGame;
 
