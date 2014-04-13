@@ -10,7 +10,6 @@
 #import "UIView+Slidable.h"
 #import "AKGravatar.h"
 #import "AKStyler.h"
-#import <Parse/Parse.h>
 
 @interface GamePlayViewController ()
 
@@ -59,7 +58,7 @@
 
 
 - (UIImage *) radialMenu:(ALRadialMenu *)radialMenu imageForIndex:(NSInteger) index {
-	UIImage *originalImage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[AKGravatar getGravatarURL:[[PFUser currentUser] email] withSize:500]]];
+	UIImage *originalImage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[AKGravatar getGravatarURL:@"alexkafer@gmail.com" withSize:200]]];
     UIImage *newImage = [AKStyler circularScaleAndCropImage:originalImage frame:addBtn.frame];
     return newImage;
 }

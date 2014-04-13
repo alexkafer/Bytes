@@ -13,7 +13,6 @@
 #import "AKStyler.h"
 #import "UIView+draggable.h"
 #import "UIImageView+movable.h"
-#import <Parse/Parse.h>
 
 @implementation GameSetupViewController
 
@@ -32,7 +31,7 @@
     
     players = [[NSMutableArray alloc] init];
     
-    AKPlayer *host = [[AKPlayer alloc] initWithUsername:[PFUser currentUser].username andGravatarEmail:[PFUser currentUser].email];
+    AKPlayer *host = [[AKPlayer alloc] initWithUsername:@"Usernmame" andGravatarEmail:@"alexkafer@gmail.com"];
     [players addObject:host];
     
     [players enumerateObjectsUsingBlock:^(AKPlayer *obj, NSUInteger idx, BOOL *stop) {

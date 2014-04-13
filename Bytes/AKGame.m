@@ -14,9 +14,9 @@
 -(id)initWithPreGameOptions: (AKPreGame *)options {
     if (self = [super init])
     {
-        hostPlayer = host;
+        //hostPlayer = options;
         //hostSetOptions = options;
-        players = otherPlayers;
+        //players = otherPlayers;
     }
     return self;
 }

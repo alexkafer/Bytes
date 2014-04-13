@@ -13,15 +13,7 @@
 		FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */; };
 		FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9818F499320090DB76 /* AKPreGame.m */; };
 		FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9C18F499FB0090DB76 /* AKGame.m */; };
-		FA5EBAA318F49F610090DB76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA218F49F610090DB76 /* Parse.framework */; };
-		FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA418F49F850090DB76 /* CFNetwork.framework */; };
-		FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */; };
-		FA5EBAA918F49F960090DB76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA818F49F960090DB76 /* CoreLocation.framework */; };
-		FA5EBAAD18F49FAA0090DB76 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */; };
-		FA5EBAAF18F49FB60090DB76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAAE18F49FB60090DB76 /* Security.framework */; };
-		FA5EBAB118F49FBE0090DB76 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */; };
-		FA5EBAB318F49FC60090DB76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */; };
-		FA5EBAB718F4A18A0090DB76 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */; };
+		FA5EBAB718F4A18A0090DB76 /* AuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAB518F4A18A0090DB76 /* AuthView.m */; };
 		FA5EBAB818F4A18A0090DB76 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */; };
 		FA5EBABB18F4BE5D0090DB76 /* UIView+draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */; };
 		FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBABD18F4D9F90090DB76 /* GameSetupViewController.m */; };
@@ -80,17 +72,8 @@
 		FA5EBA9818F499320090DB76 /* AKPreGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPreGame.m; sourceTree = "<group>"; };
 		FA5EBA9B18F499FB0090DB76 /* AKGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGame.h; sourceTree = "<group>"; };
 		FA5EBA9C18F499FB0090DB76 /* AKGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGame.m; sourceTree = "<group>"; };
-		FA5EBAA218F49F610090DB76 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		FA5EBAA418F49F850090DB76 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FA5EBAA818F49F960090DB76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FA5EBAAA18F49FA10090DB76 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		FA5EBAAE18F49FB60090DB76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		FA5EBAB418F4A18A0090DB76 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
-		FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		FA5EBAB418F4A18A0090DB76 /* AuthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthView.h; sourceTree = "<group>"; };
+		FA5EBAB518F4A18A0090DB76 /* AuthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthView.m; sourceTree = "<group>"; };
 		FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		FA5EBAB918F4BE5D0090DB76 /* UIView+draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+draggable.h"; sourceTree = "<group>"; };
 		FA5EBABA18F4BE5D0090DB76 /* UIView+draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+draggable.m"; sourceTree = "<group>"; };
@@ -123,7 +106,6 @@
 		FAF0A50918E7B4960093C13E /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		FAF1186818F5F78200C75B89 /* AKGravatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGravatar.h; sourceTree = "<group>"; };
 		FAF1186918F5F78200C75B89 /* AKGravatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGravatar.m; sourceTree = "<group>"; };
-		FAF1186B18F5F82300C75B89 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAF1186F18F609B300C75B89 /* UIImageView+movable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+movable.h"; sourceTree = "<group>"; };
 		FAF1187018F609B300C75B89 /* UIImageView+movable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+movable.m"; sourceTree = "<group>"; };
@@ -154,14 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF1186E18F5FCBC00C75B89 /* JavaScriptCore.framework in Frameworks */,
-				FA5EBAB318F49FC60090DB76 /* SystemConfiguration.framework in Frameworks */,
-				FA5EBAB118F49FBE0090DB76 /* StoreKit.framework in Frameworks */,
-				FA5EBAAF18F49FB60090DB76 /* Security.framework in Frameworks */,
-				FA5EBAAD18F49FAA0090DB76 /* MobileCoreServices.framework in Frameworks */,
-				FA5EBAA918F49F960090DB76 /* CoreLocation.framework in Frameworks */,
-				FA5EBAA718F49F8C0090DB76 /* AudioToolbox.framework in Frameworks */,
-				FA5EBAA518F49F850090DB76 /* CFNetwork.framework in Frameworks */,
-				FA5EBAA318F49F610090DB76 /* Parse.framework in Frameworks */,
 				FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */,
 				FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */,
 				FAF6F03918A3385700E2D79F /* QuartzCore.framework in Frameworks */,
@@ -235,16 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */,
-				FAF1186B18F5F82300C75B89 /* libcommonCrypto.dylib */,
-				FA5EBAB218F49FC60090DB76 /* SystemConfiguration.framework */,
-				FA5EBAB018F49FBE0090DB76 /* StoreKit.framework */,
-				FA5EBAAE18F49FB60090DB76 /* Security.framework */,
-				FA5EBAAC18F49FAA0090DB76 /* MobileCoreServices.framework */,
-				FA5EBAAA18F49FA10090DB76 /* libz.dylib */,
-				FA5EBAA818F49F960090DB76 /* CoreLocation.framework */,
-				FA5EBAA618F49F8C0090DB76 /* AudioToolbox.framework */,
-				FA5EBAA418F49F850090DB76 /* CFNetwork.framework */,
-				FA5EBAA218F49F610090DB76 /* Parse.framework */,
 				FAF0A50418E780A20093C13E /* CoreGraphics.framework */,
 				FAF0A4FF18E7719E0093C13E /* GameKit.framework */,
 				FAF6F03818A3385700E2D79F /* QuartzCore.framework */,
@@ -295,8 +259,8 @@
 				FA5EBA9218F497EC0090DB76 /* GameOptionsViewController.h */,
 				FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */,
 				FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */,
-				FA5EBAB418F4A18A0090DB76 /* AuthViewController.h */,
-				FA5EBAB518F4A18A0090DB76 /* AuthViewController.m */,
+				FA5EBAB418F4A18A0090DB76 /* AuthView.h */,
+				FA5EBAB518F4A18A0090DB76 /* AuthView.m */,
 				FA5EBAB618F4A18A0090DB76 /* AuthViewController.xib */,
 				FAF6EFF318A32D8600E2D79F /* Bytes-Info.plist */,
 				FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */,
@@ -451,7 +415,7 @@
 				FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */,
 				FA84700618F9B1BE00F70327 /* ALRadialMenu.m in Sources */,
 				FAF0A50818E79E780093C13E /* CardViewController.m in Sources */,
-				FA5EBAB718F4A18A0090DB76 /* AuthViewController.m in Sources */,
+				FA5EBAB718F4A18A0090DB76 /* AuthView.m in Sources */,
 				FA84700518F9B1BE00F70327 /* ALRadialButton.m in Sources */,
 				FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */,
 				FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */,

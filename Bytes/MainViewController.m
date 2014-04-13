@@ -128,7 +128,7 @@
 }
 
 - (void)handleCardActive:(UIGestureRecognizer *)gestureRecognizer {
-    NSLog(@"Singled you out, %d", gestureRecognizer.view.tag);
+    NSLog(@"Singled you out, %ld", (long)gestureRecognizer.view.tag);
     if (gestureRecognizer.view.tag > 0) {
         CGRect destRect = CGRectMake(whatAreBytesBtn.frame.origin.x+5, whatAreBytesBtn.frame.origin.y, whatAreBytesBtn.frame.size.width-10, whatAreBytesBtn.frame.size.height);
         [gestureRecognizer.view setCenter:CGPointMake(scrollView.center.x, scrollView.center.y/1.5+20)];
