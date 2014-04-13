@@ -11,7 +11,7 @@
 		FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA8D18F39B700090DB76 /* AKStyler.m */; };
 		FA5EBA9518F497EC0090DB76 /* GameOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */; };
 		FA5EBA9618F497EC0090DB76 /* GameOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */; };
-		FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9818F499320090DB76 /* AKGameOptions.m */; };
+		FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9818F499320090DB76 /* AKPreGame.m */; };
 		FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBA9C18F499FB0090DB76 /* AKGame.m */; };
 		FA5EBAA118F49DAA0090DB76 /* AKGamemode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5EBAA018F49DAA0090DB76 /* AKGamemode.m */; };
 		FA5EBAA318F49F610090DB76 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5EBAA218F49F610090DB76 /* Parse.framework */; };
@@ -37,7 +37,6 @@
 		FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84700B18F9C6C100F70327 /* PlayerView.xib */; };
 		FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700E18F9C7F100F70327 /* UIView+InitNib.m */; };
 		FA84701218F9D12C00F70327 /* AKTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701118F9D12C00F70327 /* AKTeam.m */; };
-		FA84701518F9DBE400F70327 /* AKGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701418F9DBE400F70327 /* AKGameManager.m */; };
 		FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A4FF18E7719E0093C13E /* GameKit.framework */; };
 		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
 		FAF0A50818E79E780093C13E /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50718E79E780093C13E /* CardViewController.m */; };
@@ -78,8 +77,8 @@
 		FA5EBA9218F497EC0090DB76 /* GameOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOptionsViewController.h; sourceTree = "<group>"; };
 		FA5EBA9318F497EC0090DB76 /* GameOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOptionsViewController.m; sourceTree = "<group>"; };
 		FA5EBA9418F497EC0090DB76 /* GameOptionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOptionsView.xib; sourceTree = "<group>"; };
-		FA5EBA9718F499320090DB76 /* AKGameOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGameOptions.h; sourceTree = "<group>"; };
-		FA5EBA9818F499320090DB76 /* AKGameOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGameOptions.m; sourceTree = "<group>"; };
+		FA5EBA9718F499320090DB76 /* AKPreGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPreGame.h; sourceTree = "<group>"; };
+		FA5EBA9818F499320090DB76 /* AKPreGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPreGame.m; sourceTree = "<group>"; };
 		FA5EBA9B18F499FB0090DB76 /* AKGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGame.h; sourceTree = "<group>"; };
 		FA5EBA9C18F499FB0090DB76 /* AKGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGame.m; sourceTree = "<group>"; };
 		FA5EBA9F18F49DAA0090DB76 /* AKGamemode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGamemode.h; sourceTree = "<group>"; };
@@ -120,8 +119,6 @@
 		FA84700E18F9C7F100F70327 /* UIView+InitNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InitNib.m"; sourceTree = "<group>"; };
 		FA84701018F9D12C00F70327 /* AKTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTeam.h; sourceTree = "<group>"; };
 		FA84701118F9D12C00F70327 /* AKTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTeam.m; sourceTree = "<group>"; };
-		FA84701318F9DBE400F70327 /* AKGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGameManager.h; sourceTree = "<group>"; };
-		FA84701418F9DBE400F70327 /* AKGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGameManager.m; sourceTree = "<group>"; };
 		FAF0A4FF18E7719E0093C13E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FAF0A50418E780A20093C13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAF0A50618E79E780093C13E /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
@@ -195,17 +192,15 @@
 				2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */,
 				FA84701018F9D12C00F70327 /* AKTeam.h */,
 				FA84701118F9D12C00F70327 /* AKTeam.m */,
+				FA5EBA9718F499320090DB76 /* AKPreGame.h */,
+				FA5EBA9818F499320090DB76 /* AKPreGame.m */,
 				FA5EBA9B18F499FB0090DB76 /* AKGame.h */,
 				FA5EBA9C18F499FB0090DB76 /* AKGame.m */,
+				FA5EBA9E18F49D710090DB76 /* AK Gamemodes */,
 				FA5EBA8C18F39B6F0090DB76 /* AKStyler.h */,
 				FA5EBA8D18F39B700090DB76 /* AKStyler.m */,
 				FAF1186818F5F78200C75B89 /* AKGravatar.h */,
 				FAF1186918F5F78200C75B89 /* AKGravatar.m */,
-				FA5EBA9718F499320090DB76 /* AKGameOptions.h */,
-				FA5EBA9818F499320090DB76 /* AKGameOptions.m */,
-				FA5EBA9E18F49D710090DB76 /* AK Gamemodes */,
-				FA84701318F9DBE400F70327 /* AKGameManager.h */,
-				FA84701418F9DBE400F70327 /* AKGameManager.m */,
 			);
 			name = "AK-API";
 			sourceTree = "<group>";
@@ -452,8 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
-				FA84701518F9DBE400F70327 /* AKGameManager.m in Sources */,
-				FA5EBA9918F499320090DB76 /* AKGameOptions.m in Sources */,
+				FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
 				FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,

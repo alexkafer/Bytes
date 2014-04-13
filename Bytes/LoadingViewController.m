@@ -51,8 +51,7 @@
                           delay:0.2
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-140)];
-                         [bytesImage setTransform:CGAffineTransformMakeTranslation(0, -140)];
+                         [bytesImage setTransform:CGAffineTransformMakeTranslation(0, -200)];
                      }
                      completion:^(BOOL finished){
                          NSLog(@"Done!");

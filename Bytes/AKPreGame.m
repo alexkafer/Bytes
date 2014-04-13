@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "AKGameOptions.h"
+#import "AKPreGame.h"
 
-@implementation AKGameOptions
+@implementation AKPreGame
 
 @end

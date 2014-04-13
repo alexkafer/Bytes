@@ -9,6 +9,7 @@
 #import "GameSetupViewController.h"
 #import "AKGravatar.h"
 #import "AKPlayer.h"
+#import "AKTeam.h"
 #import "AKStyler.h"
 #import "UIView+draggable.h"
 #import "UIImageView+movable.h"
@@ -78,7 +79,7 @@
     if ([recognizer.view isKindOfClass:[GameSetupPlayerView class]]) {
         NSInteger tag = recognizer.view.tag;
         AKPlayer *player = [players objectAtIndex:tag];
-        AKTeam *oldTeam = [player currentTeam];
+        //AKTeam *oldTeam = [player currentTeam];
     }
     
 }

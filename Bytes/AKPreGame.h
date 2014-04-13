@@ -1,5 +1,5 @@
 //
-//  AKGameOptions.h
+//  AKPreGame.h
 //  Bytes
 //
 //  Created by Alex Kafer on 4/8/14.
@@ -15,10 +15,12 @@ typedef enum {
     Defensive
 } AKGameType;
 
-@interface AKGameOptions : NSObject
+@interface AKPreGame : NSObject
 
 @property (nonatomic) AKGameType *gameType;
 @property (nonatomic) BOOL *isMultiplayer;
 @property (nonatomic) NSNumber *maxPlayers;
+
+
 
 @end
