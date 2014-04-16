@@ -15,11 +15,12 @@
     IBOutlet UILabel *loadingLabel;
     IBOutlet UIImageView *bytesImage;
     
-    IBOutlet AuthView *authView;
     NSTimer *loadingTimer;
     NSString *loadingString;
     NSUInteger loadingIndex;
 }
+
+@property (nonatomic, retain) IBOutlet AuthView *authView;
 
 -(void)userAuthenticated;
 

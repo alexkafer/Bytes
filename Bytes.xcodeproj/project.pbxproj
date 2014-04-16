@@ -28,6 +28,7 @@
 		FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84700B18F9C6C100F70327 /* PlayerView.xib */; };
 		FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700E18F9C7F100F70327 /* UIView+InitNib.m */; };
 		FA84701218F9D12C00F70327 /* AKTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701118F9D12C00F70327 /* AKTeam.m */; };
+		FA84701818FAD14E00F70327 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701718FAD14E00F70327 /* GCHelper.m */; };
 		FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A4FF18E7719E0093C13E /* GameKit.framework */; };
 		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
 		FAF0A50818E79E780093C13E /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50718E79E780093C13E /* CardViewController.m */; };
@@ -99,6 +100,8 @@
 		FA84700E18F9C7F100F70327 /* UIView+InitNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InitNib.m"; sourceTree = "<group>"; };
 		FA84701018F9D12C00F70327 /* AKTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTeam.h; sourceTree = "<group>"; };
 		FA84701118F9D12C00F70327 /* AKTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTeam.m; sourceTree = "<group>"; };
+		FA84701618FAD14E00F70327 /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
+		FA84701718FAD14E00F70327 /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		FAF0A4FF18E7719E0093C13E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FAF0A50418E780A20093C13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAF0A50618E79E780093C13E /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 		FAF6EFF218A32D8600E2D79F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA84701618FAD14E00F70327 /* GCHelper.h */,
+				FA84701718FAD14E00F70327 /* GCHelper.m */,
 				FAF1186F18F609B300C75B89 /* UIImageView+movable.h */,
 				FAF1187018F609B300C75B89 /* UIImageView+movable.m */,
 				FA5EBAB918F4BE5D0090DB76 /* UIView+draggable.h */,
@@ -401,6 +406,7 @@
 				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
 				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
 				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
+				FA84701818FAD14E00F70327 /* GCHelper.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
 				FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */,
 				FA5EBABE18F4D9F90090DB76 /* GameSetupViewController.m in Sources */,

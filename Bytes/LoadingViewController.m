@@ -11,21 +11,23 @@
 #import "AKStyler.h"
 #import "UIView+draggable.h"
 #import "AuthView.h"
+#import "GCHelper.h"
 
 @interface LoadingViewController ()
 
 @end
 
 @implementation LoadingViewController
+@dynamic authView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [authView setHidden:YES];
-    [authView setCenter:self.view.center];
+    [self.authView setHidden:YES];
+    [self.authView setCenter:self.view.center];
     
-    [authView enableDragging];
-    [authView setDraggable:YES];
+    [self.authView enableDragging];
+    [self.authView setDraggable:YES];
     
     loadingLabel.alpha = 1;
     loadingLabel.text = @"1";
@@ -37,9 +39,9 @@
     //FIXME loading label FIXME
     loadingIndex = 0;
     
-    [AKStyler styleLayer:authView.layer opacity:0.1 fancy:NO];
-    [AKStyler styleLayer:authView.loginButton.layer opacity:0.1 fancy:NO];
-    [AKStyler styleLayer:authView.cancelButton.layer opacity:0.1 fancy:NO];
+    [AKStyler styleLayer:self.authView.layer opacity:0.1 fancy:NO];
+    [AKStyler styleLayer:self.authView.loginButton.layer opacity:0.1 fancy:NO];
+    [AKStyler styleLayer:self.authView.cancelButton.layer opacity:0.1 fancy:NO];
     // Do any additional setup after loading the view.
 }
 
@@ -110,8 +112,8 @@
 -(void)completed {
     
     [UIView animateWithDuration:0.5 animations:^{
-        loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+120);
-        [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-120)];
+        loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+160);
+        [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-160)];
     } completion:^(BOOL finished) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
@@ -126,14 +128,13 @@
 #pragma mark Authentication
 
 - (void) showAuthentication {
-        [authView setCenter:self.view.center];
-        [authView setHidden:NO];
+        [self.authView setCenter:self.view.center];
+        [self.authView setHidden:NO];
         isAuthing = YES;
-    NSLog(@"Test");
 }
 
 -(void) startLoadingSequence {
-    if (/*Gamecenter is not Authed */ true) {
+    if ([[GCHelper sharedInstance] userAuthenticated]) {
         [self showAuthentication];
     } else {
         [self userAuthenticated];
@@ -141,8 +142,8 @@
 }
 
 -(void)userAuthenticated {
-    if (/*Gamecenter is not Authed */ true) {
-        [authView setHidden:YES];
+    if ([[GCHelper sharedInstance] userAuthenticated]) {
+        [self.authView setHidden:YES];
         isAuthing = NO;
         [self completed];
     } else {
@@ -153,11 +154,11 @@
 #pragma mark - IBActions
 
 -(IBAction)loginWithGameCenter:(id)sender {
-    NSLog(@"Login");
+    [[GCHelper sharedInstance] authenticateLocalUser:self];
 }
 
 -(IBAction)cancelWithGameCenter:(id)sender {
-    NSLog(@"Cancel");
+    [[GCHelper sharedInstance] setGameCenterDisabled:YES];
 }
 
 @end
