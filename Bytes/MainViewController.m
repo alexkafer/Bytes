@@ -7,18 +7,17 @@
 //
 
 #import "MainViewController.h"
-#import "CardViewController.h"
-#import "GameSetupViewController.h"
+#import "CardView.h"
+#import "GamePlayViewController.h"
 #import "UIView+Genie.h"
 #import "AKStyler.h"
+#import "BytesCard.h"
 
 @implementation MainViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self styleLayer:whatAreBytesBtn.layer];
     
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * 4,
                                         scrollView.frame.size.height);
@@ -31,69 +30,46 @@
     
     [self createCards];
     
-    [cardViewControllers enumerateObjectsUsingBlock:^(CardViewController* obj, NSUInteger idx, BOOL *stop) {
-        [obj.view setCenter:CGPointMake(scrollView.center.x + 320*idx, scrollView.center.y/1.5+20)];
+    [cardViewControllers enumerateObjectsUsingBlock:^(CardView* obj, NSUInteger idx, BOOL *stop) {
+        [obj setCenter:CGPointMake(scrollView.center.x + 320*idx, scrollView.center.y/1.5+20)];
+        [obj loadView];
         // add gesture recognizers to the image view
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardActive:)];
         [tap setNumberOfTapsRequired:2];
-        [obj.view addGestureRecognizer:tap];
-        [obj.view setTag:idx+1];
+        [obj addGestureRecognizer:tap];
+        [obj.button addTarget:self action:@selector(cardButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [obj setTag:idx+1];
         //[obj.view enableDragging];
         //[obj.view setScrollViewPriority:scrollView];
-        [scrollView addSubview:obj.view];
+        [scrollView addSubview:obj];
     }];
     
-    CardViewController *stem = [[CardViewController alloc] initWithTitle:@"STEM" discription:@"Student App"];
-    [stem.view setCenter:CGPointMake(scrollView.center.x + 320*cardViewControllers.count, scrollView.center.y/1.5+20)];
-    [scrollView addSubview:stem.view];
+    CardView *stem = [[CardView alloc] initWithTitle:@"STEM" discription:@"Student App"];
+    [stem setCenter:CGPointMake(scrollView.center.x + 320*cardViewControllers.count, scrollView.center.y/1.5+20)];
+    [[stem button] setHidden:YES];
+    [stem loadView];
+    [scrollView addSubview:stem];
+}
+
+#pragma mark - Delegate Methods
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)currentScrollView {
+    [currentScrollView.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[BytesCard class]]) {
+            CardView *replacedCard = [(BytesCard *)obj replacedCard];
+            [UIView transitionFromView:obj toView:replacedCard duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop completion:nil];
+        }
+    }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)currentScrollView {
     CGFloat width = currentScrollView.frame.size.width;
     NSInteger page = (currentScrollView.contentOffset.x + (0.5f * width)) / width;
     [segControl setSelectedSegmentIndex:page];
-    if (page == 4) {
-        [UIView animateWithDuration:0.5 animations:^{
-            [whatAreBytesBtn setAlpha:0];
-        } completion:^(BOOL finished) {
-            [whatAreBytesBtn setHidden:YES];
-        }];
-    } else {
-        [whatAreBytesBtn setHidden:NO];
-        [UIView animateWithDuration:0.5 animations:^{
-            [whatAreBytesBtn setAlpha:1];
-        }];
+    if (page == 3) {
+        [segControl setSelectedSegmentIndex:UISegmentedControlNoSegment];
     }
-    //pageControl.currentPage = page;
-}
-
-+ (CGPathRef)fancyShadowForRect:(CGRect)rect distance:(float)distance {
-    CGSize size = rect.size;
-    UIBezierPath* path = [UIBezierPath bezierPath];
-    
-    //right
-    [path moveToPoint:CGPointZero];
-    [path addLineToPoint:CGPointMake(size.width, 0.0f)];
-    [path addLineToPoint:CGPointMake(size.width, size.height + distance)];
-    
-    //curved bottom
-    [path addCurveToPoint:CGPointMake(0.0, size.height + distance)
-            controlPoint1:CGPointMake(size.width - distance, size.height)
-            controlPoint2:CGPointMake(distance, size.height)];
-    
-    [path closePath];
-    
-    return path.CGPath;
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Custom Methods
@@ -101,51 +77,121 @@
 - (void)createCards {
     cardViewControllers = [[NSMutableArray alloc] init];
     
-    CardViewController *poolPlay = [[CardViewController alloc] initWithTitle:@"Pool Play" discription:@"Race with friends!"];
-    [cardViewControllers addObject:poolPlay];
+    CardView *countDown = [[CardView alloc] initWithTitle:@"Countdown" discription:@"Gather as many bytes as you can in 30 seconds!"];
+    [countDown setGamePlayControllerIdentifier:@"countDownPlay"];
+    [cardViewControllers addObject:countDown];
     
-    CardViewController *competitive = [[CardViewController alloc] initWithTitle:@"Competitive" discription:@"Race against friends!"];
-    [cardViewControllers addObject:competitive];
+    CardView *pinpoint = [[CardView alloc] initWithTitle:@"Pinpoint" discription:@"Use a code to race against friends!"];
+    [pinpoint setGamePlayControllerIdentifier:@"pinPointPlay"];
+    [cardViewControllers addObject:pinpoint];
     
-    CardViewController *defensive = [[CardViewController alloc] initWithTitle:@"Defensive" discription:@"Attack and Defend!"];
-    [cardViewControllers addObject:defensive];
+    CardView *million = [[CardView alloc] initWithTitle:@"Race to a Million" discription:@"Speed your way to a million bytes!"];
+    [million setGamePlayControllerIdentifier:@"millionPlay"];
+    [cardViewControllers addObject:million];
 }
 
-- (void)styleLayer: (CALayer *)layer {
-    layer.cornerRadius = 4.0f;
-    layer.shadowOffset =  CGSizeMake(1, 1);
-    layer.shadowColor = [[UIColor blackColor] CGColor];
-    layer.shadowRadius = 4.0f;
-    layer.shadowOpacity = 0.30f;
-    //layer.shadowPath = [[UIBezierPath bezierPathWithRect:buttonLayer.bounds] CGPath];
-    layer.shadowPath = [AKStyler fancyShadowForRect:layer.bounds distance:5.0f];
-}
-
-#pragma mark - IBActions
+#pragma mark - Selectors and IBActions
 
 -(IBAction)scrollWith:(id)sender {
     [scrollView setContentOffset:CGPointMake(320*segControl.selectedSegmentIndex, scrollView.contentOffset.y) animated:YES];
 }
 
-- (void)handleCardActive:(UIGestureRecognizer *)gestureRecognizer {
-    NSLog(@"Singled you out, %ld", (long)gestureRecognizer.view.tag);
-    if (gestureRecognizer.view.tag > 0) {
-        CGRect destRect = CGRectMake(whatAreBytesBtn.frame.origin.x+5, whatAreBytesBtn.frame.origin.y, whatAreBytesBtn.frame.size.width-10, whatAreBytesBtn.frame.size.height);
-        [gestureRecognizer.view setCenter:CGPointMake(scrollView.center.x, scrollView.center.y/1.5+20)];
-        [gestureRecognizer.view genieInTransitionWithDuration:1
-                                          destinationRect:destRect
-                                          destinationEdge:BCRectEdgeTop completion:^{
-                                              NSLog(@"Done!");
-                                              [scrollView setHidden:YES];
-                                              [UIView animateWithDuration:0.2 animations:^{
-                                                  [segControl setAlpha:0];
-                                              } completion:^(BOOL finished) {
-                                                  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-                                                  GameSetupViewController *setup = (GameSetupViewController *)[storyboard instantiateViewControllerWithIdentifier:@"gameSetup"];
-                                                  [self presentViewController:setup animated:NO completion:nil];
-                                              }];
-                                          }];
-    }
+- (void)handleCardReturn: (UITapGestureRecognizer *)gestureRecognizer {
+    CardView *replacedCard = [(BytesCard *)gestureRecognizer.view replacedCard];
+    
+    CGPoint location = [gestureRecognizer locationInView:gestureRecognizer.view];
+    [UIView transitionFromView:gestureRecognizer.view toView:replacedCard duration:0.5 options:[MainViewController optionForLocation:location inView:gestureRecognizer.view] completion:nil];
 }
 
+- (void)handleCardActive:(UITapGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.view.tag > 0) {
+        UIView *originalView = [gestureRecognizer view];
+        BytesCard *bytesCard = [[BytesCard alloc] initFromNib];
+        [bytesCard setReplacedCard:(CardView *)originalView];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardReturn:)];
+        [tap setNumberOfTapsRequired:1];
+        [bytesCard addGestureRecognizer:tap];
+        
+        [bytesCard loadView];
+        [bytesCard setCenter:[originalView center]];
+        
+        CGPoint location = [gestureRecognizer locationInView:originalView];
+        [UIView transitionFromView:originalView toView:bytesCard duration:0.5 options:[MainViewController optionForLocation:location inView:originalView] completion:nil];
+    }
+    
+}
+
+- (void) cardButtonPressed: (id)sender {
+    CardView *card = (CardView *)[sender superview];
+    NSLog(@"Identifier: %@", [card gamePlayControllerIdentifier]);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:[card gamePlayControllerIdentifier]];
+    [self animateViewOut:card toViewController:play];
+}
+
+#pragma mark - Utility Methods
+
+-(void)animateViewOut: (UIView *)view toViewController: (UIViewController *)endView {
+    UIView *newView = [[UIView alloc] initWithFrame:view.frame];
+    [newView setBackgroundColor:[UIColor whiteColor]];
+    [newView.layer setCornerRadius:4];
+    [UIView transitionFromView:view toView:newView duration:0.7 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
+    {
+        UIView *newView2 = [[UIView alloc] initWithFrame:view.frame];
+        [newView2 setBackgroundColor:[UIColor whiteColor]];
+        [newView2.layer setCornerRadius:8];
+        [UIView transitionFromView:newView toView:newView2 duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
+        {
+            UIView *newView3 = [[UIView alloc] initWithFrame:view.frame];
+            [newView3 setBackgroundColor:[UIColor whiteColor]];
+            [newView3.layer setCornerRadius:12];
+            [UIView transitionFromView:newView2 toView:newView3 duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
+            {
+                UIView *newView4 = [[UIView alloc] initWithFrame:view.frame];
+                [newView4 setBackgroundColor:[UIColor whiteColor]];
+                [newView4.layer setCornerRadius:16];
+                [UIView transitionFromView:newView3 toView:newView4 duration:0.2 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
+                {
+                    UIView *newView5 = [[UIView alloc] initWithFrame:view.frame];
+                    [newView5 setBackgroundColor:[UIColor whiteColor]];
+                    [newView5.layer setCornerRadius:24];
+                    [UIView transitionFromView:newView4 toView:newView5 duration:0.2 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
+                    {
+                        CGRect destRect = CGRectMake( self.view.frame.size.width/4, self.view.frame.size.height+5, self.view.frame.size.width/2, 20);
+                        
+                        
+                        [newView5 genieInTransitionWithDuration:0.1
+                                            destinationRect:destRect
+                                            destinationEdge:BCRectEdgeTop completion:^{
+                                                NSLog(@"Done!");
+                                                [scrollView setHidden:YES];
+                                                [UIView animateWithDuration:0.2 animations:^{
+                                                    [segControl setAlpha:0];
+                                                } completion:^(BOOL finished) {
+                                                    [self presentViewController:endView animated:NO completion:nil];
+                                                }];
+                                            }];
+                    }];
+                }];
+            }];
+        }];
+    }];
+}
+
++(UIViewAnimationOptions) optionForLocation: (CGPoint)location inView: (UIView *)view {
+    CGFloat y = location.y-view.frame.size.height/2;
+    CGFloat x = location.x-view.frame.size.width/2;
+    
+    if (y > 0 && fabsf(x) < fabsf(y)) {
+        return UIViewAnimationOptionTransitionFlipFromBottom;
+    } else if (y < 0 && fabsf(x) < fabsf(y)) {
+        return UIViewAnimationOptionTransitionFlipFromTop;
+    } else if (x > 0) {
+        return UIViewAnimationOptionTransitionFlipFromLeft;
+    } else {
+        return UIViewAnimationOptionTransitionFlipFromRight;
+    }
+    
+}
 @end

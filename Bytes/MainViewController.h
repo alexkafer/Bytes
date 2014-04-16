@@ -11,7 +11,7 @@
 @interface MainViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
     IBOutlet UIScrollView *scrollView;
     IBOutlet UISegmentedControl *segControl;
-    IBOutlet UIButton *whatAreBytesBtn;
+    IBOutlet UIView *upperView;
     
     NSMutableArray *cardViewControllers;
 }

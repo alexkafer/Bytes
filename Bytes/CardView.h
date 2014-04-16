@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CardViewController : UIViewController
+@interface CardView : UIView
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, retain) IBOutlet UIButton *button;
 
--(id)initWithTitle: (NSString *)string discription: (NSString *)description;
+@property (nonatomic, retain) IBOutlet NSString *gamePlayControllerIdentifier;
+
+- (id)initWithTitle: (NSString *)string discription: (NSString *)description;
+- (void)loadView;
 
 @end

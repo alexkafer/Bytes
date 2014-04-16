@@ -13,4 +13,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *loginButton;
 @property (nonatomic, retain) IBOutlet UIButton *cancelButton;
 
+-(id)initFromNib;
+- (void)loadView;
+
 @end
