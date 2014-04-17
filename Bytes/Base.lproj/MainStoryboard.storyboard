@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BytesLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nkd-xg-7z8">
-                                <rect key="frame" x="33" y="110" width="254" height="92"/>
+                                <rect key="frame" x="34" y="109" width="254" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

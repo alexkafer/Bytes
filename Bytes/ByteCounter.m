@@ -10,9 +10,11 @@
 
 @implementation ByteCounter
 
-+(int)amountOfBytesFromString:(NSString *) string {
-    // Going with the standard of one byte per letter and space
-    return string.length;
++(int)bytesFromObject: (NSObject *)object {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:object] forKey:@"object"];
+    NSData *dataOnObject = [[NSUserDefaults standardUserDefaults] objectForKey:@"object"];
+    
+    return [dataOnObject length]-135; //An empty NSObject is 135 bytes in an NSData, trying to keep the data of just user input
 }
-
 @end

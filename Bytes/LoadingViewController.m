@@ -53,7 +53,7 @@
                           delay:0.2
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         [bytesImage setTransform:CGAffineTransformMakeTranslation(0, -140)];
+                         //[bytesImage setTransform:CGAffineTransformMakeTranslation(0, -140)];
                      }
                      completion:^(BOOL finished){
                          NSLog(@"Done Loading!");
@@ -116,7 +116,7 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+160);
-        [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-160)];
+        [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-220)];
     } completion:^(BOOL finished) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];

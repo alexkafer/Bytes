@@ -10,6 +10,6 @@
 
 @interface ByteCounter : NSObject
 
-+(int)amountOfBytesFromString:(NSString *) string;
++(int)bytesFromObject: (NSObject *)object;
 
 @end
