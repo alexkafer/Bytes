@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ALRadialMenu.h"
+#import "DBCameraViewController.h"
+#import "DBCameraContainer.h"
 
-@interface PinPointViewController : UIViewController <ALRadialMenuDelegate>{
+@interface PinPointViewController : UIViewController <ALRadialMenuDelegate, DBCameraViewControllerDelegate>{
     IBOutlet UILabel *scoreView;
     
     IBOutlet UIButton *addBtn;

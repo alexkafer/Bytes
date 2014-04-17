@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ALRadialMenu.h"
+#import "DBCameraViewController.h"
+#import "DBCameraContainer.h"
 
-@interface MillionViewController : UIViewController <ALRadialMenuDelegate> {
+@interface MillionViewController : UIViewController <ALRadialMenuDelegate, DBCameraViewControllerDelegate> {
     IBOutlet UILabel *scoreView;
     
     IBOutlet UIButton *addBtn;

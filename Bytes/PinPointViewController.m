@@ -84,5 +84,14 @@
     return addBtn.frame.size.width/1.25;
 }
 
+#pragma mark - DBCameraViewControllerDelegate
+
+- (void) captureImageDidFinish:(UIImage *)image withMetadata:(NSDictionary *)metadata
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [imageView setImage:image];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

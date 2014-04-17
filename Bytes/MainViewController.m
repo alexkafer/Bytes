@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 #import "CardView.h"
-#import "GamePlayViewController.h"
 #import "UIView+Genie.h"
 #import "AKStyler.h"
 #import "BytesCard.h"
@@ -27,6 +26,8 @@
     scrollView.delegate = self;
     
     [scrollView setCanCancelContentTouches:YES];
+    
+    [AKStyler styleLayer:upperView.layer opacity:0.2 fancy:NO];
     
     [self createCards];
     
