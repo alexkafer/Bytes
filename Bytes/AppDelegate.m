@@ -7,15 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse setApplicationId:@"sPVS2a6LkLEB0gxiDHdz2dkNkVSDmSqiGqD2RsC1"
-                  clientKey:@"5vjix7eiF5rSnLPG3YUaYvz3ZR1q7eA8zpZ01XDq"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
     //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;

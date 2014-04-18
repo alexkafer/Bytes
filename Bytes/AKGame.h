@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AKPreGame;
 #import "AKPreGame.h"
 #import "AKPlayer.h"
 

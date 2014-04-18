@@ -8,17 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "AKGame.h"
-#import "AKGamemode.h"
 
 @interface AKPreGame : NSObject
-
-@property (nonatomic) AKGamemode *gameType;
 
 @property (nonatomic) NSMutableArray *teams;
 
 @property (nonatomic) BOOL *isMultiplayer;
 @property (nonatomic) NSNumber *maxPlayers;
 
--(id)initWithGamemode: (AKGamemode *)gamemode;
 
 @end

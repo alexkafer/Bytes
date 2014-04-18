@@ -10,13 +10,4 @@
 
 @implementation AKPreGame
 
--(id)initWithGamemode:(AKGamemode *)gamemode {
-    self = [super init];
-    if (self)
-    {
-        //Set gamemode stuff
-    }
-    return self;
-}
-
 @end

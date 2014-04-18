@@ -7,44 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef enum {
-    authenticating,
-    fetchingprofile = 10,
-    updating = 20,
-    starting = 30
-} LoadingStatus;
+#import "AuthView.h"
 
 @interface LoadingViewController : UIViewController {
-    LoadingStatus status;
-    NSUInteger loadingCount;
     BOOL isAuthing;
     
     IBOutlet UILabel *loadingLabel;
     IBOutlet UIImageView *bytesImage;
     
-    IBOutlet UILabel *ContactServerLabel;
-    IBOutlet UILabel *FetchProfileLabel;
-    IBOutlet UILabel *UpdatingContentLabel;
-    IBOutlet UILabel *StartingAppLabel;
+    AuthView *authView;
     
-    IBOutlet UIView *authView;
-    IBOutlet UITextField *username;
-    IBOutlet UITextField *password;
-    IBOutlet UIButton *loginButton;
-    
-    IBOutlet UIView *registerView;
-    IBOutlet UITextField *regUsername;
-    IBOutlet UITextField *regEmail;
-    IBOutlet UITextField *regPassword;
-    IBOutlet UITextField *regPasswordRepeat;
-    IBOutlet UIButton *registerButton;
+    NSTimer *loadingTimer;
+    NSString *loadingString;
+    NSUInteger loadingIndex;
 }
-
--(IBAction)registerAccount:(id)sender;
--(IBAction)login:(id)sender;
--(IBAction)submitRegistration:(id)sender;
--(IBAction)emailInfo:(id)sender;
 
 -(void)userAuthenticated;
 
