@@ -27,8 +27,8 @@
 		FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FFF18F99FF100F70327 /* UIView+Slidable.m */; };
 		FA84700518F9B1BE00F70327 /* AKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700218F9B1BE00F70327 /* AKButton.m */; };
 		FA84700618F9B1BE00F70327 /* AKMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700418F9B1BE00F70327 /* AKMenu.m */; };
-		FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */; };
-		FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84700B18F9C6C100F70327 /* PlayerView.xib */; };
+		FA84700A18F9C3A300F70327 /* ObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700918F9C3A300F70327 /* ObjectView.m */; };
+		FA84700C18F9C6C100F70327 /* ObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84700B18F9C6C100F70327 /* ObjectView.xib */; };
 		FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700E18F9C7F100F70327 /* UIView+InitNib.m */; };
 		FA84701218F9D12C00F70327 /* AKTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701118F9D12C00F70327 /* AKTeam.m */; };
 		FA84701818FAD14E00F70327 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701718FAD14E00F70327 /* GCHelper.m */; };
@@ -101,9 +101,9 @@
 		FA84700218F9B1BE00F70327 /* AKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKButton.m; sourceTree = "<group>"; };
 		FA84700318F9B1BE00F70327 /* AKMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMenu.h; sourceTree = "<group>"; };
 		FA84700418F9B1BE00F70327 /* AKMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMenu.m; sourceTree = "<group>"; };
-		FA84700818F9C3A300F70327 /* GameSetupPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSetupPlayerView.h; sourceTree = "<group>"; };
-		FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSetupPlayerView.m; sourceTree = "<group>"; };
-		FA84700B18F9C6C100F70327 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		FA84700818F9C3A300F70327 /* ObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectView.h; sourceTree = "<group>"; };
+		FA84700918F9C3A300F70327 /* ObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectView.m; sourceTree = "<group>"; };
+		FA84700B18F9C6C100F70327 /* ObjectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjectView.xib; sourceTree = "<group>"; };
 		FA84700D18F9C7F100F70327 /* UIView+InitNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InitNib.h"; sourceTree = "<group>"; };
 		FA84700E18F9C7F100F70327 /* UIView+InitNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InitNib.m"; sourceTree = "<group>"; };
 		FA84701018F9D12C00F70327 /* AKTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTeam.h; sourceTree = "<group>"; };
@@ -295,9 +295,9 @@
 				FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */,
 				FAF6EFF718A32D8600E2D79F /* main.m */,
 				FAF6EFF918A32D8600E2D79F /* Bytes-Prefix.pch */,
-				FA84700818F9C3A300F70327 /* GameSetupPlayerView.h */,
-				FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */,
-				FA84700B18F9C6C100F70327 /* PlayerView.xib */,
+				FA84700818F9C3A300F70327 /* ObjectView.h */,
+				FA84700918F9C3A300F70327 /* ObjectView.m */,
+				FA84700B18F9C6C100F70327 /* ObjectView.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */,
+				FA84700C18F9C6C100F70327 /* ObjectView.xib in Resources */,
 				FAF6EFFF18A32D8600E2D79F /* MainStoryboard.storyboard in Resources */,
 				FA783B6F18FE30B60023C418 /* BytesCardView.xib in Resources */,
 				FA7095B218E5120900C1B282 /* Images.xcassets in Resources */,
@@ -460,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA84700A18F9C3A300F70327 /* ObjectView.m in Sources */,
 				FAF6EFFC18A32D8600E2D79F /* AppDelegate.m in Sources */,
 				FAF1186A18F5F78200C75B89 /* AKGravatar.m in Sources */,
 				FA783B6D18FE309C0023C418 /* BytesCard.m in Sources */,
@@ -468,7 +469,6 @@
 				FAF6F03418A32FD400E2D79F /* ByteCounter.m in Sources */,
 				FA84701818FAD14E00F70327 /* GCHelper.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
-				FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */,
 				FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */,
 				FA5EBABB18F4BE5D0090DB76 /* UIView+draggable.m in Sources */,
 				FA783B7B18FF49600023C418 /* CountDownViewController.m in Sources */,

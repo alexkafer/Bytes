@@ -30,14 +30,14 @@
     return self;
 }
 
--(GameSetupPlayerView *)getPlayerProfileView {
+-(ObjectView *)getPlayerProfileView {
     UIImage *profilePic = profileImage;
     
     if (profilePic == nil) {
         profilePic = [UIImage imageNamed:@"userAccount"];
     }
     
-    GameSetupPlayerView *playerProfile = [[GameSetupPlayerView alloc] initWithPlayerDetail:@"You (Host)" withUncroppedProfilePicture:profilePic];
+    ObjectView *playerProfile = [[ObjectView alloc] initWithPlayerDetail:@"You (Host)" withUncroppedProfilePicture:profilePic];
     [playerProfile loadView];
     
     return playerProfile;

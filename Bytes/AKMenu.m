@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "AKMenu.h"
-#import "AKButton.h"
 #import "UIView+draggable.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AKMenu.h"
 
 @implementation AKMenu
 
@@ -178,7 +177,7 @@
 		return;
 	}
 	
-	ALRadialButton *button = [self.items objectAtIndex:self.itemIndex];
+	AKButton *button = [self.items objectAtIndex:self.itemIndex];
 	//tell the button to animate into view
 	[button willAppear];
 	
@@ -196,7 +195,7 @@
 	}
 	self.itemIndex--;
 	
-	ALRadialButton *button = [self.items objectAtIndex:self.itemIndex];
+	AKButton *button = [self.items objectAtIndex:self.itemIndex];
 	//tell the button to animate out of view
     if ([button isEnabled]) {
          [button willDisappear];
@@ -206,7 +205,7 @@
 
 
 - (void)buttonPressed:(id)sender  {
-	ALRadialButton *button = (ALRadialButton *)sender;
+	AKButton *button = (AKButton *)sender;
 	[self.delegate radialMenu:self didSelectItemAtIndex:button.tag];
     if (![button isEnabled]) {
         [self.delegate radialMenu:self didReleaseButton:button AfterDragAtIndex:button.tag];
@@ -235,7 +234,7 @@
 
 
 #pragma mark - button delegate methods
-- (void) buttonDidFinishAnimation:(ALRadialButton *)radialButton {
+- (void) buttonDidFinishAnimation:(AKButton *)radialButton {
 	//now that the animation is complete remove the button from view.
 	[radialButton removeFromSuperview];
 	
@@ -248,13 +247,13 @@
 
 #pragma mark - AKAdjustments
 - (void)buttonDragged:(id)sender {
-    ALRadialButton *button = (ALRadialButton *)sender;
+    AKButton *button = (AKButton *)sender;
     [button setDraggable:YES];
     [button setEnabled:NO];
 }
 
 - (void)buttonHighlighted:(id)sender  {
-	ALRadialButton *button = (ALRadialButton *)sender;
+	AKButton *button = (AKButton *)sender;
     [button setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
     //[button setDraggable:YES];
 }

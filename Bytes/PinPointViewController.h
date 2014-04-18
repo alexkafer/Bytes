@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ALRadialMenu.h"
+#import "AKMenu.h"
 #import "DBCameraViewController.h"
 #import "DBCameraContainer.h"
 
-@interface PinPointViewController : UIViewController <ALRadialMenuDelegate, DBCameraViewControllerDelegate>{
+@interface PinPointViewController : UIViewController <AKMenuDelegate, DBCameraViewControllerDelegate>{
     IBOutlet UILabel *scoreView;
     
     IBOutlet UIButton *addBtn;
 }
 
-@property (strong, nonatomic) ALRadialMenu *mediaMenu;
+@property (strong, nonatomic) AKMenu *mediaMenu;
 - (IBAction)buttonPressed:(id)sender;
 
 @end

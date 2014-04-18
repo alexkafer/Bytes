@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameSetupPlayerView.h"
+#import "ObjectView.h"
 
 @interface AKPlayer : NSObject
 
@@ -21,6 +21,6 @@
 -(id)initWithUsername: (NSString *)user andProfilePicture: (UIImage *)profile;
 
 
--(GameSetupPlayerView *)getPlayerProfileView;
+-(ObjectView *)getPlayerProfileView;
 
 @end

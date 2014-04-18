@@ -7,6 +7,7 @@
 //
 
 #import "CountDownViewController.h"
+#import "ObjectView.h"
 #import "UIView+draggable.h"
 #import "AKGravatar.h"
 #import "AKStyler.h"
@@ -24,10 +25,12 @@
     
     [addBtn.imageView.layer setCornerRadius:addBtn.frame.size.width/2];
     
-    self.mediaMenu = [[ALRadialMenu alloc] init];
+    self.mediaMenu = [[AKMenu alloc] init];
     self.mediaMenu.delegate = self;
     
-    totalBytes = 0;
+    currentlyActiveObjects = [[NSMutableArray alloc] init];
+    
+    scoreView.text = [NSString stringWithFormat:@"%d", 0];
     // Do any additional setup after loading the view.
 }
 
@@ -37,22 +40,22 @@
 }
 
 #pragma mark - radial menu delegate methods
-- (NSInteger) numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu {
+- (NSInteger) numberOfItemsInRadialMenu:(AKMenu *)radialMenu {
 	return 3;
 }
 
 
-- (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu {
+- (NSInteger) arcSizeForRadialMenu:(AKMenu *)radialMenu {
 	return 180;
 }
 
 
-- (NSInteger) arcRadiusForRadialMenu:(ALRadialMenu *)radialMenu {
+- (NSInteger) arcRadiusForRadialMenu:(AKMenu *)radialMenu {
 	return 80;
 }
 
 
-- (UIImage *) radialMenu:(ALRadialMenu *)radialMenu imageForIndex:(NSInteger) index {
+- (UIImage *) radialMenu:(AKMenu *)radialMenu imageForIndex:(NSInteger) index {
     CGRect rect = CGRectMake(0, 0, 200, 200);
 	switch (index) {
         case 1: return [AKStyler circularScaleAndCropImage:[UIImage imageNamed:@"Sound"] frame:rect];
@@ -62,7 +65,7 @@
 }
 
 
-- (void) radialMenu:(ALRadialMenu *)radialMenu didSelectItemAtIndex:(NSInteger)index {
+- (void) radialMenu:(AKMenu *)radialMenu didSelectItemAtIndex:(NSInteger)index {
 	[self.mediaMenu itemsWillDisapearIntoButton:addBtn];
     
     if (index == 1) {
@@ -79,16 +82,16 @@
     }
 }
 
-- (void) radialMenu:(ALRadialMenu *)radialMenu didReleaseButton:(ALRadialButton *)button AfterDragAtIndex:(NSInteger)index {
-    self.mediaMenu = [[ALRadialMenu alloc] init];
+- (void) radialMenu:(AKMenu *)radialMenu didReleaseButton:(AKMenu *)button AfterDragAtIndex:(NSInteger)index {
+    self.mediaMenu = [[AKMenu alloc] init];
     self.mediaMenu.delegate = self;
 }
 
--(NSInteger)arcStartForRadialMenu:(ALRadialMenu *)radialMenu {
+-(NSInteger)arcStartForRadialMenu:(AKMenu *)radialMenu {
     return 180;
 }
 
--(float)buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu {
+-(float)buttonSizeForRadialMenu:(AKMenu *)radialMenu {
     return addBtn.frame.size.width/1.25;
 }
 
@@ -96,33 +99,31 @@
 
 - (void) captureImageDidFinish:(UIImage *)image withMetadata:(NSDictionary *)metadata
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [imageView setImage:image];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"Guess what");
+    bytesLeft += [ByteCounter bytesFromObject:image];
     
-    CALayer *layer = imageView.layer;
+    ObjectView *objectView = [[ObjectView alloc] initWithPlayerDetail:[NSString stringWithFormat:@"%d", bytesLeft] withUncroppedProfilePicture:image];
     
-    [layer setBorderColor:[UIColor whiteColor].CGColor];
-    [layer setBorderWidth:2];
+    [objectView setBytesLeftForObj:(NSInteger*)bytesLeft];
+    [currentlyActiveObjects addObject:objectView];
+     
+    [objectView setCenter:[self.view center]];
     
-    [imageView setCenter:[self.view center]];
-    [self.view addSubview:imageView];
+    [objectView enableDragging];
+    [objectView setDraggable:YES];
     
-    [imageView enableDragging];
-    [imageView setDraggable:YES];
+    [self.view addSubview:objectView];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.001
+    
+    if (timer == nil) {
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.001
                                      target:self
                                    selector:@selector(increaseNumber:)
                                    userInfo:nil
                                     repeats:YES];
+    }
     
-    bytesLeft = [ByteCounter bytesFromObject:image];
-    
-    [UIView animateWithDuration:120 animations:^{
-        [imageView setAlpha:0];
-    }];
-    
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) increaseNumber: (id)sender {
@@ -140,15 +141,28 @@
     } else {
         scale = 1;
     }
-    NSLog(@"Scale: %d Left: %d Total %d", scale, bytesLeft, totalBytes);
     totalBytes += scale;
     bytesLeft -= scale;
     scoreView.text = [NSString stringWithFormat:@"%d", totalBytes];
-    
-    if (bytesLeft < 0) {
+    NSLog(@"BytesLeft: %d active objects: %d", bytesLeft, [currentlyActiveObjects count]);
+    if (bytesLeft < 0 && [currentlyActiveObjects count] <= 0) {
         [timer invalidate];
         timer = nil;
     }
+    
+    [currentlyActiveObjects enumerateObjectsUsingBlock:^(ObjectView *obj, NSUInteger idx, BOOL *stop) {
+        int bytesLeftForObj = (int)[obj bytesLeftForObj] - scale;
+        if (bytesLeftForObj < 0) {
+            [currentlyActiveObjects removeObject:obj];
+            [UIView animateWithDuration:1 animations:^{
+                [obj setAlpha:0];
+            }];
+        } else {
+            [obj setBytesLeftForObj:(NSInteger *)(bytesLeftForObj)];
+            NSLog(@"Bytes Left for object: %d", bytesLeftForObj);
+            [[obj subTextLabel] setText:[NSString stringWithFormat:@"%d", bytesLeftForObj]];
+        }
+    }];
 }
 
 

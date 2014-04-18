@@ -6,27 +6,23 @@
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "GameSetupPlayerView.h"
+#import "ObjectView.h"
 #import "UIView+InitNib.h"
 #import "AKStyler.h"
 
-@implementation GameSetupPlayerView
-@synthesize playerDetail, profileImage;
+@implementation ObjectView
+@synthesize subTextLabel, profilePictureView, bytesLeftForObj;
 
 -(id)initWithPlayerDetail: (NSString *)detail withUncroppedProfilePicture: (UIImage *)profile {
-    self = [super initWithNibName:@"PlayerView"];
+    self = [super initWithNibName:@"ObjectView"];
     if (self) {
-        playerDetail = detail;
-        profileImage = profile;
+        subTextLabel.text = detail;
+        profilePictureView.image = [AKStyler circularScaleAndCropImage:profile frame:profilePictureView.frame];;
     }
     return self;
 }
 
 -(void)loadView {
-    [subTextLabel setText:playerDetail];
-    
-    UIImage *newImage = [AKStyler circularScaleAndCropImage:profileImage frame:profilePictureView.frame];
-    [profilePictureView setImage:newImage];
     CALayer *layer = profilePictureView.layer;
     
     [layer setCornerRadius:self.frame.size.width/2];

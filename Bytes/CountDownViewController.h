@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ALRadialMenu.h"
+#import "AKMenu.h"
 #import "DBCameraViewController.h"
 #import "DBCameraContainer.h"
 
-@interface CountDownViewController : UIViewController <ALRadialMenuDelegate, DBCameraViewControllerDelegate>{
+@interface CountDownViewController : UIViewController <AKMenuDelegate, DBCameraViewControllerDelegate>{
     IBOutlet UILabel *scoreView;
     
     IBOutlet UIButton *addBtn;
@@ -19,10 +19,12 @@
     int totalBytes;
     int bytesLeft;
     
+    NSMutableArray *currentlyActiveObjects;
+    
     NSTimer *timer;
 }
 
-@property (strong, nonatomic) ALRadialMenu *mediaMenu;
+@property (strong, nonatomic) AKMenu *mediaMenu;
 - (IBAction)buttonPressed:(id)sender;
 
 @end
