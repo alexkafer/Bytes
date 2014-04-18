@@ -2,29 +2,28 @@
 //  ALRadialButton.h
 //  ALRadial
 //
-//  Created by andrew lattis on 12/10/14.
-//  Copyright (c) 2012 andrew lattis. All rights reserved.
-//  http://andrewlattis.com
+//  Created by Alex Kafer on 2/5/14.
+//  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class ALRadialButton;
+@class AKButton;
 
 ///protocol delegate for owner of the button
-@protocol ALRadialButtonDelegate <NSObject>
+@protocol AKButtonDelegate <NSObject>
 
 /**
  * method to let the creator know when the disappear animation is completed
  * @param radialButton the radial button object making the request
  */
-- (void) buttonDidFinishAnimation:(ALRadialButton *)radialButton;
+- (void) buttonDidFinishAnimation:(AKButton *)radialButton;
 
 @end
 
 
 ///uibutton subclass that handles the individual item animation and display
-@interface ALRadialButton : UIButton
+@interface AKButton : UIButton
 
 ///@name Tasks
 
@@ -47,6 +46,6 @@
 @property (nonatomic) CGPoint originPoint;
 
 ///the delegate object for the creator of this button
-@property (nonatomic, weak) id <ALRadialButtonDelegate> delegate;
+@property (nonatomic, weak) id <AKButtonDelegate> delegate;
 
 @end

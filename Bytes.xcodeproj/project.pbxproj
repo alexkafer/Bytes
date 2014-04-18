@@ -25,8 +25,8 @@
 		FA783B7818FF48900023C418 /* PinPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B7718FF48900023C418 /* PinPointViewController.m */; };
 		FA783B7B18FF49600023C418 /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B7A18FF49600023C418 /* CountDownViewController.m */; };
 		FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FFF18F99FF100F70327 /* UIView+Slidable.m */; };
-		FA84700518F9B1BE00F70327 /* ALRadialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700218F9B1BE00F70327 /* ALRadialButton.m */; };
-		FA84700618F9B1BE00F70327 /* ALRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700418F9B1BE00F70327 /* ALRadialMenu.m */; };
+		FA84700518F9B1BE00F70327 /* AKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700218F9B1BE00F70327 /* AKButton.m */; };
+		FA84700618F9B1BE00F70327 /* AKMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700418F9B1BE00F70327 /* AKMenu.m */; };
 		FA84700A18F9C3A300F70327 /* GameSetupPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */; };
 		FA84700C18F9C6C100F70327 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84700B18F9C6C100F70327 /* PlayerView.xib */; };
 		FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700E18F9C7F100F70327 /* UIView+InitNib.m */; };
@@ -97,10 +97,10 @@
 		FA783B7A18FF49600023C418 /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownViewController.m; sourceTree = "<group>"; };
 		FA846FFE18F99FF100F70327 /* UIView+Slidable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Slidable.h"; sourceTree = "<group>"; };
 		FA846FFF18F99FF100F70327 /* UIView+Slidable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Slidable.m"; sourceTree = "<group>"; };
-		FA84700118F9B1BE00F70327 /* ALRadialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialButton.h; sourceTree = "<group>"; };
-		FA84700218F9B1BE00F70327 /* ALRadialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialButton.m; sourceTree = "<group>"; };
-		FA84700318F9B1BE00F70327 /* ALRadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialMenu.h; sourceTree = "<group>"; };
-		FA84700418F9B1BE00F70327 /* ALRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialMenu.m; sourceTree = "<group>"; };
+		FA84700118F9B1BE00F70327 /* AKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKButton.h; sourceTree = "<group>"; };
+		FA84700218F9B1BE00F70327 /* AKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKButton.m; sourceTree = "<group>"; };
+		FA84700318F9B1BE00F70327 /* AKMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMenu.h; sourceTree = "<group>"; };
+		FA84700418F9B1BE00F70327 /* AKMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMenu.m; sourceTree = "<group>"; };
 		FA84700818F9C3A300F70327 /* GameSetupPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSetupPlayerView.h; sourceTree = "<group>"; };
 		FA84700918F9C3A300F70327 /* GameSetupPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSetupPlayerView.m; sourceTree = "<group>"; };
 		FA84700B18F9C6C100F70327 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
@@ -171,6 +171,10 @@
 		FA5EBA9A18F499D90090DB76 /* AK-API */ = {
 			isa = PBXGroup;
 			children = (
+				FA84700118F9B1BE00F70327 /* AKButton.h */,
+				FA84700218F9B1BE00F70327 /* AKButton.m */,
+				FA84700318F9B1BE00F70327 /* AKMenu.h */,
+				FA84700418F9B1BE00F70327 /* AKMenu.m */,
 				2A6BAE2718E84B7C00A0F4E6 /* AKPlayer.h */,
 				2A6BAE2818E84B7C00A0F4E6 /* AKPlayer.m */,
 				FA84701018F9D12C00F70327 /* AKTeam.h */,
@@ -215,17 +219,6 @@
 				FA783B7A18FF49600023C418 /* CountDownViewController.m */,
 			);
 			name = Gameplays;
-			sourceTree = "<group>";
-		};
-		FA84700718F9C1ED00F70327 /* ALRadial */ = {
-			isa = PBXGroup;
-			children = (
-				FA84700118F9B1BE00F70327 /* ALRadialButton.h */,
-				FA84700218F9B1BE00F70327 /* ALRadialButton.m */,
-				FA84700318F9B1BE00F70327 /* ALRadialMenu.h */,
-				FA84700418F9B1BE00F70327 /* ALRadialMenu.m */,
-			);
-			name = ALRadial;
 			sourceTree = "<group>";
 		};
 		FAF6EFDF18A32D8600E2D79F = {
@@ -276,7 +269,6 @@
 				FAF6F03218A32FD400E2D79F /* ByteCounter.h */,
 				FAF6F03318A32FD400E2D79F /* ByteCounter.m */,
 				FA7095B118E5120900C1B282 /* Images.xcassets */,
-				FA84700718F9C1ED00F70327 /* ALRadial */,
 				FA5EBA9A18F499D90090DB76 /* AK-API */,
 				FAF6EFF218A32D8600E2D79F /* Supporting Files */,
 			);
@@ -485,10 +477,10 @@
 				FA5EBA9918F499320090DB76 /* AKPreGame.m in Sources */,
 				FA5EBA9D18F499FB0090DB76 /* AKGame.m in Sources */,
 				FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */,
-				FA84700618F9B1BE00F70327 /* ALRadialMenu.m in Sources */,
+				FA84700618F9B1BE00F70327 /* AKMenu.m in Sources */,
 				FAF0A50818E79E780093C13E /* CardView.m in Sources */,
 				FA5EBAB718F4A18A0090DB76 /* AuthView.m in Sources */,
-				FA84700518F9B1BE00F70327 /* ALRadialButton.m in Sources */,
+				FA84700518F9B1BE00F70327 /* AKButton.m in Sources */,
 				FA783B7218FF343B0023C418 /* MillionViewController.m in Sources */,
 				FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */,
 				FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */,

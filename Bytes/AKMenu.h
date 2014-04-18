@@ -1,40 +1,39 @@
 //
-//  ALRadialMenu.h
-//  ALRadial
+//  AKMenu.h
+//  AKMenu
 //
-//  Created by andrew lattis on 12/10/14.
-//  Copyright (c) 2012 andrew lattis. All rights reserved.
-//  http://andrewlattis.com
+//  Created by Alex Kafer on 2/5/14.
+//  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ALRadialButton.h"
+#import "AKButton.h"
 
-@class ALRadialMenu;
+@class AKMenu;
 
 ///protocol delegate for the data source
-@protocol ALRadialMenuDelegate <NSObject>
+@protocol AKMenuDelegate <NSObject>
 
 /**
  * when called with this message delegate's should return the number of items that will be displayed
  * @return number of items to display
  * @param radialMenu the radial menu object making the request
  */
-- (NSInteger) numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu;
+- (NSInteger) numberOfItemsInRadialMenu:(AKMenu *)radialMenu;
 
 /** 
  * when called with this message delegate's should return the size of the arc (how far the objects are spread) the items will be draw in
  * @return size of the arc
  * @param radialMenu the radial menu object making the request
  */
- - (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu;
+ - (NSInteger) arcSizeForRadialMenu:(AKMenu *)radialMenu;
 
 /** 
  * when called with this message delegate's should return the arc radius (distance between the button and objects final resting spot)
  * @return radius for the arc
  * @param radialMenu the radial menu object making the request
  */
-- (NSInteger) arcRadiusForRadialMenu:(ALRadialMenu *)radialMenu;
+- (NSInteger) arcRadiusForRadialMenu:(AKMenu *)radialMenu;
 
 
 /** 
@@ -43,16 +42,16 @@
  * @param radialMenu the radial menu object making the request
  * @param index the item to be displayed
  */
-- (UIImage *) radialMenu:(ALRadialMenu *)radialMenu imageForIndex:(NSInteger) index;
+- (UIImage *) radialMenu:(AKMenu *)radialMenu imageForIndex:(NSInteger) index;
 
 /**
  * this method will notify the delegates any time a button from the radial menu is pressed
  * @param radialMenu the radial menu object that the button appeared from
  * @param index the index of the button that was touched
  */
-- (void) radialMenu:(ALRadialMenu *)radialMenu didSelectItemAtIndex:(NSInteger) index;
+- (void) radialMenu:(AKMenu *)radialMenu didSelectItemAtIndex:(NSInteger) index;
 
-- (void) radialMenu:(ALRadialMenu *)radialMenu didReleaseButton: (ALRadialButton *)button AfterDragAtIndex:(NSInteger) index;
+- (void) radialMenu:(AKMenu *)radialMenu didReleaseButton: (AKButton *)button AfterDragAtIndex:(NSInteger) index;
 
 @optional
 
@@ -61,7 +60,7 @@
  * @return start of the arc
  * @param radialMenu the radial menu object making the request
  */
-- (NSInteger) arcStartForRadialMenu:(ALRadialMenu *)radialMenu;
+- (NSInteger) arcStartForRadialMenu:(AKMenu *)radialMenu;
 
 
 /**
@@ -69,7 +68,7 @@
  * @return size of the button
  * @param radialMenu the radial menu object making the request
  */
-- (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu;
+- (float) buttonSizeForRadialMenu:(AKMenu *)radialMenu;
 
 @end
 
@@ -80,7 +79,7 @@
  *
  * to use it in your project just add the ALRadialMenu and ALRadialButton files to your project, include ALRadialMenu.h, and implement the 5 ALRadialMenuDelegate methods.
  */
-@interface ALRadialMenu : UIView <ALRadialButtonDelegate>
+@interface AKMenu : UIView <AKButtonDelegate>
 
 ///@name Tasks
 /** 
@@ -109,7 +108,7 @@
 ///@name Properites
 
 ///data source delegate
-@property (nonatomic, weak) id <ALRadialMenuDelegate> delegate;
+@property (nonatomic, weak) id <AKMenuDelegate> delegate;
 
 ///property to store the next item to be animated into/out of view
 @property (nonatomic) NSInteger itemIndex;
@@ -123,7 +122,7 @@
 
 
 
-@interface ALRadialMenu (Private)
+@interface AKMenu (Private)
 /**
  * rotate a button in place for a given duration
  * @param button the button that will be rotated

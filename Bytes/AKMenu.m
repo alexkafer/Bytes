@@ -1,17 +1,17 @@
 //
-//  ALRadialMenu.m
-//  ALRadial
+//  AKMenu.m
+//  AKMenu
 //
-//  Created by andrew lattis on 12/10/14.
-//  Copyright (c) 2012 andrew lattis. All rights reserved.
-//  http://andrewlattis.com
+//  Created by Alex Kafer on 2/5/14.
+//  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "ALRadialMenu.h"
+#import "AKMenu.h"
+#import "AKButton.h"
 #import "UIView+draggable.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation ALRadialMenu
+@implementation AKMenu
 
 - (void)itemsWillAppearFromButton:(UIButton *) button withFrame:(CGRect)frame inView:(UIView *)view {
 	if ([self.items count]) {
@@ -57,7 +57,7 @@
 	}
 	
 	int currentItem = 1;
-	ALRadialButton *popupButton;
+	AKButton *popupButton;
 	while (currentItem <= itemCount) {
 		float radians = (angle * (currentItem - 1) + start) * (M_PI/180);
 		
@@ -74,7 +74,7 @@
 		CGPoint bounce = CGPointMake(extraX, extraY);
 		
 		
-		popupButton = [[ALRadialButton alloc] initWithFrame:frame];
+		popupButton = [[AKButton alloc] initWithFrame:frame];
 		popupButton.alpha = 0.0f;
 		popupButton.centerPoint = final;
 		popupButton.bouncePoint = bounce;

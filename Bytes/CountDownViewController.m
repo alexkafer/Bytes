@@ -38,7 +38,7 @@
 
 #pragma mark - radial menu delegate methods
 - (NSInteger) numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu {
-	return 4;
+	return 3;
 }
 
 
@@ -57,7 +57,6 @@
 	switch (index) {
         case 1: return [AKStyler circularScaleAndCropImage:[UIImage imageNamed:@"Sound"] frame:rect];
         case 2: return [AKStyler circularScaleAndCropImage:[UIImage imageNamed:@"Camera"] frame:rect];
-        case 3: return [AKStyler circularScaleAndCropImage:[UIImage imageNamed:@"Video"] frame:rect];
         default: return [AKStyler circularScaleAndCropImage:[UIImage imageNamed:@"Text"] frame:rect];
     }
 }
@@ -75,9 +74,6 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cameraController];
         [nav setNavigationBarHidden:YES];
         [self presentViewController:nav animated:YES completion:nil];
-    } else if (index == 3) {
-        NSLog(@"Video");
-        
     } else if (index == 4) {
         NSLog(@"Text");
     }
@@ -110,6 +106,7 @@
     
     [imageView setCenter:[self.view center]];
     [self.view addSubview:imageView];
+    
     [imageView enableDragging];
     [imageView setDraggable:YES];
     

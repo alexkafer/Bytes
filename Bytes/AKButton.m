@@ -1,15 +1,13 @@
 //
-//  ALRadialButton.m
-//  ALRadial
+//  AKButton.m
 //
-//  Created by andrew lattis on 12/10/14.
-//  Copyright (c) 2012 andrew lattis. All rights reserved.
-//  http://andrewlattis.com
+//  Created by Alex Kafer on 2/5/14.
+//  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "ALRadialButton.h"
+#import "AKButton.h"
 
-@implementation ALRadialButton
+@implementation AKButton
 
 - (id)initWithFrame:(CGRect)frame
 {
