@@ -7,19 +7,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view alpha="0.89999997615814209" contentMode="scaleToFill" id="ZfD-RZ-v1S" customClass="AuthView">
-            <rect key="frame" x="0.0" y="0.0" width="281" height="184"/>
+            <rect key="frame" x="0.0" y="0.0" width="281" height="191"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please login now, or forever hold your single player games" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="9Wt-V9-aRA">
-                    <rect key="frame" x="13" y="42" width="248" height="46"/>
+                    <rect key="frame" x="13" y="35" width="248" height="46"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQm-uu-lkC">
-                    <rect key="frame" x="49" y="103" width="195" height="30"/>
+                    <rect key="frame" x="31" y="137" width="218" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.15299109929999999" green="0.5568627451" blue="0.19319674740000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.1215686351" green="0.62745100259999997" blue="0.52549022440000004" alpha="1" colorSpace="deviceRGB"/>
                     <state key="normal" title="Login With GameCenter">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +39,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-dZ-ubL">
-                    <rect key="frame" x="49" y="141" width="195" height="30"/>
+                    <rect key="frame" x="35" y="96" width="211" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Single Player Only">

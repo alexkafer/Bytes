@@ -15,4 +15,6 @@
 + (CGPathRef)cardShadowForRect:(CGRect)rect distance:(float)distance;
 + (UIImage*)circularScaleAndCropImage:(UIImage*)image frame:(CGRect)frame;
 
++(NSURL *)getGravatarURL:(NSString *)emailAddress withSize: (int)pixelSize;
+
 @end

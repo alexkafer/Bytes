@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="button" destination="ZET-iP-HId" id="rTQ-5q-b1m"/>
                 <outlet property="descriptionLabel" destination="hWC-ib-ELh" id="MjA-Cm-hwl"/>
+                <outlet property="doubleTapLabel" destination="f7k-Bn-t39" id="Hvd-pN-Z1W"/>
                 <outlet property="titleLabel" destination="ywC-w3-PeO" id="lAx-p8-YPs"/>
             </connections>
         </placeholder>

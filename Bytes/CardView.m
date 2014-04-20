@@ -20,7 +20,7 @@
 @end
 
 @implementation CardView
-@synthesize titleLabel, descriptionLabel, button, gamePlayControllerIdentifier;
+@synthesize titleLabel, descriptionLabel, button, doubleTapLabel, gamePlayControllerIdentifier;
 
 -(id)initWithTitle: (NSString *)stringTitle discription: (NSString *)stringDescription {
     if (self = [super initWithNibName:@"CardView"])

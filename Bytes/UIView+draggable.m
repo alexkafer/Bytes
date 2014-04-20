@@ -32,10 +32,8 @@
     
     if (sender.state == UIGestureRecognizerStateBegan && self.layer.shadowRadius > 0) {
         self.layer.shadowOpacity = 0.5f;
-        NSLog(@"Test");
     } else if (sender.state == UIGestureRecognizerStateEnded && self.layer.shadowRadius > 0) {
         self.layer.shadowOpacity = 0.1f;
-        NSLog(@"End Test");
     }
 }
 
