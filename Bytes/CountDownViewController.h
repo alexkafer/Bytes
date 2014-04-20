@@ -7,24 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AKMenu.h"
-#import "DBCameraViewController.h"
-#import "DBCameraContainer.h"
+#import "GamePlayViewController.h"
 
-@interface CountDownViewController : UIViewController <AKMenuDelegate, DBCameraViewControllerDelegate>{
-    IBOutlet UILabel *scoreView;
-    
-    IBOutlet UIButton *addBtn;
-    NSString *total;
+@interface CountDownViewController : GamePlayViewController <GamePlayViewControllerDelegate> {
     int totalBytes;
-    int bytesLeft;
-    
-    NSMutableArray *currentlyActiveObjects;
-    
-    NSTimer *timer;
+    int seconds;
 }
-
-@property (strong, nonatomic) AKMenu *mediaMenu;
-- (IBAction)buttonPressed:(id)sender;
 
 @end

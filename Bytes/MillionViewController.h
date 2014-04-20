@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AKMenu.h"
-#import "DBCameraViewController.h"
-#import "DBCameraContainer.h"
+#import "GamePlayViewController.h"
 
-@interface MillionViewController : UIViewController <AKMenuDelegate, DBCameraViewControllerDelegate> {
-    IBOutlet UILabel *scoreView;
-    
-    IBOutlet UIButton *addBtn;
+@interface MillionViewController : GamePlayViewController <GamePlayViewControllerDelegate> {
+    int totalBytes;
 }
-
-@property (strong, nonatomic) AKMenu *mediaMenu;
-- (IBAction)buttonPressed:(id)sender;
 
 @end

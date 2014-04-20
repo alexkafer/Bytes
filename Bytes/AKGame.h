@@ -1,25 +1,34 @@
 //
-//  AKGameInstance.h
+//  AKGame.h
 //  Bytes
 //
-//  Created by Alex Kafer on 4/8/14.
+//  Created by Alex Kafer on 4/20/14.
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-@class AKPreGame;
-#import "AKPreGame.h"
-#import "AKPlayer.h"
 
-@interface AKGame : NSObject
+@protocol AKGameDelegate <NSObject>
+- (void)objectAddedWithBytes: (int)bytes andImage: (UIImage *)objectImage;
+@optional
+- (void)gameTimerUpdate;
+@end
 
+@interface AKGame : NSObject {
+    NSTimer *gameTicker;
+}
 
-//@property (nonatomic) AKGameOptions *hostSetOptions;
-@property (nonatomic) AKPlayer *hostPlayer;
-@property (nonatomic) NSMutableArray *players;
+-(void)startGame;
+-(void)endGame;
 
--(id)initWithPreGameOptions: (AKPreGame *)options;
+-(void)pauseGame;
+-(void)resumeGame;
 
--(NSString *)validateGame;
+- (void)addObjectWithBytes: (int)bytes andImage: (UIImage *)objectImage;
+
+@property (nonatomic,assign) id <AKGameDelegate> delegate;
+@property (nonatomic) BOOL paused;
 
 @end
+
+

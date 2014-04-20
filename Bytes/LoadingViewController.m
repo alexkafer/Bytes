@@ -53,14 +53,16 @@
                           delay:0.2
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         //[bytesImage setTransform:CGAffineTransformMakeTranslation(0, -140)];
+                         [bytesImage setCenter:CGPointMake([bytesImage center].x, [bytesImage center].y-20)];
                      }
                      completion:^(BOOL finished){
                          NSLog(@"Done Loading!");
-                         
-                         
+                         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
                          [self startLoadingSequence];
                      }];
+    
+    [AKStyler styleLayer:playButton.layer opacity:0.1 fancy:NO];
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -113,17 +115,30 @@
 }
 
 -(void)completed {
+    [authView setHidden:YES];
+    [playButton setAlpha:0];
+    [playButton setHidden:NO];
     
+    [UIView animateWithDuration:0.5 animations:^{
+        [playButton setAlpha:1];
+    }];
+}
+
+-(IBAction)play:(id)sender {
     [UIView animateWithDuration:0.5 animations:^{
         loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+160);
         [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-220)];
     } completion:^(BOOL finished) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
-        [self presentViewController:main animated:NO completion:nil];
+        [self presentViewController:main animated:NO completion:^{
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        }];
     }];
-    
-    
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 
@@ -137,7 +152,7 @@
 }
 
 -(void) startLoadingSequence {
-    if ([[GCHelper sharedInstance] userAuthenticated]) {
+    if ([GKLocalPlayer localPlayer].isAuthenticated) {
         NSLog(@"Authed!");
         [self userAuthenticated];
     } else {
@@ -147,8 +162,7 @@
 }
 
 -(void)userAuthenticated {
-    if ([[GCHelper sharedInstance] userAuthenticated]) {
-        [authView setHidden:YES];
+    if ([GKLocalPlayer localPlayer].isAuthenticated) {
         isAuthing = NO;
          NSLog(@"Complete");
         [self completed];

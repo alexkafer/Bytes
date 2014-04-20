@@ -1,0 +1,10 @@
+PODS:
+  - DBCamera (1.2)
+
+DEPENDENCIES:
+  - DBCamera (~> 1.2)
+
+SPEC CHECKSUMS:
+  DBCamera: 0c3433f240b8f714de93427c223a2d60d808f21b
+
+COCOAPODS: 0.32.1

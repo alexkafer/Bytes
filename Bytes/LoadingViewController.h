@@ -13,6 +13,7 @@
     BOOL isAuthing;
     
     IBOutlet UILabel *loadingLabel;
+    IBOutlet UIButton *playButton;
     IBOutlet UIImageView *bytesImage;
     
     AuthView *authView;
@@ -23,5 +24,7 @@
 }
 
 -(void)userAuthenticated;
+
+-(IBAction)play:(id)sender;
 
 @end
