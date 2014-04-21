@@ -15,6 +15,7 @@
     BOOL userDisabledGameCenter;
     BOOL gameCenterAvailable;
     BOOL userAuthenticated;
+    LoadingViewController *loadingView;
 }
 
 @property (assign, readonly) BOOL userDisabledGameCenter;

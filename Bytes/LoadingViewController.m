@@ -38,11 +38,9 @@
     loadingLabel.text = @"1";
     loadingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                     target:self
-                                                  selector:@selector(typeALetter:)
+                                                  selector:@selector(typeALetter)
                                                   userInfo:nil
                                                    repeats:YES];
-    //FIXME loading label FIXME
-    loadingIndex = 0;
     
 
     // Do any additional setup after loading the view.
@@ -58,10 +56,8 @@
                      completion:^(BOOL finished){
                          NSLog(@"Done Loading!");
                          [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-                         [self startLoadingSequence];
+                         [self authenticateUser];
                      }];
-    
-    [AKStyler styleLayer:playButton.layer opacity:0.1 fancy:NO];
     
 }
 
@@ -78,56 +74,38 @@
     }
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Internal Loading Methods
+#pragma mark - Internal Methods
 
-- (void)typeALetter:(id)sender {
-    NSString *nextDigit;
-    if ([self getYesOrNo]) {
-        nextDigit = @"1";
+- (void)typeALetter {
+    int nextDigit = arc4random_uniform(2);
+    
+    if (!loadingReturning && loadingLabel.text.length <= 34) {
+        loadingLabel.text = [loadingLabel.text stringByAppendingFormat:@"%d", nextDigit];
     } else {
-        nextDigit = @"0";
-    }
-    loadingLabel.text = [loadingLabel.text stringByAppendingFormat:@"%@", nextDigit];
-    if (loadingIndex < 100) {
-        loadingIndex++;
-        loadingLabel.alpha =- 0.01;
-    } else {
-        loadingIndex = 0;
-        loadingLabel.alpha = 1;
-        loadingLabel.text = @"";
+        loadingReturning = true;
+        if (loadingLabel.text.length == 0) {
+            loadingReturning = false;
+        } else {
+            loadingLabel.text = [loadingLabel.text substringToIndex:[loadingLabel.text length] - 1];
+        }
     }
     
 }
 
--(BOOL) getYesOrNo
-{
-    int tmp = arc4random_uniform(2);
-    if (tmp >= 1) {
-        return YES;
-    }
-    return NO;
-}
-
--(void)completed {
-    [authView setHidden:YES];
-    [playButton setAlpha:0];
-    [playButton setHidden:NO];
-    
+-(void)play {
     [UIView animateWithDuration:0.5 animations:^{
-        [playButton setAlpha:1];
-    }];
-}
-
--(IBAction)play:(id)sender {
-    [UIView animateWithDuration:0.5 animations:^{
-        loadingLabel.center = CGPointMake(loadingLabel.center.x, loadingLabel.center.y+160);
-        [bytesImage setCenter:CGPointMake(bytesImage.center.x, bytesImage.center.y-220)];
+        [bytesImage setAlpha:0];
+        [loadingLabel setAlpha:0];
     } completion:^(BOOL finished) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
@@ -137,37 +115,20 @@
     }];
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+
 
 
 
 #pragma mark Authentication
 
-- (void) showAuthentication {
+-(void)authenticateUser {
+    if ([GKLocalPlayer localPlayer].isAuthenticated) {
+        isAuthing = NO;
+        [self play];
+    } else {
         [authView setCenter:self.view.center];
         [authView setHidden:NO];
         isAuthing = YES;
-}
-
--(void) startLoadingSequence {
-    if ([GKLocalPlayer localPlayer].isAuthenticated) {
-        NSLog(@"Authed!");
-        [self userAuthenticated];
-    } else {
-         NSLog(@"Showing Auth!");
-        [self showAuthentication];
-    }
-}
-
--(void)userAuthenticated {
-    if ([GKLocalPlayer localPlayer].isAuthenticated) {
-        isAuthing = NO;
-         NSLog(@"Complete");
-        [self completed];
-    } else {
-        [self showAuthentication];
     }
 }
 
@@ -175,11 +136,28 @@
 
 -(IBAction)loginWithGameCenter:(id)sender {
     [[GCHelper sharedInstance] authenticateLocalUser:self];
+    
+    [UIView animateWithDuration:1 animations:^{
+        [authView setAlpha:0];
+        [authView setCenter:CGPointMake(0, [self.view center].y)];
+    } completion:^(BOOL finished) {
+        [authView setHidden:YES];
+    }];
+    
+    
 }
 
 -(IBAction)cancelWithGameCenter:(id)sender {
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        [authView setAlpha:0];
+        [authView setCenter:CGPointMake(0, [self.view center].y)];
+    } completion:^(BOOL finished) {
+        [authView setHidden:YES];
+    }];
+    
     [[GCHelper sharedInstance] setGameCenterDisabled:YES];
-    [self completed];
+    [self play];
 }
 
 @end

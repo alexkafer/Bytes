@@ -13,18 +13,15 @@
     BOOL isAuthing;
     
     IBOutlet UILabel *loadingLabel;
-    IBOutlet UIButton *playButton;
+    IBOutlet UILabel *statusLabel;
     IBOutlet UIImageView *bytesImage;
     
     AuthView *authView;
     
     NSTimer *loadingTimer;
-    NSString *loadingString;
-    NSUInteger loadingIndex;
+    BOOL loadingReturning;
 }
 
--(void)userAuthenticated;
-
--(IBAction)play:(id)sender;
+-(void)authenticateUser;
 
 @end
