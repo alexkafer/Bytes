@@ -174,7 +174,7 @@
 }
 
 - (void)handleCardReturn: (UITapGestureRecognizer *)gestureRecognizer {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:1 animations:^{
         [bytesScroller setCenter:CGPointMake([bytesScroller center].x, [bytesScroller center].y-200)];
     } completion:^(BOOL finished) {
         UIView *replacedCard = [(BytesCard *)gestureRecognizer.view replacedCard];
@@ -218,57 +218,40 @@
 - (void) cardButtonPressed: (id)sender {
     CardView *card = (CardView *)[sender superview];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:[card gamePlayControllerIdentifier]];
-    [self animateViewOut:card toViewController:play];
+    NSString *identifier = [card gamePlayControllerIdentifier];
+    if ([identifier isEqualToString:@"pinPointPlay"]) {
+        NSLog(@"Bring forth the code dialog");
+    } else {
+        UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:identifier];
+        [self animateViewOut:card toViewController:play];
+        
+        UIView *newView = [[UIView alloc] initWithFrame:card.frame];
+        [newView setBackgroundColor:[UIColor whiteColor]];
+        [newView.layer setCornerRadius:4];
+        
+        [UIView transitionFromView:card toView:newView duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom completion:^(BOOL finished) {
+            
+        }];
+    }
+    
 }
 
 #pragma mark - Utility Methods
 
 -(void)animateViewOut: (UIView *)view toViewController: (UIViewController *)endView {
-    UIView *newView = [[UIView alloc] initWithFrame:view.frame];
-    [newView setBackgroundColor:[UIColor whiteColor]];
-    [newView.layer setCornerRadius:4];
-    [UIView transitionFromView:view toView:newView duration:0.7 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
-    {
-        UIView *newView2 = [[UIView alloc] initWithFrame:view.frame];
-        [newView2 setBackgroundColor:[UIColor whiteColor]];
-        [newView2.layer setCornerRadius:8];
-        [UIView transitionFromView:newView toView:newView2 duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
-        {
-            UIView *newView3 = [[UIView alloc] initWithFrame:view.frame];
-            [newView3 setBackgroundColor:[UIColor whiteColor]];
-            [newView3.layer setCornerRadius:12];
-            [UIView transitionFromView:newView2 toView:newView3 duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
-            {
-                UIView *newView4 = [[UIView alloc] initWithFrame:view.frame];
-                [newView4 setBackgroundColor:[UIColor whiteColor]];
-                [newView4.layer setCornerRadius:16];
-                [UIView transitionFromView:newView3 toView:newView4 duration:0.2 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
-                {
-                    UIView *newView5 = [[UIView alloc] initWithFrame:view.frame];
-                    [newView5 setBackgroundColor:[UIColor whiteColor]];
-                    [newView5.layer setCornerRadius:24];
-                    [UIView transitionFromView:newView4 toView:newView5 duration:0.2 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished)
-                    {
-                        CGRect destRect = CGRectMake( self.view.frame.size.width/4, self.view.frame.size.height+5, self.view.frame.size.width/2, 20);
-                        
-                        
-                        [newView5 genieInTransitionWithDuration:0.1
-                                            destinationRect:destRect
-                                            destinationEdge:BCRectEdgeTop completion:^{
-                                                NSLog(@"Done!");
-                                                [scrollView setHidden:YES];
-                                                [UIView animateWithDuration:0.2 animations:^{
-                                                    [segControl setAlpha:0];
-                                                } completion:^(BOOL finished) {
-                                                    [self presentViewController:endView animated:NO completion:nil];
-                                                }];
-                                            }];
-                    }];
-                }];
-            }];
-        }];
-    }];
+    CGRect destRect = CGRectMake( self.view.frame.size.width/4, self.view.frame.size.height+5, self.view.frame.size.width/2, 20);
+    
+    [view genieInTransitionWithDuration:0.1
+                            destinationRect:destRect
+                            destinationEdge:BCRectEdgeTop completion:^{
+                                NSLog(@"Done!");
+                                [scrollView setHidden:YES];
+                                [UIView animateWithDuration:0.2 animations:^{
+                                    [segControl setAlpha:0];
+                                } completion:^(BOOL finished) {
+                                    [self presentViewController:endView animated:NO completion:nil];
+                                }];
+                            }];
 }
 
 +(UIViewAnimationOptions) optionForLocation: (CGPoint)location inView: (UIView *)view {

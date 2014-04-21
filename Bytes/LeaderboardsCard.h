@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CardView.h"
 
-@interface BytesCard : UIView
+@interface LeaderboardsCard : UIView
 
 @property (nonatomic, retain) CardView *replacedCard;
 

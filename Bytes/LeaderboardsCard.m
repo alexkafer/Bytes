@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "BytesCard.h"
+#import "LeaderboardsCard.h"
 #import "UIView+InitNib.h"
 #import "AKStyler.h"
 
-@implementation BytesCard
+@implementation LeaderboardsCard
 @synthesize replacedCard;
 
 -(id)initFromNib {
-    if (self = [super initWithNibName:@"BytesCardView"])
+    if (self = [super initWithNibName:@"LeaderboardsCardView"])
     {
         
     }
