@@ -37,6 +37,8 @@
 		FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84700E18F9C7F100F70327 /* UIView+InitNib.m */; };
 		FA84701818FAD14E00F70327 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84701718FAD14E00F70327 /* GCHelper.m */; };
 		FAE5305E1904B3C700CD2278 /* AKData.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5305D1904B3C700CD2278 /* AKData.m */; };
+		FAE530611904BEAC00CD2278 /* PinPointCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE530601904BEAC00CD2278 /* PinPointCodeView.m */; };
+		FAE530631904BEBC00CD2278 /* PinPointCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE530621904BEBC00CD2278 /* PinPointCodeView.xib */; };
 		FAF0A50018E7719E0093C13E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A4FF18E7719E0093C13E /* GameKit.framework */; };
 		FAF0A50518E780A20093C13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF0A50418E780A20093C13E /* CoreGraphics.framework */; };
 		FAF0A50818E79E780093C13E /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0A50718E79E780093C13E /* CardView.m */; };
@@ -122,6 +124,9 @@
 		FA84701718FAD14E00F70327 /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		FAE5305C1904B3C700CD2278 /* AKData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKData.h; sourceTree = "<group>"; };
 		FAE5305D1904B3C700CD2278 /* AKData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKData.m; sourceTree = "<group>"; };
+		FAE5305F1904BEAC00CD2278 /* PinPointCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinPointCodeView.h; sourceTree = "<group>"; };
+		FAE530601904BEAC00CD2278 /* PinPointCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinPointCodeView.m; sourceTree = "<group>"; };
+		FAE530621904BEBC00CD2278 /* PinPointCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinPointCodeView.xib; sourceTree = "<group>"; };
 		FAF0A4FF18E7719E0093C13E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FAF0A50418E780A20093C13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAF0A50618E79E780093C13E /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
@@ -184,6 +189,9 @@
 				FAF0A50618E79E780093C13E /* CardView.h */,
 				FAF0A50718E79E780093C13E /* CardView.m */,
 				FAF0A50918E7B4960093C13E /* CardView.xib */,
+				FAE5305F1904BEAC00CD2278 /* PinPointCodeView.h */,
+				FAE530601904BEAC00CD2278 /* PinPointCodeView.m */,
+				FAE530621904BEBC00CD2278 /* PinPointCodeView.xib */,
 				FA783B6B18FE309C0023C418 /* LeaderboardsCard.h */,
 				FA783B6C18FE309C0023C418 /* LeaderboardsCard.m */,
 				FA783B6E18FE30B60023C418 /* LeaderboardsCardView.xib */,
@@ -425,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE530631904BEBC00CD2278 /* PinPointCodeView.xib in Resources */,
 				2A1B84991904555700F3EECC /* StartView.xib in Resources */,
 				FA84700C18F9C6C100F70327 /* ObjectView.xib in Resources */,
 				FAF6EFFF18A32D8600E2D79F /* MainStoryboard.storyboard in Resources */,
@@ -495,6 +504,7 @@
 				FA5EBA8E18F39B700090DB76 /* AKStyler.m in Sources */,
 				FAF6F03418A32FD400E2D79F /* AKByteCounter.m in Sources */,
 				2A1B848C1904164500F3EECC /* CardTapGestureRecognizer.m in Sources */,
+				FAE530611904BEAC00CD2278 /* PinPointCodeView.m in Sources */,
 				FA84701818FAD14E00F70327 /* GCHelper.m in Sources */,
 				FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */,
 				FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */,

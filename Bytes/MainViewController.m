@@ -11,7 +11,7 @@
 #import "BytesOverlay.h"
 #import "UIView+Genie.h"
 #import "AKStyler.h"
-#import "BytesCard.h"
+#import "LeaderboardsCard.h"
 
 @implementation MainViewController
 
@@ -88,8 +88,8 @@
     {
         
         [currentScrollView.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
-            if ([obj isKindOfClass:[BytesCard class]]) {
-                CardView *replacedCard = [(BytesCard *)obj replacedCard];
+            if ([obj isKindOfClass:[LeaderboardsCard class]]) {
+                CardView *replacedCard = [(LeaderboardsCard *)obj replacedCard];
                 [UIView transitionFromView:obj toView:replacedCard duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop completion:nil];
             }
         }];
@@ -177,7 +177,7 @@
     [UIView animateWithDuration:1 animations:^{
         [bytesScroller setCenter:CGPointMake([bytesScroller center].x, [bytesScroller center].y-200)];
     } completion:^(BOOL finished) {
-        UIView *replacedCard = [(BytesCard *)gestureRecognizer.view replacedCard];
+        UIView *replacedCard = [(LeaderboardsCard *)gestureRecognizer.view replacedCard];
         CGPoint location = [gestureRecognizer locationInView:gestureRecognizer.view];
         [UIView transitionFromView:gestureRecognizer.view toView:replacedCard duration:0.5 options:[MainViewController optionForLocation:location inView:gestureRecognizer.view] completion:^(BOOL finished) {
             [UIView animateWithDuration:0.2 animations:^{
@@ -193,7 +193,7 @@
             [bytesScroller setCenter:CGPointMake([bytesScroller center].x, [bytesScroller center].y-200)];
         } completion:^(BOOL finished) {
             UIView *originalView = [gestureRecognizer view];
-            BytesCard *bytesCard = [[BytesCard alloc] initFromNib];
+            LeaderboardsCard *bytesCard = [[LeaderboardsCard alloc] initFromNib];
             [bytesCard setReplacedCard:(CardView *)originalView];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardReturn:)];
