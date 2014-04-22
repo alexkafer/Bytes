@@ -11,7 +11,7 @@
 
 @interface MainViewController : UIViewController <UIScrollViewDelegate, CardTapGestureRecognizerDelegate> {
     IBOutlet UIScrollView *scrollView;
-    
+    IBOutlet UILabel *accountName;
     IBOutlet UISegmentedControl *segControl;
     IBOutlet UIView *upperView;
     

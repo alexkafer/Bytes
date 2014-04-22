@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AuthView.h"
+#import "ObjectView.h"
 
 @interface LoadingViewController : UIViewController {
-    BOOL isAuthing;
+    BOOL waitingWithPlayer;
+    ObjectView *player;
     
     IBOutlet UILabel *loadingLabel;
     IBOutlet UILabel *statusLabel;

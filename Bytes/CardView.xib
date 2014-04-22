@@ -10,6 +10,7 @@
                 <outlet property="descriptionLabel" destination="hWC-ib-ELh" id="MjA-Cm-hwl"/>
                 <outlet property="doubleTapLabel" destination="f7k-Bn-t39" id="Hvd-pN-Z1W"/>
                 <outlet property="titleLabel" destination="ywC-w3-PeO" id="lAx-p8-YPs"/>
+                <outlet property="useCodeBtn" destination="qgq-B8-kml" id="cZf-kE-KGD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,18 +31,26 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Double Tap Card For Leaderboards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="f7k-Bn-t39">
-                    <rect key="frame" x="20" y="288" width="217" height="47"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Double Tap for Leaderboards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="f7k-Bn-t39">
+                    <rect key="frame" x="20" y="328" width="217" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZET-iP-HId">
-                    <rect key="frame" x="20" y="324" width="217" height="40"/>
+                    <rect key="frame" x="20" y="287" width="217" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Start Game">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgq-B8-kml">
+                    <rect key="frame" x="20" y="332" width="217" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Use Code">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -51,7 +60,9 @@
             <connections>
                 <outlet property="button" destination="ZET-iP-HId" id="fX6-QY-Y63"/>
                 <outlet property="descriptionLabel" destination="hWC-ib-ELh" id="Q9d-7o-JjI"/>
+                <outlet property="doubleTapLabel" destination="f7k-Bn-t39" id="LE8-Le-Kv8"/>
                 <outlet property="titleLabel" destination="ywC-w3-PeO" id="Juk-8M-4lc"/>
+                <outlet property="useCodeBtn" destination="qgq-B8-kml" id="YAg-K6-NL5"/>
             </connections>
         </view>
     </objects>

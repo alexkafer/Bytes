@@ -12,6 +12,7 @@
 #import "UIView+Genie.h"
 #import "AKStyler.h"
 #import "LeaderboardsCard.h"
+#import "GCHelper.h"
 
 @implementation MainViewController
 
@@ -79,6 +80,12 @@
     [bytesScroller setCanCancelContentTouches:YES];
     
     [bytesScroller setContentOffset:CGPointMake(0, 279)];
+    
+    if ([[GCHelper sharedInstance] userAuthenticated]) {
+        [accountName setText:[[GKLocalPlayer localPlayer] alias]];
+    } else {
+        [accountName setText:@"Guest"];
+    }
 }
 
 #pragma mark - Delegate Methods
@@ -86,7 +93,6 @@
 -(void)scrollViewWillBeginDragging:(UIScrollView *)currentScrollView {
     if ([currentScrollView isEqual:scrollView])
     {
-        
         [currentScrollView.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
             if ([obj isKindOfClass:[LeaderboardsCard class]]) {
                 CardView *replacedCard = [(LeaderboardsCard *)obj replacedCard];
@@ -160,6 +166,8 @@
     
     CardView *pinpoint = [[CardView alloc] initWithTitle:@"Pinpoint" discription:@"Use a code to race against friends!"];
     [pinpoint setGamePlayControllerIdentifier:@"pinPointPlay"];
+    [pinpoint.doubleTapLabel setHidden:YES];
+    [pinpoint.useCodeBtn setHidden:NO];
     [cardViewControllers addObject:pinpoint];
     
     CardView *million = [[CardView alloc] initWithTitle:@"Race to a Million" discription:@"Speed your way to a million bytes!"];
@@ -203,7 +211,6 @@
             [bytesCard loadView];
             [bytesCard setCenter:[originalView center]];
             CGPoint location = [lastCardTouch locationInView:[gestureRecognizer view]];
-            NSLog(@"Location Active: %f, %f", location.x, location.y);
             [UIView transitionFromView:originalView toView:bytesCard duration:0.5 options:[MainViewController optionForLocation:location inView:originalView] completion:^(BOOL finished) {
                 [UIView animateWithDuration:0.2 animations:^{
                     [bytesScroller setCenter:CGPointMake([bytesScroller center].x, [bytesScroller center].y+200)];
@@ -221,10 +228,6 @@
     NSString *identifier = [card gamePlayControllerIdentifier];
     if ([identifier isEqualToString:@"pinPointPlay"]) {
         NSLog(@"Bring forth the code dialog");
-    } else {
-        UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:identifier];
-        [self animateViewOut:card toViewController:play];
-        
         UIView *newView = [[UIView alloc] initWithFrame:card.frame];
         [newView setBackgroundColor:[UIColor whiteColor]];
         [newView.layer setCornerRadius:4];
@@ -232,6 +235,9 @@
         [UIView transitionFromView:card toView:newView duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom completion:^(BOOL finished) {
             
         }];
+    } else {
+        UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:identifier];
+        [self animateViewOut:card toViewController:play];
     }
     
 }

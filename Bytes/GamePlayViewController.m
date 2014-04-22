@@ -10,6 +10,7 @@
 #import "UIView+draggable.h"
 #import "AKByteCounter.h"
 #import "AKStyler.h"
+#import "MainViewController.h"
 
 @interface GamePlayViewController ()
 
@@ -45,10 +46,15 @@
     [currentGame setDelegate:self];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseGame:)];
-    [tapGesture setNumberOfTapsRequired:2];
+    [tapGesture setNumberOfTapsRequired:1];
+    [tapGesture setNumberOfTouchesRequired:2];
     [self.view addGestureRecognizer:tapGesture];
     
-    [self.view addSubview:startDialog];
+    darkCurtain = [[UIView alloc]initWithFrame:self.view.frame];
+    [darkCurtain setBackgroundColor:[UIColor blackColor]];
+    [darkCurtain setAlpha:0.5];
+    
+    [pauseDialog setHidden:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,6 +64,11 @@
 
     [startDialog loadView];
     [pauseDialog loadView];
+    
+    [self.view addSubview:darkCurtain];
+    [self.view addSubview:startDialog];
+    [self.view addSubview:pauseDialog];
+    
 }
 
 -(void)objectAddedWithBytes:(int)bytes andImage:(UIImage *)objectImage {
@@ -103,7 +114,7 @@
     }
     
     bytesLeft -= scale;
-    NSLog(@"BytesLeft: %d active objects: %d", bytesLeft, [currentlyActiveObjects count]);
+    NSLog(@"BytesLeft: %d active objects: %d", bytesLeft, (int)[currentlyActiveObjects count]);
     
     if (bytesLeft < 0 && [currentlyActiveObjects count] <= 0) {
         [objectUpdater invalidate];
@@ -128,25 +139,57 @@
 #pragma mark - Game Commands
 -(void)startGame:(id)sender {
     [self.currentGame startGame];
-    [startDialog removeFromSuperview];
+    [UIView animateWithDuration:0.3 animations:^{
+        [startDialog setAlpha:0];
+        [darkCurtain setAlpha:0];
+    } completion:^(BOOL finished) {
+        [startDialog setHidden:YES];
+        [darkCurtain setHidden:YES];
+    }];
     NSLog(@"Started");
 }
 
 -(void)pauseGame:(id)sender {
-    [self.currentGame pauseGame];
-    [self.view addSubview:pauseDialog];
-    NSLog(@"Pause");
+    if ([startDialog isHidden]) {
+        [self.currentGame pauseGame];
+        [pauseDialog setHidden:NO];
+        [darkCurtain setHidden:NO];
+        [UIView animateWithDuration:0.3 animations:^{
+            [pauseDialog setAlpha:1];
+            [darkCurtain setAlpha:0.5];
+        }];
+        NSLog(@"Pause");
+    }
 }
 
 -(void)resumeGame:(id)sender {
     [self.currentGame resumeGame];
-    [pauseDialog removeFromSuperview];
+    [UIView animateWithDuration:0.3 animations:^{
+        [pauseDialog setAlpha:0];
+        [pauseDialog setAlpha:0];
+    } completion:^(BOOL finished) {
+        [pauseDialog setHidden:YES];
+        [darkCurtain setHidden:YES];
+    }];
     NSLog(@"Resumed");
 }
                                           
 -(void)endGame:(id)sender {
     [self.currentGame endGame];
-    [pauseDialog removeFromSuperview];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [pauseDialog setAlpha:0];
+        [darkCurtain setAlpha:0];
+    } completion:^(BOOL finished) {
+        [pauseDialog setHidden:YES];
+        [darkCurtain setHidden:YES];
+    }];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+    [main setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:main animated:YES completion:nil];
+    
     NSLog(@"Ended");
 }
 

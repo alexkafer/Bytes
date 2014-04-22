@@ -9,7 +9,6 @@
 #import "LoadingViewController.h"
 #import "MainViewController.h"
 #import "AKStyler.h"
-#import "UIView+draggable.h"
 #import "GCHelper.h"
 
 @interface LoadingViewController ()
@@ -21,8 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     authView = [[AuthView alloc] initFromNib];
     [authView loadView];
+    [authView startDragging];
     [authView setHidden:YES];
     [authView setCenter:self.view.center];
     
@@ -30,11 +31,12 @@
     [authView.cancelButton addTarget:self action:@selector(cancelWithGameCenter:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:authView];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    
-    [authView enableDragging];
-    [authView setDraggable:YES];
-    
+    [self authenticateUser];
     loadingLabel.text = @"1";
     loadingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                     target:self
@@ -42,55 +44,37 @@
                                                   userInfo:nil
                                                    repeats:YES];
     
-
-    // Do any additional setup after loading the view.
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [UIView animateWithDuration:0.5
-                          delay:0.2
-                        options: UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         [bytesImage setCenter:CGPointMake([bytesImage center].x, [bytesImage center].y-20)];
-                     }
-                     completion:^(BOOL finished){
-                         NSLog(@"Done Loading!");
-                         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-                         [self authenticateUser];
-                     }];
-    
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    
-    if (isAuthing) {
-        UIView *touchedView = [touch view];
-        if ([touchedView isEqual:self.view]) {
-            [self.view.subviews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
-                [obj endEditing:YES];
-            }];
-        }
-    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (waitingWithPlayer) {
+        [UIView animateWithDuration:0.5 animations:^{
+            [player setAlpha:0];
+            [player setCenter:CGPointMake(0, [player center].y)];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                [bytesImage setAlpha:0];
+                [loadingLabel setAlpha:0];
+            } completion:^(BOOL finished) {
+                waitingWithPlayer = NO;
+                [self beginGame];
+            }];
+            
+        }];
+    }
 }
 
 #pragma mark - Internal Methods
 
 - (void)typeALetter {
-    int nextDigit = arc4random_uniform(2);
+    //int nextDigit = arc4random_uniform(2);
     
     if (!loadingReturning && loadingLabel.text.length <= 34) {
-        loadingLabel.text = [loadingLabel.text stringByAppendingFormat:@"%d", nextDigit];
+        loadingLabel.text = [loadingLabel.text stringByAppendingFormat:@"%d", (int)arc4random_uniform(2)];
     } else {
         loadingReturning = true;
         if (loadingLabel.text.length == 0) {
@@ -102,20 +86,34 @@
     
 }
 
--(void)play {
-    [UIView animateWithDuration:0.5 animations:^{
-        [bytesImage setAlpha:0];
-        [loadingLabel setAlpha:0];
-    } completion:^(BOOL finished) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
-        [self presentViewController:main animated:NO completion:^{
-            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-        }];
+-(void)beginGame {
+    NSLog(@"Begining Game");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+    [self presentViewController:main animated:NO completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     }];
 }
 
-
+- (void)animateNewPlayer {
+    [[GKLocalPlayer localPlayer] loadPhotoForSize:GKPhotoSizeNormal withCompletionHandler:^(UIImage *photo, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", [error debugDescription]);
+        } //[self play];
+        
+        player = [[ObjectView alloc] initWithPlayerDetail:[[GKLocalPlayer localPlayer] alias] withUncroppedProfilePicture:photo];
+        [player setAlpha:0];
+        [player setCenter:[self.view center]];
+        [self.view addSubview:player];
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            [player setAlpha:1];
+        } completion:^(BOOL finished) {
+            waitingWithPlayer = YES;
+        }];
+    }];
+    
+}
 
 
 
@@ -123,12 +121,12 @@
 
 -(void)authenticateUser {
     if ([GKLocalPlayer localPlayer].isAuthenticated) {
-        isAuthing = NO;
-        [self play];
+        //[self play];
+        [self animateNewPlayer];
+        
     } else {
         [authView setCenter:self.view.center];
         [authView setHidden:NO];
-        isAuthing = YES;
     }
 }
 
@@ -139,7 +137,7 @@
     
     [UIView animateWithDuration:1 animations:^{
         [authView setAlpha:0];
-        [authView setCenter:CGPointMake(0, [self.view center].y)];
+        [authView setCenter:CGPointMake(0, [authView center].y)];
     } completion:^(BOOL finished) {
         [authView setHidden:YES];
     }];
@@ -151,13 +149,19 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         [authView setAlpha:0];
-        [authView setCenter:CGPointMake(0, [self.view center].y)];
+        [authView setCenter:CGPointMake(0, [authView center].y)];
     } completion:^(BOOL finished) {
         [authView setHidden:YES];
     }];
     
     [[GCHelper sharedInstance] setGameCenterDisabled:YES];
-    [self play];
+    [UIView animateWithDuration:0.5 animations:^{
+        [bytesImage setAlpha:0];
+        [loadingLabel setAlpha:0];
+    } completion:^(BOOL finished) {
+        [self beginGame];
+    }];
+    
 }
 
 @end

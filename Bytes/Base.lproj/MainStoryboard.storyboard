@@ -72,8 +72,8 @@
                                             <action selector="scrollWith:" destination="vXZ-lx-hvc" eventType="valueChanged" id="EBP-xc-Dmy"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="alexkafer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZL-4M-bD4">
-                                        <rect key="frame" x="20" y="26" width="242" height="16"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZL-4M-bD4">
+                                        <rect key="frame" x="20" y="26" width="242" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -94,6 +94,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="accountName" destination="WZL-4M-bD4" id="ZCd-SG-IBn"/>
                         <outlet property="scrollView" destination="ZVS-mx-ttI" id="1KY-eA-EXl"/>
                         <outlet property="segControl" destination="4dH-BS-1c5" id="aoY-yU-Gs9"/>
                         <outlet property="upperView" destination="wog-Xa-EFP" id="Gte-Fw-XM8"/>

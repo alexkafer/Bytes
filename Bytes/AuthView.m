@@ -9,6 +9,7 @@
 #import "AuthView.h"
 #import "AKStyler.h"
 #import "UIView+InitNib.h"
+#import "UIView+draggable.h"
 
 @implementation AuthView
 @synthesize loginButton, cancelButton;
@@ -26,6 +27,11 @@
     [AKStyler styleLayer:cancelButton.layer opacity:0.1 fancy:NO];
      NSLog(@"Prettiezed Auth!");
     [AKStyler styleLayer:self.layer opacity:0.1 fancy:NO];
+}
+
+-(void)startDragging {
+    [self enableDragging];
+    [self setDraggable:YES];
 }
 
 @end

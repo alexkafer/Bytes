@@ -31,6 +31,7 @@
     
     StartView *startDialog;
     PauseView *pauseDialog;
+    UIView *darkCurtain;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *scoreView;

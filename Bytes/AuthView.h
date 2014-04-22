@@ -16,4 +16,6 @@
 -(id)initFromNib;
 - (void)loadView;
 
+-(void)startDragging;
+
 @end
