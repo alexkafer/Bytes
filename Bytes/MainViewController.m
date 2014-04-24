@@ -13,6 +13,8 @@
 #import "AKStyler.h"
 #import "LeaderboardsCard.h"
 #import "GCHelper.h"
+#import "PinPointCodeView.h"
+#import "PinEnterView.h"
 
 @implementation MainViewController
 
@@ -32,10 +34,18 @@
         [obj setCenter:CGPointMake(scrollView.center.x + 320*idx, scrollView.center.y/1.5+20)];
         [obj loadView];
         // add gesture recognizers to the image view
-        CardTapGestureRecognizer *tap = [[CardTapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardActive:)];
-        [tap setNumberOfTapsRequired:2];
-        [obj addGestureRecognizer:tap];
-        [obj.button addTarget:self action:@selector(cardButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                [obj.startButton addTarget:self action:@selector(cardButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        if ([obj isKindOfClass:[PinPointCodeView class]]) {
+            PinPointCodeView *pin = (PinPointCodeView *)obj;
+            [[pin useCodeBtn] addTarget:self action:@selector(pinUseButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [[pin clearButton] addTarget:self action:@selector(pinClearButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [[pin randomCode] addTarget:self action:@selector(pinRandomButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        } else {
+            CardTapGestureRecognizer *tap = [[CardTapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardActive:)];
+            [tap setNumberOfTapsRequired:2];
+            [obj addGestureRecognizer:tap];
+
+        }
         
         [obj setTag:idx+1];
         //[obj.view enableDragging];
@@ -45,8 +55,7 @@
     
     CardView *stem = [[CardView alloc] initWithTitle:@"STEM" discription:@"Student App"];
     [stem setCenter:CGPointMake(scrollView.center.x + 320*cardViewControllers.count, scrollView.center.y/1.5+20)];
-    [[stem button] setHidden:YES];
-    [[stem doubleTapLabel] setHidden:YES];
+    [[stem startButton] setHidden:YES];
     [stem loadView];
     [scrollView addSubview:stem];
     
@@ -164,14 +173,15 @@
     [countDown setGamePlayControllerIdentifier:@"countDownPlay"];
     [cardViewControllers addObject:countDown];
     
-    CardView *pinpoint = [[CardView alloc] initWithTitle:@"Pinpoint" discription:@"Use a code to race against friends!"];
+    PinPointCodeView *pinpoint = [[PinPointCodeView alloc] initWithPinPointTitle:@"Pinpoint" discription:@"Use a code to race against friends!"];
     [pinpoint setGamePlayControllerIdentifier:@"pinPointPlay"];
-    [pinpoint.doubleTapLabel setHidden:YES];
-    [pinpoint.useCodeBtn setHidden:NO];
+    [[pinpoint clearButton] setHidden:YES];
+    [[pinpoint codeField] setHidden:YES];
+    [self randomizePinLabel:pinpoint];
     [cardViewControllers addObject:pinpoint];
     
-    CardView *million = [[CardView alloc] initWithTitle:@"Race to a Million" discription:@"Speed your way to a million bytes!"];
-    [million setGamePlayControllerIdentifier:@"millionPlay"];
+    CardView *million = [[CardView alloc] initWithTitle:@"Race to a Gig" discription:@"Speed your way to a billion bytes!"];
+    [million setGamePlayControllerIdentifier:@"billionPlay"];
     [cardViewControllers addObject:million];
 }
 
@@ -201,17 +211,17 @@
             [bytesScroller setCenter:CGPointMake([bytesScroller center].x, [bytesScroller center].y-200)];
         } completion:^(BOOL finished) {
             UIView *originalView = [gestureRecognizer view];
-            LeaderboardsCard *bytesCard = [[LeaderboardsCard alloc] initFromNib];
-            [bytesCard setReplacedCard:(CardView *)originalView];
+            LeaderboardsCard *leaderboard = [[LeaderboardsCard alloc] initFromNib];
+            [leaderboard setReplacedCard:(CardView *)originalView];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardReturn:)];
             [tap setNumberOfTapsRequired:1];
-            [bytesCard addGestureRecognizer:tap];
+            [leaderboard addGestureRecognizer:tap];
             
-            [bytesCard loadView];
-            [bytesCard setCenter:[originalView center]];
+            [leaderboard loadView];
+            [leaderboard setCenter:[originalView center]];
             CGPoint location = [lastCardTouch locationInView:[gestureRecognizer view]];
-            [UIView transitionFromView:originalView toView:bytesCard duration:0.5 options:[MainViewController optionForLocation:location inView:originalView] completion:^(BOOL finished) {
+            [UIView transitionFromView:originalView toView:leaderboard duration:0.5 options:[MainViewController optionForLocation:location inView:originalView] completion:^(BOOL finished) {
                 [UIView animateWithDuration:0.2 animations:^{
                     [bytesScroller setCenter:CGPointMake([bytesScroller center].x, [bytesScroller center].y+200)];
                 }];
@@ -226,20 +236,37 @@
     CardView *card = (CardView *)[sender superview];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     NSString *identifier = [card gamePlayControllerIdentifier];
-    if ([identifier isEqualToString:@"pinPointPlay"]) {
-        NSLog(@"Bring forth the code dialog");
-        UIView *newView = [[UIView alloc] initWithFrame:card.frame];
-        [newView setBackgroundColor:[UIColor whiteColor]];
-        [newView.layer setCornerRadius:4];
-        
-        [UIView transitionFromView:card toView:newView duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom completion:^(BOOL finished) {
-            
-        }];
-    } else {
-        UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:identifier];
-        [self animateViewOut:card toViewController:play];
-    }
+    UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    [self animateViewOut:card toViewController:play];
+}
+
+- (void) pinRandomButtonPressed: (id)sender {
+    PinPointCodeView *card = (PinPointCodeView *)[sender superview];
+    [self randomizePinLabel:card];
+}
+
+- (void) pinUseButtonPressed: (id)sender {
+    CGRect square = CGRectMake(50, self.view.frame.size.height, self.view.frame.size.width-100, 1);
+    PinPointCodeView *card = (PinPointCodeView *)[sender superview];
+    PinEnterView *pinPointCode = [[PinEnterView alloc] initFromNib];
+    [pinPointCode loadView];
+    [card setCenter:[self.view center]];
     
+    [card genieInTransitionWithDuration:0.5 destinationRect:square destinationEdge:BCRectEdgeTop completion:^{
+        [pinPointCode setCenter:CGPointMake(self.view.center.x, self.view.center.y+upperView.frame.size.height+10)];
+        [self.view addSubview:pinPointCode];
+        [pinPointCode genieOutTransitionWithDuration:0.5 startRect:square startEdge:BCRectEdgeTop completion:nil];
+    }];
+}
+
+- (void) pinClearButtonPressed: (id)sender {
+    PinPointCodeView *card = (PinPointCodeView *)[sender superview];
+    [[card codeField] setText:@""];
+}
+
+- (void) randomizePinLabel:(PinPointCodeView *)card; {
+    NSInteger randomNumb = [self getRandomNumberBetween:1000000 maxNumber:1000000000]; //About 1 MB to 1 GB
+    [[card randomCode] setTitle:[NSString stringWithFormat:@"%d", randomNumb] forState:UIControlStateNormal];
 }
 
 #pragma mark - Utility Methods
@@ -247,7 +274,7 @@
 -(void)animateViewOut: (UIView *)view toViewController: (UIViewController *)endView {
     CGRect destRect = CGRectMake( self.view.frame.size.width/4, self.view.frame.size.height+5, self.view.frame.size.width/2, 20);
     
-    [view genieInTransitionWithDuration:0.1
+    [view genieInTransitionWithDuration:1
                             destinationRect:destRect
                             destinationEdge:BCRectEdgeTop completion:^{
                                 NSLog(@"Done!");
@@ -258,6 +285,11 @@
                                     [self presentViewController:endView animated:NO completion:nil];
                                 }];
                             }];
+}
+
+- (NSInteger)getRandomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
+{
+    return min + arc4random() % (max - min + 1);
 }
 
 +(UIViewAnimationOptions) optionForLocation: (CGPoint)location inView: (UIView *)view {

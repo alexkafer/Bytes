@@ -23,9 +23,6 @@
 
 @interface GamePlayViewController : UIViewController <AKMenuDelegate, DBCameraViewControllerDelegate, UIAlertViewDelegate, AKGameDelegate>
 {
-    
-
-    int bytesLeft;
     NSMutableArray *currentlyActiveObjects;
     NSTimer *objectUpdater;
     

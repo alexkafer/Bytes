@@ -56,25 +56,20 @@ static GCHelper *sharedHelper = nil;
 
 #pragma mark User Functions
 - (void)authenticateLocalUser: (LoadingViewController *)view {
-    
-    NSLog(@"Authenticating local user ...");
     if(!gameCenterAvailable || userDisabledGameCenter) {
         return;
     }
     
     GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
     localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-        NSLog(@"authenticateHandler");
         if (viewController != nil)
         {
-            NSLog(@"viewController != nil");
             //showAuthenticationDialogWhenReasonable: is an example method name. Create your own method that displays an authentication view when appropriate for your app.
             //[self showAuthenticationDialogWhenReasonable: viewController];
             [view presentViewController:viewController animated:YES completion:nil];
         }
         else if ([GKLocalPlayer localPlayer].isAuthenticated)
         {
-            NSLog(@"localPlayer already authenticated");
             //authenticatedPlayer: is an example method name. Create your own method that is called after the loacal player is authenticated.
             //[self authenticatedPlayer: localPlayer];
             loadingView = view;
@@ -82,7 +77,6 @@ static GCHelper *sharedHelper = nil;
         }
         else
         {
-            NSLog(@"local player not authenticated");
             userDisabledGameCenter = YES;
         }
     };

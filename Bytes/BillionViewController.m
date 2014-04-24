@@ -1,15 +1,16 @@
 //
-//  PinPointViewController.m
+//  MillionViewController.m
 //  Bytes
 //
 //  Created by Alex Kafer on 4/16/14.
 //  Copyright (c) 2014 Kintas. All rights reserved.
 //
 
-#import "PinPointViewController.h"
+#import "BillionViewController.h"
 #import "ObjectView.h"
 
-@implementation PinPointViewController
+@implementation BillionViewController
+@synthesize mediaMenu;
 
 - (void)viewDidLoad
 {
@@ -31,7 +32,6 @@
                                                        userInfo:nil
                                                         repeats:YES];
     }
-    NSLog(@"Bytes are added. What should I do?");
 }
 
 -(void)gameTimerUpdate {
@@ -72,9 +72,10 @@
             }];
         } else {
             [obj setBytesLeftForObj:objBytesLeft];
-            NSLog(@"Bytes Left for object: %ld", (long)objBytesLeft);
-            [[obj subTextLabel] setText:[NSString stringWithFormat:@"%ld", (long)objBytesLeft]];
+            NSLog(@"Bytes Left for object: %lu", (long)objBytesLeft);
+            [[obj subTextLabel] setText:[NSString stringWithFormat:@"%lu", (long)objBytesLeft]];
         }
     }];
 }
+
 @end

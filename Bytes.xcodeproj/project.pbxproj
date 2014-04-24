@@ -26,7 +26,7 @@
 		FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7095B418E5125900C1B282 /* LoadingViewController.m */; };
 		FA783B6D18FE309C0023C418 /* LeaderboardsCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B6C18FE309C0023C418 /* LeaderboardsCard.m */; };
 		FA783B6F18FE30B60023C418 /* LeaderboardsCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA783B6E18FE30B60023C418 /* LeaderboardsCardView.xib */; };
-		FA783B7218FF343B0023C418 /* MillionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B7118FF343B0023C418 /* MillionViewController.m */; };
+		FA783B7218FF343B0023C418 /* BillionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B7118FF343B0023C418 /* BillionViewController.m */; };
 		FA783B7818FF48900023C418 /* PinPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B7718FF48900023C418 /* PinPointViewController.m */; };
 		FA783B7B18FF49600023C418 /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA783B7A18FF49600023C418 /* CountDownViewController.m */; };
 		FA84700018F99FF100F70327 /* UIView+Slidable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA846FFF18F99FF100F70327 /* UIView+Slidable.m */; };
@@ -45,6 +45,8 @@
 		FAF0A50A18E7B4960093C13E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF0A50918E7B4960093C13E /* CardView.xib */; };
 		FAF1186E18F5FCBC00C75B89 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */; };
 		FAF1187118F609B300C75B89 /* UIImageView+movable.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF1187018F609B300C75B89 /* UIImageView+movable.m */; };
+		FAF3A6541909BBF700FC7B5A /* PinEnterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3A6531909BBF700FC7B5A /* PinEnterView.xib */; };
+		FAF3A6571909BD3F00FC7B5A /* PinEnterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A6561909BD3F00FC7B5A /* PinEnterView.m */; };
 		FAF6EFEC18A32D8600E2D79F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEB18A32D8600E2D79F /* Foundation.framework */; };
 		FAF6EFF018A32D8600E2D79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6EFEF18A32D8600E2D79F /* UIKit.framework */; };
 		FAF6EFF618A32D8600E2D79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF6EFF418A32D8600E2D79F /* InfoPlist.strings */; };
@@ -103,8 +105,8 @@
 		FA783B6B18FE309C0023C418 /* LeaderboardsCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardsCard.h; sourceTree = "<group>"; };
 		FA783B6C18FE309C0023C418 /* LeaderboardsCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardsCard.m; sourceTree = "<group>"; };
 		FA783B6E18FE30B60023C418 /* LeaderboardsCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardsCardView.xib; sourceTree = "<group>"; };
-		FA783B7018FF343B0023C418 /* MillionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MillionViewController.h; sourceTree = "<group>"; };
-		FA783B7118FF343B0023C418 /* MillionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MillionViewController.m; sourceTree = "<group>"; };
+		FA783B7018FF343B0023C418 /* BillionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillionViewController.h; sourceTree = "<group>"; };
+		FA783B7118FF343B0023C418 /* BillionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillionViewController.m; sourceTree = "<group>"; };
 		FA783B7618FF48900023C418 /* PinPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinPointViewController.h; sourceTree = "<group>"; };
 		FA783B7718FF48900023C418 /* PinPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinPointViewController.m; sourceTree = "<group>"; };
 		FA783B7918FF49600023C418 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
@@ -135,6 +137,9 @@
 		FAF1186D18F5FCBC00C75B89 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAF1186F18F609B300C75B89 /* UIImageView+movable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+movable.h"; sourceTree = "<group>"; };
 		FAF1187018F609B300C75B89 /* UIImageView+movable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+movable.m"; sourceTree = "<group>"; };
+		FAF3A6531909BBF700FC7B5A /* PinEnterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinEnterView.xib; sourceTree = "<group>"; };
+		FAF3A6551909BD3F00FC7B5A /* PinEnterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinEnterView.h; sourceTree = "<group>"; };
+		FAF3A6561909BD3F00FC7B5A /* PinEnterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinEnterView.m; sourceTree = "<group>"; };
 		FAF6EFE818A32D8600E2D79F /* Bytes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bytes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6EFEB18A32D8600E2D79F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAF6EFEF18A32D8600E2D79F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -192,6 +197,9 @@
 				FAE5305F1904BEAC00CD2278 /* PinPointCodeView.h */,
 				FAE530601904BEAC00CD2278 /* PinPointCodeView.m */,
 				FAE530621904BEBC00CD2278 /* PinPointCodeView.xib */,
+				FAF3A6551909BD3F00FC7B5A /* PinEnterView.h */,
+				FAF3A6561909BD3F00FC7B5A /* PinEnterView.m */,
+				FAF3A6531909BBF700FC7B5A /* PinEnterView.xib */,
 				FA783B6B18FE309C0023C418 /* LeaderboardsCard.h */,
 				FA783B6C18FE309C0023C418 /* LeaderboardsCard.m */,
 				FA783B6E18FE30B60023C418 /* LeaderboardsCardView.xib */,
@@ -255,8 +263,8 @@
 			children = (
 				2A1B848D19043F7400F3EECC /* GamePlayViewController.h */,
 				2A1B848E19043F7400F3EECC /* GamePlayViewController.m */,
-				FA783B7018FF343B0023C418 /* MillionViewController.h */,
-				FA783B7118FF343B0023C418 /* MillionViewController.m */,
+				FA783B7018FF343B0023C418 /* BillionViewController.h */,
+				FA783B7118FF343B0023C418 /* BillionViewController.m */,
 				FA783B7618FF48900023C418 /* PinPointViewController.h */,
 				FA783B7718FF48900023C418 /* PinPointViewController.m */,
 				FA783B7918FF49600023C418 /* CountDownViewController.h */,
@@ -434,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE530631904BEBC00CD2278 /* PinPointCodeView.xib in Resources */,
+				FAF3A6541909BBF700FC7B5A /* PinEnterView.xib in Resources */,
 				2A1B84991904555700F3EECC /* StartView.xib in Resources */,
 				FA84700C18F9C6C100F70327 /* ObjectView.xib in Resources */,
 				FAF6EFFF18A32D8600E2D79F /* MainStoryboard.storyboard in Resources */,
@@ -512,13 +521,14 @@
 				2A1B848F19043F7400F3EECC /* GamePlayViewController.m in Sources */,
 				FA783B7B18FF49600023C418 /* CountDownViewController.m in Sources */,
 				FA84700F18F9C7F100F70327 /* UIView+InitNib.m in Sources */,
+				FAF3A6571909BD3F00FC7B5A /* PinEnterView.m in Sources */,
 				FA84700618F9B1BE00F70327 /* AKMenu.m in Sources */,
 				2A1B84871902475D00F3EECC /* BytesOverlay.m in Sources */,
 				FAF0A50818E79E780093C13E /* CardView.m in Sources */,
 				FA5EBAB718F4A18A0090DB76 /* AuthView.m in Sources */,
 				FA84700518F9B1BE00F70327 /* AKButton.m in Sources */,
 				FAE5305E1904B3C700CD2278 /* AKData.m in Sources */,
-				FA783B7218FF343B0023C418 /* MillionViewController.m in Sources */,
+				FA783B7218FF343B0023C418 /* BillionViewController.m in Sources */,
 				2A1B84951904542500F3EECC /* PauseView.m in Sources */,
 				FA7095B518E5125900C1B282 /* LoadingViewController.m in Sources */,
 				FA5EBAC418F4F1360090DB76 /* UIView+Genie.m in Sources */,

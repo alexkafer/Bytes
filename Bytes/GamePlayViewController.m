@@ -34,6 +34,7 @@
     
     startDialog = [[StartView alloc] initFromNibStart];
     [[startDialog startGame] addTarget:self action:@selector(startGame:) forControlEvents:UIControlEventTouchUpInside];
+    [[startDialog backMenu] addTarget:self action:@selector(endGame:) forControlEvents:UIControlEventTouchUpInside];
     [startDialog setCenter:[self.view center]];
     
     pauseDialog = [[PauseView alloc] initFromNibPause];
@@ -71,11 +72,9 @@
     
 }
 
--(void)objectAddedWithBytes:(int)bytes andImage:(UIImage *)objectImage {
+-(void)objectAddedWithBytes:(NSInteger)bytes andImage:(UIImage *)objectImage {
     
-    bytesLeft += bytes;
-    
-    ObjectView *objectView = [[ObjectView alloc] initWithPlayerDetail:[NSString stringWithFormat:@"%d", bytes] withUncroppedProfilePicture:objectImage];
+    ObjectView *objectView = [[ObjectView alloc] initWithPlayerDetail:[NSString stringWithFormat:@"%ld", (long)bytes] withUncroppedProfilePicture:objectImage];
     [currentlyActiveObjects addObject:objectView];
     
     [objectView setCenter:[self.view center]];
@@ -86,54 +85,6 @@
     if ([self.delegate respondsToSelector:@selector(addObjectView:)]) {
         [(id)self.delegate addObjectView:objectView];
     }
-    
-    if (objectUpdater == nil) {
-        objectUpdater = [NSTimer scheduledTimerWithTimeInterval:0.001
-                                                   target:self
-                                                 selector:@selector(updateTick:)
-                                                 userInfo:nil
-                                                  repeats:YES];
-    }
-    
-}
-
-- (void) updateTick: (id)sender {
-    int scale;
-    if (bytesLeft > 1000000) {
-        scale = 101021;
-    } else if (bytesLeft > 100000) {
-        scale = 10201;
-    } else if (bytesLeft > 10000) {
-        scale = 1031;
-    } else if (bytesLeft > 1000) {
-        scale = 101;
-    } else if (bytesLeft > 100) {
-        scale = 11;
-    } else {
-        scale = 1;
-    }
-    
-    bytesLeft -= scale;
-    NSLog(@"BytesLeft: %d active objects: %d", bytesLeft, (int)[currentlyActiveObjects count]);
-    
-    if (bytesLeft < 0 && [currentlyActiveObjects count] <= 0) {
-        [objectUpdater invalidate];
-        objectUpdater = nil;
-    }
-    
-    [currentlyActiveObjects enumerateObjectsUsingBlock:^(ObjectView *obj, NSUInteger idx, BOOL *stop) {
-        int bytesLeftForObj = (int)[obj bytesLeftForObj] - scale;
-        if (bytesLeftForObj < 0) {
-            [currentlyActiveObjects removeObject:obj];
-            [UIView animateWithDuration:1 animations:^{
-                [obj setAlpha:0];
-            }];
-        } else {
-            [obj setBytesLeftForObj:(NSInteger *)(bytesLeftForObj)];
-            NSLog(@"Bytes Left for object: %d", bytesLeftForObj);
-            [[obj subTextLabel] setText:[NSString stringWithFormat:@"%d", bytesLeftForObj]];
-        }
-    }];
 }
 
 #pragma mark - Game Commands

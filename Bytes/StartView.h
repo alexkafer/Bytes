@@ -11,6 +11,7 @@
 @interface StartView : UIView
 
 @property(nonatomic, retain) IBOutlet UIButton *startGame;
+@property(nonatomic, retain) IBOutlet UIButton *backMenu;
 
 
 -(id)initFromNibStart;

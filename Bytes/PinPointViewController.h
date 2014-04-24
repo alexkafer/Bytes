@@ -10,7 +10,9 @@
 #import "GamePlayViewController.h"
 
 @interface PinPointViewController : GamePlayViewController <GamePlayViewControllerDelegate> {
-    int totalBytes;
+    int bytesLeft;
 }
+
+@property (nonatomic) NSInteger *targetGoal;
 
 @end

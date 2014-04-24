@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="-615" y="162"/>
         </scene>
-        <!--Million View Controller-->
+        <!--Billion View Controller-->
         <scene sceneID="k1S-bE-4TY">
             <objects>
-                <viewController storyboardIdentifier="millionPlay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3vj-Vd-kWX" customClass="MillionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="billionPlay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3vj-Vd-kWX" customClass="BillionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eKC-pH-83N"/>
                         <viewControllerLayoutGuide type="bottom" id="4CR-T1-VMH"/>
@@ -147,7 +147,7 @@
                                     <action selector="menuPressed:" destination="3vj-Vd-kWX" eventType="touchUpInside" id="nvZ-TE-Og7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,000,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-Vw-WMA">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,000,000,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-Vw-WMA">
                                 <rect key="frame" x="0.0" y="92" width="320" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>

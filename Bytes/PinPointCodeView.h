@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+InitNib.h"
+#import "CardView.h"
 
-@interface PinPointCodeView : UIView
+@interface PinPointCodeView : CardView
 
--(id)initFromNib;
+@property (nonatomic, retain) IBOutlet UIButton *randomCode;
+@property (nonatomic, retain) IBOutlet UILabel *codeField;
+@property (nonatomic, retain) IBOutlet UIButton *clearButton;
+@property (nonatomic, retain) IBOutlet UIButton *useCodeBtn;
 
--(void)loadView;
+- (id)initWithPinPointTitle: (NSString *)string discription: (NSString *)description;
 
 @end

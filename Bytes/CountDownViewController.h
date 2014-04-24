@@ -10,8 +10,9 @@
 #import "GamePlayViewController.h"
 
 @interface CountDownViewController : GamePlayViewController <GamePlayViewControllerDelegate> {
+    int bytesLeft;
     int totalBytes;
-    int seconds;
+    int secondsLeft;
 }
 
 @end

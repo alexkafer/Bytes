@@ -23,6 +23,7 @@
 
 -(void)loadView {
     [AKStyler styleLayer:[self.startGame layer] opacity:0.0 fancy:NO];
+    [AKStyler styleLayer:[self.backMenu layer] opacity:0.0 fancy:NO];
     [AKStyler styleLayer:[self layer] opacity:0.3 fancy:NO];
 }
 

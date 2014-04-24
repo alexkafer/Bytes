@@ -17,7 +17,6 @@
 -(id)initFromNib {
     if (self = [super initWithNibName:@"AuthView"])
     {
-         NSLog(@"Loaded Auth!");
     }
     return self;
 }
@@ -25,7 +24,6 @@
 -(void)loadView {
     [AKStyler styleLayer:loginButton.layer opacity:0.1 fancy:NO];
     [AKStyler styleLayer:cancelButton.layer opacity:0.1 fancy:NO];
-     NSLog(@"Prettiezed Auth!");
     [AKStyler styleLayer:self.layer opacity:0.1 fancy:NO];
 }
 

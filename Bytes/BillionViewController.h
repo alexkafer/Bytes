@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "GamePlayViewController.h"
 
-@interface MillionViewController : GamePlayViewController <GamePlayViewControllerDelegate> {
-    int totalBytes;
+@interface BillionViewController : GamePlayViewController <GamePlayViewControllerDelegate> {
+    int bytesLeft;
 }
 
 @end

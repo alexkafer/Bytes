@@ -25,7 +25,7 @@
     [authView loadView];
     [authView startDragging];
     [authView setHidden:YES];
-    [authView setCenter:self.view.center];
+    [authView setCenter: CGPointMake([self.view center].x, [self.view center].y+40)];
     
     [authView.loginButton addTarget:self action:@selector(loginWithGameCenter:) forControlEvents:UIControlEventTouchUpInside];
     [authView.cancelButton addTarget:self action:@selector(cancelWithGameCenter:) forControlEvents:UIControlEventTouchUpInside];
@@ -38,7 +38,7 @@
     
     [self authenticateUser];
     loadingLabel.text = @"1";
-    loadingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+    loadingTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
                                                     target:self
                                                   selector:@selector(typeALetter)
                                                   userInfo:nil
@@ -87,7 +87,6 @@
 }
 
 -(void)beginGame {
-    NSLog(@"Begining Game");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     MainViewController *main = (MainViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainView"];
     [self presentViewController:main animated:NO completion:^{
@@ -125,7 +124,6 @@
         [self animateNewPlayer];
         
     } else {
-        [authView setCenter:self.view.center];
         [authView setHidden:NO];
     }
 }

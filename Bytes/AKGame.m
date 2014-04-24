@@ -34,7 +34,7 @@
 
 #pragma mark - Game Byte Management
 
-- (void)addObjectWithBytes: (int)bytes andImage: (UIImage *)objectImage {
+- (void)addObjectWithBytes: (NSInteger)bytes andImage: (UIImage *)objectImage {
     if (![self paused] && [self.delegate respondsToSelector:@selector(objectAddedWithBytes:andImage:)]) {
         [(id)self.delegate objectAddedWithBytes:bytes andImage:objectImage];
     }

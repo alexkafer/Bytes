@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol AKGameDelegate <NSObject>
-- (void)objectAddedWithBytes: (int)bytes andImage: (UIImage *)objectImage;
+- (void)objectAddedWithBytes: (NSInteger)bytes andImage: (UIImage *)objectImage;
 @optional
 - (void)gameTimerUpdate;
 @end
@@ -24,7 +24,7 @@
 -(void)pauseGame;
 -(void)resumeGame;
 
-- (void)addObjectWithBytes: (int)bytes andImage: (UIImage *)objectImage;
+- (void)addObjectWithBytes: (NSInteger)bytes andImage: (UIImage *)objectImage;
 
 @property (nonatomic,assign) id <AKGameDelegate> delegate;
 @property (nonatomic) BOOL paused;

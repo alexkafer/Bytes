@@ -20,7 +20,7 @@
 @end
 
 @implementation CardView
-@synthesize titleLabel, descriptionLabel, button, doubleTapLabel, gamePlayControllerIdentifier, useCodeBtn;
+@synthesize titleLabel, descriptionLabel, startButton, gamePlayControllerIdentifier;
 
 -(id)initWithTitle: (NSString *)stringTitle discription: (NSString *)stringDescription {
     if (self = [super initWithNibName:@"CardView"])
@@ -37,8 +37,7 @@
     self.titleLabel.text = title;
     self.descriptionLabel.text = description;
     [AKStyler styleLayer:self.layer opacity:0.3 fancy:YES];
-    [AKStyler styleLayer:button.layer opacity:0.2 fancy:NO];
-    [AKStyler styleLayer:useCodeBtn.layer opacity:0.2 fancy:NO];
+    [AKStyler styleLayer:startButton.layer opacity:0.2 fancy:NO];
     // Do any additional setup after loading the view from its nib.
 }
 

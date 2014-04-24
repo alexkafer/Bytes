@@ -12,11 +12,9 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, retain) IBOutlet UILabel *doubleTapLabel;
-@property (nonatomic, retain) IBOutlet UIButton *button;
-@property (nonatomic, retain) IBOutlet UIButton *useCodeBtn;
+@property (nonatomic, retain) IBOutlet UIButton *startButton;
 
-@property (nonatomic, retain) IBOutlet NSString *gamePlayControllerIdentifier;
+@property (nonatomic, retain) NSString *gamePlayControllerIdentifier;
 
 - (id)initWithTitle: (NSString *)string discription: (NSString *)description;
 - (void)loadView;
