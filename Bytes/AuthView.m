@@ -32,4 +32,8 @@
     [self setDraggable:YES];
 }
 
+-(void)lockDragging: (BOOL) lock {
+    [self setDraggable:!lock];
+}
+
 @end

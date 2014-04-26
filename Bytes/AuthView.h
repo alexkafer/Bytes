@@ -18,4 +18,6 @@
 
 -(void)startDragging;
 
+-(void)lockDragging: (BOOL) lock;
+
 @end

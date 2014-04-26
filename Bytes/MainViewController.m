@@ -14,7 +14,7 @@
 #import "LeaderboardsCard.h"
 #import "GCHelper.h"
 #import "PinPointCodeView.h"
-#import "PinEnterView.h"
+#import "PinPointViewController.h"
 
 @implementation MainViewController
 
@@ -37,9 +37,8 @@
                 [obj.startButton addTarget:self action:@selector(cardButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         if ([obj isKindOfClass:[PinPointCodeView class]]) {
             PinPointCodeView *pin = (PinPointCodeView *)obj;
-            [[pin useCodeBtn] addTarget:self action:@selector(pinUseButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            [[pin clearButton] addTarget:self action:@selector(pinClearButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            [[pin randomCode] addTarget:self action:@selector(pinRandomButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [[pin useCodeBtn] addTarget:self action:@selector(useButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [[pin randomCode] addTarget:self action:@selector(randomButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         } else {
             CardTapGestureRecognizer *tap = [[CardTapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCardActive:)];
             [tap setNumberOfTapsRequired:2];
@@ -62,7 +61,6 @@
     bytesScroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 500)];
     overlayCenter = [bytesScroller center];
     [scrollView addSubview:bytesScroller];
-    
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -95,6 +93,8 @@
     } else {
         [accountName setText:@"Guest"];
     }
+    
+    [self randomButtonPressed:nil];
 }
 
 #pragma mark - Delegate Methods
@@ -108,7 +108,6 @@
                 [UIView transitionFromView:obj toView:replacedCard duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop completion:nil];
             }
         }];
-        
     }
     else
     {
@@ -161,7 +160,6 @@
 
 - (void) gestureRecognizer:(UIGestureRecognizer *)gr touched:(NSSet*)touches andEvent:(UIEvent *)event {
     lastCardTouch = [touches anyObject];
-    NSLog(@"Tapped");
 }
 
 #pragma mark - Custom Methods
@@ -173,12 +171,10 @@
     [countDown setGamePlayControllerIdentifier:@"countDownPlay"];
     [cardViewControllers addObject:countDown];
     
-    PinPointCodeView *pinpoint = [[PinPointCodeView alloc] initWithPinPointTitle:@"Pinpoint" discription:@"Use a code to race against friends!"];
-    [pinpoint setGamePlayControllerIdentifier:@"pinPointPlay"];
-    [[pinpoint clearButton] setHidden:YES];
-    [[pinpoint codeField] setHidden:YES];
-    [self randomizePinLabel:pinpoint];
-    [cardViewControllers addObject:pinpoint];
+    pinPointCard = [[PinPointCodeView alloc] initWithPinPointTitle:@"Pinpoint" discription:@"Use a code to race against friends!"];
+    [pinPointCard setGamePlayControllerIdentifier:@"pinPointPlay"];
+    [[pinPointCard codeField] setHidden:YES];
+    [cardViewControllers addObject:pinPointCard];
     
     CardView *million = [[CardView alloc] initWithTitle:@"Race to a Gig" discription:@"Speed your way to a billion bytes!"];
     [million setGamePlayControllerIdentifier:@"billionPlay"];
@@ -236,37 +232,44 @@
     CardView *card = (CardView *)[sender superview];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     NSString *identifier = [card gamePlayControllerIdentifier];
-    UIViewController *play = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    UIViewController *play = nil;
+    if ([identifier isEqualToString:@"pinPointPlay"]) {
+        play = (PinPointViewController *)[storyboard instantiateViewControllerWithIdentifier:identifier];
+        PinPointViewController *pinPlay = (PinPointViewController *)play;
+        [pinPlay setTargetGoal:(NSInteger *)[pinPointCard getBytesForGame]];
+    } else {
+        play = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    }
+    [card setCenter:CGPointMake([scrollView center].x, [card center].y)];
     [self animateViewOut:card toViewController:play];
 }
 
-- (void) pinRandomButtonPressed: (id)sender {
-    PinPointCodeView *card = (PinPointCodeView *)[sender superview];
-    [self randomizePinLabel:card];
-}
+#pragma mark - Pin Actions
+#pragma mark IBActions
 
-- (void) pinUseButtonPressed: (id)sender {
-    CGRect square = CGRectMake(50, self.view.frame.size.height, self.view.frame.size.width-100, 1);
-    PinPointCodeView *card = (PinPointCodeView *)[sender superview];
-    PinEnterView *pinPointCode = [[PinEnterView alloc] initFromNib];
-    [pinPointCode loadView];
-    [card setCenter:[self.view center]];
-    
-    [card genieInTransitionWithDuration:0.5 destinationRect:square destinationEdge:BCRectEdgeTop completion:^{
-        [pinPointCode setCenter:CGPointMake(self.view.center.x, self.view.center.y+upperView.frame.size.height+10)];
-        [self.view addSubview:pinPointCode];
-        [pinPointCode genieOutTransitionWithDuration:0.5 startRect:square startEdge:BCRectEdgeTop completion:nil];
-    }];
-}
-
-- (void) pinClearButtonPressed: (id)sender {
-    PinPointCodeView *card = (PinPointCodeView *)[sender superview];
-    [[card codeField] setText:@""];
-}
-
-- (void) randomizePinLabel:(PinPointCodeView *)card; {
+- (IBAction) randomButtonPressed: (id)sender {
     NSInteger randomNumb = [self getRandomNumberBetween:1000000 maxNumber:1000000000]; //About 1 MB to 1 GB
-    [[card randomCode] setTitle:[NSString stringWithFormat:@"%d", randomNumb] forState:UIControlStateNormal];
+    [pinPointCard setBytesTo:randomNumb];
+}
+
+- (IBAction)useButtonPressed: (id)sender {
+    UIAlertView *pinAlert = [[UIAlertView alloc] initWithTitle:@"Enter Code:" message:@"Codes are used to get the same random number as a friend. Ask for theirs!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Sumbit", nil];
+    pinAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[pinAlert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    [pinAlert show];
+}
+
+#pragma mark Alert View Delegate Methods
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) return;
+    NSInteger codeInput = [[[alertView textFieldAtIndex:0] text] integerValue];
+    if (!codeInput) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Code must only be numbers" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    } else {
+        [pinPointCard setCodeTo:codeInput];
+        
+    }
 }
 
 #pragma mark - Utility Methods
@@ -287,10 +290,7 @@
                             }];
 }
 
-- (NSInteger)getRandomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
-{
-    return min + arc4random() % (max - min + 1);
-}
+
 
 +(UIViewAnimationOptions) optionForLocation: (CGPoint)location inView: (UIView *)view {
     CGFloat y = location.y-view.frame.size.height/2;
@@ -306,5 +306,10 @@
         return UIViewAnimationOptionTransitionFlipFromRight;
     }
     
+}
+
+- (NSInteger)getRandomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
+{
+    return min + arc4random() % (max - min + 1);
 }
 @end

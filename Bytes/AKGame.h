@@ -10,8 +10,6 @@
 
 @protocol AKGameDelegate <NSObject>
 - (void)objectAddedWithBytes: (NSInteger)bytes andImage: (UIImage *)objectImage;
-@optional
-- (void)gameTimerUpdate;
 @end
 
 @interface AKGame : NSObject {
@@ -27,6 +25,7 @@
 - (void)addObjectWithBytes: (NSInteger)bytes andImage: (UIImage *)objectImage;
 
 @property (nonatomic,assign) id <AKGameDelegate> delegate;
+@property (nonatomic) BOOL started;
 @property (nonatomic) BOOL paused;
 
 @end

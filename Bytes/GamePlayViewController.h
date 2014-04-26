@@ -19,16 +19,20 @@
 
 @protocol GamePlayViewControllerDelegate <NSObject>
 -(void)addObjectView: (ObjectView *)view;
+-(void)gameTick;
 @end
 
 @interface GamePlayViewController : UIViewController <AKMenuDelegate, DBCameraViewControllerDelegate, UIAlertViewDelegate, AKGameDelegate>
 {
     NSMutableArray *currentlyActiveObjects;
     NSTimer *objectUpdater;
+    NSTimer *gameTicker;
     
     StartView *startDialog;
     PauseView *pauseDialog;
     UIView *darkCurtain;
+    
+    NSInteger bytesLeftForMainLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *scoreView;
@@ -38,7 +42,9 @@
 
 @property (nonatomic, assign) id<GamePlayViewControllerDelegate> delegate;
 
+
 @property (strong, nonatomic) AKMenu *mediaMenu;
 - (IBAction)menuPressed:(id)sender;
 
+- (void)animateMainLabelTo: (NSInteger)number;
 @end

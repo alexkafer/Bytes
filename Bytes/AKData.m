@@ -10,8 +10,9 @@
 
 @implementation AKData
 
-+(int)getBytesWithCode:(int)code {
-    NSString *url = [NSString stringWithFormat:@"%@%d", @"http://kintas.com/bytes/bytes.php?code=", code];
++(int)getBytesWithCode:(NSInteger)code {
+    NSString *url = [NSString stringWithFormat:@"%@%ld", @"http://kintas.com/bytes/bytes.php?code=", (long)code];
+    NSLog(@"URL: %@", url);
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     
     NSError *error = nil;
@@ -19,12 +20,16 @@
                  JSONObjectWithData:jsonData
                  options:0
                  error:&error];
+    if ([[results objectForKey:@"result"] isKindOfClass:[NSNull class]]) {
+        return 0;
+    }
     
-    return (int)[results objectForKey:@"result"];
+    NSInteger bytesFromCode = [[results objectForKey:@"result"] integerValue];
+    return bytesFromCode;
 }
 
-+(int)createCodeWithBytes:(int)bytes {
-    NSString *url = [NSString stringWithFormat:@"%@%d", @"http://kintas.com/bytes/bytes.php?bytes=", bytes];
++(int)createCodeWithBytes:(NSInteger)bytes {
+    NSString *url = [NSString stringWithFormat:@"%@%ld", @"http://kintas.com/bytes/bytes.php?bytes=", (long)bytes];
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     
     NSError *error = nil;
@@ -33,7 +38,12 @@
                              options:0
                              error:&error];
     
-    return (int)[results objectForKey:@"result"];
+    if ([[results objectForKey:@"result"] isKindOfClass:[NSNull class]]) {
+        return 0;
+    }
+    
+    NSInteger codeFromBytes = [[results objectForKey:@"result"] integerValue];
+    return codeFromBytes;
 }
 
 @end

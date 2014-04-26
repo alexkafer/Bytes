@@ -28,7 +28,12 @@
     [authView setCenter: CGPointMake([self.view center].x, [self.view center].y+40)];
     
     [authView.loginButton addTarget:self action:@selector(loginWithGameCenter:) forControlEvents:UIControlEventTouchUpInside];
+    [authView.loginButton addTarget:self action:@selector(lockAuthView:) forControlEvents:UIControlEventTouchDown];
+    [authView.loginButton addTarget:self action:@selector(unlockAuthView:) forControlEvents:UIControlEventTouchUpOutside];
+    
     [authView.cancelButton addTarget:self action:@selector(cancelWithGameCenter:) forControlEvents:UIControlEventTouchUpInside];
+    [authView.cancelButton addTarget:self action:@selector(lockAuthView:) forControlEvents:UIControlEventTouchDown];
+    [authView.cancelButton addTarget:self action:@selector(unlockAuthView:) forControlEvents:UIControlEventTouchUpOutside];
     
     [self.view addSubview:authView];
 }
@@ -84,6 +89,14 @@
         }
     }
     
+}
+
+- (IBAction)lockAuthView:(id)sender {
+    [authView lockDragging:YES];
+}
+
+- (IBAction)unlockAuthView:(id)sender {
+    [authView lockDragging:NO];
 }
 
 -(void)beginGame {

@@ -55,23 +55,41 @@
     [darkCurtain setBackgroundColor:[UIColor blackColor]];
     [darkCurtain setAlpha:0.5];
     
-    [pauseDialog setHidden:YES];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[self scoreView] setText:[NSString stringWithFormat:@"%d", 0]];
-    [[self.addBtn.imageView layer] setCornerRadius:[self addBtn].frame.size.width/2];
+    
+    if (![currentGame started]) {
+       
+        [[self scoreView] setText:[NSString stringWithFormat:@"%d", 0]];
+        [[self.addBtn.imageView layer] setCornerRadius:[self addBtn].frame.size.width/2];
 
-    [startDialog loadView];
-    [pauseDialog loadView];
+        [startDialog loadView];
+        [pauseDialog loadView];
+        [pauseDialog setHidden:YES];
     
-    [self.view addSubview:darkCurtain];
-    [self.view addSubview:startDialog];
-    [self.view addSubview:pauseDialog];
+        [self.view addSubview:darkCurtain];
+        [self.view addSubview:startDialog];
+        [self.view addSubview:pauseDialog];
     
+        [startDialog setHidden:NO];
+        [startDialog setCenter:CGPointMake([startDialog center].x-200, [startDialog center].y)];
+        [darkCurtain setHidden:NO];
+    
+        [UIView animateWithDuration:0.3 animations:^{
+            [darkCurtain setAlpha:0.5];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                [startDialog setAlpha:1];
+                [startDialog setCenter:CGPointMake([startDialog center].x+200, [startDialog center].y)];
+            }];
+        }];
+    }
 }
 
+#pragma Bytes and Animations
 -(void)objectAddedWithBytes:(NSInteger)bytes andImage:(UIImage *)objectImage {
     
     ObjectView *objectView = [[ObjectView alloc] initWithPlayerDetail:[NSString stringWithFormat:@"%ld", (long)bytes] withUncroppedProfilePicture:objectImage];
@@ -87,9 +105,66 @@
     }
 }
 
+-(void)animateMainLabelTo:(NSInteger)number {
+    bytesLeftForMainLabel = number;
+    if (objectUpdater == nil) {
+        objectUpdater = [NSTimer scheduledTimerWithTimeInterval:0.001
+                                                         target:self
+                                                       selector:@selector(updateTick:)
+                                                       userInfo:nil
+                                                        repeats:YES];
+    }
+}
+
+- (void) updateTick: (id)sender {
+    int scale;
+    if (bytesLeftForMainLabel > 1000000) {
+        scale = 101021;
+    } else if (bytesLeftForMainLabel > 100000) {
+        scale = 10201;
+    } else if (bytesLeftForMainLabel > 10000) {
+        scale = 1031;
+    } else if (bytesLeftForMainLabel > 1000) {
+        scale = 101;
+    } else if (bytesLeftForMainLabel > 100) {
+        scale = 11;
+    } else {
+        scale = 1;
+    }
+    
+    bytesLeftForMainLabel -= scale;
+    NSLog(@"BytesLeft: %d active objects: %d", bytesLeftForMainLabel, (int)[currentlyActiveObjects count]);
+    [[self scoreView] setText:[NSString stringWithFormat:@"%lu", (long)bytesLeftForMainLabel]];
+    
+    if (bytesLeftForMainLabel < 0 && [currentlyActiveObjects count] <= 0) {
+        [objectUpdater invalidate];
+        objectUpdater = nil;
+    }
+    
+    [currentlyActiveObjects enumerateObjectsUsingBlock:^(ObjectView *obj, NSUInteger idx, BOOL *stop) {
+        NSInteger *objBytesLeft = [obj bytesLeftForObj] - scale;
+        if (objBytesLeft < 0) {
+            [currentlyActiveObjects removeObject:obj];
+            [UIView animateWithDuration:1 animations:^{
+                [obj setAlpha:0];
+            }];
+        } else {
+            [obj setBytesLeftForObj:objBytesLeft];
+            NSLog(@"Bytes Left for object: %lu", (long)objBytesLeft);
+            [[obj subTextLabel] setText:[NSString stringWithFormat:@"%lu", (long)objBytesLeft]];
+        }
+    }];
+}
+
 #pragma mark - Game Commands
 -(void)startGame:(id)sender {
     [self.currentGame startGame];
+    [self.view bringSubviewToFront:darkCurtain];
+    [self.view bringSubviewToFront:startDialog];
+    
+    gameTicker = nil;
+    gameTicker = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(gameTick) userInfo:nil repeats:YES];
+    NSLog(@"Game Started");
     [UIView animateWithDuration:0.3 animations:^{
         [startDialog setAlpha:0];
         [darkCurtain setAlpha:0];
@@ -97,25 +172,38 @@
         [startDialog setHidden:YES];
         [darkCurtain setHidden:YES];
     }];
-    NSLog(@"Started");
 }
 
 -(void)pauseGame:(id)sender {
-    if ([startDialog isHidden]) {
+    if (![self.currentGame paused]) {
         [self.currentGame pauseGame];
+        [self.view bringSubviewToFront:darkCurtain];
+        [self.view bringSubviewToFront:pauseDialog];
+        
+        [gameTicker invalidate];
+        gameTicker = nil;
+        
         [pauseDialog setHidden:NO];
+        [pauseDialog setCenter:CGPointMake([pauseDialog center].x-300, [pauseDialog center].y)];
         [darkCurtain setHidden:NO];
+        
         [UIView animateWithDuration:0.3 animations:^{
-            [pauseDialog setAlpha:1];
             [darkCurtain setAlpha:0.5];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                [pauseDialog setAlpha:1];
+                [pauseDialog setCenter:CGPointMake([pauseDialog center].x+300, [pauseDialog center].y)];
+            }];
         }];
-        NSLog(@"Pause");
     }
 }
 
 -(void)resumeGame:(id)sender {
     [self.currentGame resumeGame];
-    [UIView animateWithDuration:0.3 animations:^{
+    gameTicker = nil;
+    gameTicker = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(gameTick) userInfo:nil repeats:YES];
+    
+    [UIView animateWithDuration:0.5 animations:^{
         [pauseDialog setAlpha:0];
         [pauseDialog setAlpha:0];
     } completion:^(BOOL finished) {
@@ -127,6 +215,10 @@
                                           
 -(void)endGame:(id)sender {
     [self.currentGame endGame];
+    
+    [gameTicker invalidate];
+    gameTicker = nil;
+    
     
     [UIView animateWithDuration:0.3 animations:^{
         [pauseDialog setAlpha:0];
@@ -144,7 +236,14 @@
     NSLog(@"Ended");
 }
 
-#pragma mark- IBActionsx
+-(void)gameTick {
+    NSLog(@"Update! GamePlay!");
+    if ([self.delegate respondsToSelector:@selector(gameTick)]) {
+        [(id)self.delegate gameTick];
+    }
+}
+
+#pragma mark- IBActions
 
 -(void)menuPressed:(id)sender {
     [self.mediaMenu buttonsWillAnimateFromButton:sender withFrame:self.addBtn.frame inView:self.view];

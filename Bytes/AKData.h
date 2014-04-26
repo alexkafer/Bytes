@@ -10,7 +10,7 @@
 
 @interface AKData : NSObject
 
-+(int)createCodeWithBytes:(int)bytes;
-+(int)getBytesWithCode:(int)bytes;
++(int)createCodeWithBytes:(NSInteger)bytes;
++(int)getBytesWithCode:(NSInteger)bytes;
 
 @end

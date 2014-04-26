@@ -12,7 +12,7 @@
 
 #pragma mark - Game Timer Commands
 -(void)startGame {
-    gameTicker = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(gameTick) userInfo:nil repeats:YES];
+    [self setStarted:YES];
 }
 
 -(void)pauseGame {
@@ -28,6 +28,7 @@
 }
 
 -(void)endGame {
+    [self setStarted:NO];
     [gameTicker invalidate];
     gameTicker = nil;
 }
@@ -37,13 +38,6 @@
 - (void)addObjectWithBytes: (NSInteger)bytes andImage: (UIImage *)objectImage {
     if (![self paused] && [self.delegate respondsToSelector:@selector(objectAddedWithBytes:andImage:)]) {
         [(id)self.delegate objectAddedWithBytes:bytes andImage:objectImage];
-    }
-}
-
-#pragma mark - Game Actions
--(void) gameTick {
-    if (![self paused] && [self.delegate respondsToSelector:@selector(gameTimerUpdate)]) {
-        [(id)self.delegate gameTimerUpdate];
     }
 }
 

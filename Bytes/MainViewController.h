@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CardTapGestureRecognizer.h"
+#import "PinPointCodeView.h"
 
-@interface MainViewController : UIViewController <UIScrollViewDelegate, CardTapGestureRecognizerDelegate> {
+@interface MainViewController : UIViewController <UIScrollViewDelegate, UIAlertViewDelegate, CardTapGestureRecognizerDelegate> {
     IBOutlet UIScrollView *scrollView;
     IBOutlet UILabel *accountName;
     IBOutlet UISegmentedControl *segControl;
@@ -25,6 +26,8 @@
     UITouch *lastCardTouch;
     
     NSMutableArray *cardViewControllers;
+    
+    PinPointCodeView *pinPointCard;
 }
 
 -(IBAction)scrollWith:(id)sender;
