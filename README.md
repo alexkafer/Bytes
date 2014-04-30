@@ -12,4 +12,9 @@ but I had to remake the project loosing all the commit history.
 Github then thinks it is a completely different project and won't let me merge.
 
 Demonstration Video URL: www.vimeo.com/urltobeputhere
+
 Developer Video URL: www.vimeo.com/urltobeputhere
+
+Mutliplayer Request Server URL will be changed from the one in the code as soon as the judges have judged. That code is a php file called bytes.php, for future reference.
+
+Upload it, set the database details, and replace the bytesURL address in AKData.m. If the code is unchanged, it should work right away.
