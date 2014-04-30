@@ -2,7 +2,7 @@ Bytes
 =====
 
 Submission for the STEM House App Challenge
-=====
+==
 
 If you are looking for the final source code for the House Student App Challenge, 
 please look in the branch entitled StudentAppFinal. This branch will be "locked" (Not pushed to) the second the app is submitted.
